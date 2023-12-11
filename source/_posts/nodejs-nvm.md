@@ -6,8 +6,6 @@ tags:
 
 ## change npm registry
 
-### common command
-
 ``` bash
 npm config get registry
 
@@ -15,7 +13,7 @@ npm config set registry https://registry.npmmirror.com/(taobo)
 
 npm config set registry https://registry.npmjs.org/
 ```
-
+<br><br>
 
 ## nvm
 
