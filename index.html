@@ -69,6 +69,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-blog-config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/11/blog-config/" class="article-date">
+  <time class="dt-published" datetime="2023-12-11T09:01:36.000Z" itemprop="datePublished">2023-12-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/12/11/blog-config/">blog-config</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="blog-in-github-with-hexo"><a href="#blog-in-github-with-hexo" class="headerlink" title="blog in github with hexo"></a>blog in github with hexo</h2><h3 id="common-command"><a href="#common-command" class="headerlink" title="common command"></a>common command</h3><p><strong>local</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog_name</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog_name</span><br><span class="line">$ npm install (only download <span class="keyword">in</span> current <span class="built_in">dir</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p><strong>remote</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_config.yml:</span><br><span class="line">......</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &quot;github url&quot;</span><br><span class="line">  branch: master/main</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g / generate</span><br><span class="line">$ hexo d / deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. node_modules: Dependency packages</span><br><span class="line">2. public: Storage for generated pages</span><br><span class="line">3. scaffolds: Templates for generating articles</span><br><span class="line">4. source: Location for storing your articles</span><br><span class="line">5. themes: Themes</span><br><span class="line">6. _config.yml: Configuration file for the blog</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Every time &#x27;hexo d&#x27; command is executed, it uploads the contents generated locally inside the &#x27;.deploy_git&#x27; directory. Other files, including those within the &#x27;source&#x27; directory, configuration files, and theme files, are not uploaded to GitHub. Without the source files, it&#x27;s impossible to regenerate the pages.</span><br></pre></td></tr></table></figure>
+<p>Workflow: <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/358198143668">reference</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/11/blog-config/" data-id="clq0p8gwz00019w6o7tkl5mcu" data-title="blog-config" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-windows-config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/12/11/windows-config/" class="article-date">
@@ -98,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/11/windows-config/" data-id="clq0oo9ix00022s6oadjvc27d" data-title="Windows Configuration Tips" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/11/windows-config/" data-id="clq0p8gx100049w6o436kgovn" data-title="Windows Configuration Tips" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -140,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/10/nodejs-nvm/" data-id="clq0oo9iu00012s6o0e9ld38s" data-title="Contact nvm" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/10/nodejs-nvm/" data-id="clq0p8gx000039w6ohwvffy6h" data-title="Contact nvm" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -193,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/07/git/" data-id="clq0oo9im00002s6o6t467h52" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/07/git/" data-id="clq0p8gwo00009w6o1z28czlk" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -242,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/02/terminal-config/" data-id="clq0oo9iy00032s6obwqb01rw" data-title="Terminal Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/02/terminal-config/" data-id="clq0p8gx000029w6o5c6f1e99" data-title="Terminal Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -283,6 +340,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/12/11/blog-config/">blog-config</a>
+          </li>
         
           <li>
             <a href="/2023/12/11/windows-config/">Windows Configuration Tips</a>
