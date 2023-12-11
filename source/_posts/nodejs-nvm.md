@@ -1,8 +1,21 @@
 ---
-title: Contact nvm
+title: Nodejs
 date: 2023-12-10 18:41:42
 tags:
 ---
+
+## change npm registry
+
+### common command
+
+``` bash
+npm config get registry
+
+npm config set registry https://registry.npmmirror.com/(taobo)
+
+npm config set registry https://registry.npmjs.org/
+```
+
 
 ## nvm
 
