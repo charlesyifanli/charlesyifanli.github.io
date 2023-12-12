@@ -4,8 +4,8 @@ date: 2023-12-11 17:01:36
 tags:
 ---
 
-## blog using github with hexo
-**local**
+## blog using github and hexo
+*The default GitHub-related configurations have been completed.*
 ```bash
 $ npm install -g hexo-cli
 
@@ -17,7 +17,7 @@ $ npm install (only download in current dir)
 $ hexo g
 $ hexo s
 ```
-**remote** (*The default GitHub-related configurations have been completed.*)<br>
+<br>
 
 modify "_config.yml":
 
