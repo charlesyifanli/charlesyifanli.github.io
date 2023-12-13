@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/11/blog-config/" data-id="clq28xwz10000c86o0ntubt4p" data-title="Blog Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/11/blog-config/" data-id="clq3r71mc0003yk6ocavaab6k" data-title="Blog Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -152,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/11/windows-config/" data-id="clq28xwz80005c86o1fsv50su" data-title="Windows Configuration Tips" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/11/windows-config/" data-id="clq3r71md0005yk6o8kxd2uj0" data-title="Windows Configuration Tips" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -186,17 +186,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="change-npm-registry"><a href="#change-npm-registry" class="headerlink" title="change npm registry"></a>change npm registry</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/(taobo)</span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+        <h2 id="change-npm-registry"><a href="#change-npm-registry" class="headerlink" title="change npm registry"></a>change npm registry</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm config get registry</span><br><span class="line"></span><br><span class="line">$ npm config <span class="built_in">set</span> registry https://registry.npmmirror.com/</span><br><span class="line"></span><br><span class="line">$ npm config <span class="built_in">set</span> registry https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
 <h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><h3 id="what-is-“nvm”"><a href="#what-is-“nvm”" class="headerlink" title="what is “nvm”"></a>what is “nvm”</h3><p>NVM (Node Version Manager) is a tool that manages multiple Node.js versions.</p>
-<h3 id="common-command"><a href="#common-command" class="headerlink" title="common command"></a>common command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="built_in">ls</span> - View currently installed versions</span><br><span class="line"></span><br><span class="line">nvm install &lt;version&gt; </span><br><span class="line"></span><br><span class="line">nvm use &lt;version&gt;</span><br><span class="line"></span><br><span class="line">nvm list available - Display a partial list of available versions <span class="keyword">for</span> download</span><br><span class="line"></span><br><span class="line">nvm uninstall &lt;version&gt; </span><br><span class="line"></span><br><span class="line">nvm <span class="built_in">alias</span> - Add aliases to different version numbers</span><br><span class="line"></span><br><span class="line">nvm <span class="built_in">unalias</span> - Remove defined aliases</span><br><span class="line"></span><br><span class="line">nvm reinstall-packages &lt;version&gt; - Reinstall globally installed npm packages <span class="keyword">for</span> a specified version <span class="keyword">in</span> the current Node environment</span><br></pre></td></tr></table></figure>
+<h3 id="common-command"><a href="#common-command" class="headerlink" title="common command"></a>common command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ nvm <span class="built_in">ls</span> - View currently installed versions</span><br><span class="line"></span><br><span class="line">$ nvm install &lt;version&gt; </span><br><span class="line"></span><br><span class="line">$ nvm use &lt;version&gt;</span><br><span class="line"></span><br><span class="line">$ nvm list available - Display a partial list of available versions <span class="keyword">for</span> download</span><br><span class="line"></span><br><span class="line">$ nvm uninstall &lt;version&gt; </span><br><span class="line"></span><br><span class="line">$ nvm <span class="built_in">alias</span> - Add aliases to different version numbers</span><br><span class="line"></span><br><span class="line">$ nvm <span class="built_in">unalias</span> - Remove defined aliases</span><br><span class="line"></span><br><span class="line">$ nvm reinstall-packages &lt;version&gt; - Reinstall globally installed npm packages <span class="keyword">for</span> a specified version <span class="keyword">in</span> the current Node environment</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/549256854">reference</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/10/nodejs-nvm/" data-id="clq28xwz70003c86o6snd4ow0" data-title="Nodejs" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/10/nodejs-nvm/" data-id="clq3r71m50000yk6oadfv42rm" data-title="Nodejs" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -249,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/07/git/" data-id="clq28xwz60002c86oh6jm1pf4" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/07/git/" data-id="clq3r71md0004yk6o02746o29" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -298,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/02/terminal-config/" data-id="clq28xwz70004c86o54vwbgr7" data-title="Terminal Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/02/terminal-config/" data-id="clq3r71ma0001yk6o05aldmc9" data-title="Terminal Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -349,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/23/hello-world/" data-id="clq28xwz50001c86obim2fah1" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/11/23/hello-world/" data-id="clq3r71mb0002yk6od1mzh4dz" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
