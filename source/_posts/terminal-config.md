@@ -45,3 +45,43 @@ $ chcp
 ``` bash
 $ chcp 65001
 ```
+<br><br>
+
+## oh-my-posh config
+
+### init oh-my-posh
+
+``` bash
+$ notepad $profile
+```
+add context: **oh-my-posh init pwsh | Invoke-Expression**
+
+### switch theme
+``` bash
+$ Get-PoshThemes
+```
+
+``` bash
+$ notepad $profile
+```
+modify context: **oh-my-posh init pwsh --config <\path> \ <\name>.omp.json | Invoke-Expression**
+
+### allow to use conda
+#### get path by "Get-PoshThemes"
+#### modify the theme json file to be used, in "blocks" in "segments", add:
+```
+{
+          "type": "python",
+          "style": "powerline",
+          "properties": {
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "home_enabled": true
+          },
+          "powerline_symbol": "",
+          "foreground": "#100e23",
+          "background": "#906cff",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+},
+```
+More info: [reference](https://zhuanlan.zhihu.com/p/354603010)
