@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/11/blog-config/" data-id="clq6jlnj20000l06oc67o1lck" data-title="Blog Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/11/blog-config/" data-id="clq6l4zrf0000sc6o153y0bxk" data-title="Blog Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -152,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/11/windows-config/" data-id="clq6jlnja0005l06odoq9hxrd" data-title="Windows Configuration Tips" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/11/windows-config/" data-id="clq6l4zrt0005sc6o8naqc712" data-title="Windows Configuration Tips" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -196,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/10/nodejs-nvm/" data-id="clq6jlnj80002l06o74iq98v4" data-title="Nodejs" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/10/nodejs-nvm/" data-id="clq6l4zrp0003sc6o8dm3dyk6" data-title="Nodejs" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -249,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/07/git/" data-id="clq6jlnj90004l06o3ebn8arh" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/07/git/" data-id="clq6l4zri0001sc6ofn3k0ikg" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -297,11 +297,20 @@
 
 <p><strong>Set the console code page to UTF-8 <em>temporarily</em>:</strong><br></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chcp 65001</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h2 id="oh-my-posh-config"><a href="#oh-my-posh-config" class="headerlink" title="oh-my-posh config"></a>oh-my-posh config</h2><h3 id="init-oh-my-posh"><a href="#init-oh-my-posh" class="headerlink" title="init oh-my-posh"></a>init oh-my-posh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ notepad <span class="variable">$profile</span></span><br></pre></td></tr></table></figure>
+<p>add context: <strong>oh-my-posh init pwsh | Invoke-Expression</strong></p>
+<h3 id="switch-theme"><a href="#switch-theme" class="headerlink" title="switch theme"></a>switch theme</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Get-PoshThemes</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ notepad <span class="variable">$profile</span></span><br></pre></td></tr></table></figure>
+<p>modify context: <strong>oh-my-posh init pwsh –config &lt;\path&gt; \ &lt;\name&gt;.omp.json | Invoke-Expression</strong></p>
+<h3 id="allow-to-use-conda"><a href="#allow-to-use-conda" class="headerlink" title="allow to use conda"></a>allow to use conda</h3><h4 id="get-path-by-“Get-PoshThemes”"><a href="#get-path-by-“Get-PoshThemes”" class="headerlink" title="get path by “Get-PoshThemes”"></a>get path by “Get-PoshThemes”</h4><h4 id="modify-the-theme-json-file-to-be-used-in-“blocks”-in-“segments”-add"><a href="#modify-the-theme-json-file-to-be-used-in-“blocks”-in-“segments”-add" class="headerlink" title="modify the theme json file to be used, in “blocks” in “segments”, add:"></a>modify the theme json file to be used, in “blocks” in “segments”, add:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">          &quot;type&quot;: &quot;python&quot;,</span><br><span class="line">          &quot;style&quot;: &quot;powerline&quot;,</span><br><span class="line">          &quot;properties&quot;: &#123;</span><br><span class="line">            &quot;display_mode&quot;: &quot;environment&quot;,</span><br><span class="line">            &quot;fetch_virtual_env&quot;: true,</span><br><span class="line">            &quot;home_enabled&quot;: true</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;powerline_symbol&quot;: &quot;&quot;,</span><br><span class="line">          &quot;foreground&quot;: &quot;#100e23&quot;,</span><br><span class="line">          &quot;background&quot;: &quot;#906cff&quot;,</span><br><span class="line">          &quot;template&quot;: &quot;  &#123;&#123; if .Error &#125;&#125;&#123;&#123; .Error &#125;&#125;&#123;&#123; else &#125;&#125;&#123;&#123; if .Venv &#125;&#125;&#123;&#123; .Venv &#125;&#125; &#123;&#123; end &#125;&#125;&#123;&#123; .Full &#125;&#125;&#123;&#123; end &#125;&#125; &quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/354603010">reference</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/02/terminal-config/" data-id="clq6jlnj90003l06odp1w5x2g" data-title="Terminal Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/12/02/terminal-config/" data-id="clq6l4zrs0004sc6ogsmq8tlw" data-title="Terminal Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -352,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/23/hello-world/" data-id="clq6jlnj70001l06odfuo4khg" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/11/23/hello-world/" data-id="clq6l4zrk0002sc6ogzenbv1h" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
