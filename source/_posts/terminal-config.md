@@ -85,3 +85,4 @@ modify context: **oh-my-posh init pwsh --config <\path> \ <\name>.omp.json | Inv
 },
 ```
 More info: [reference](https://zhuanlan.zhihu.com/p/354603010)
+
