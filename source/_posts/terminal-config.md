@@ -88,12 +88,27 @@ More info: [reference](https://zhuanlan.zhihu.com/p/354603010)
 
 <br><br>
 
-## irm and iex
+## irm and iwr
+```
+"It is used to retrieve content from a specified URL."
+iwr is more suitable for retrieve scripts file compared with irm.
+```
 
 ### Invoke-RestMethod
 
-``` bash
-"It is used to retrieve content from a specified URL."
+```
+1. Used to interact with REST APIs, retrieve, and handle returned data.
+2. Typically employed for processing data returned from APIs, such as JSON, XML, etc.
+3. Capable of handling more structured data, suitable for scenarios requiring specific format data.
+4. For example, it can be used to fetch data from web services or send API requests.
+```
+
+### Invoke-WebMethod
+
+```
+1. Used for interacting with web pages, retrieving webpage content, or downloading files.
+2. Suitable for downloading files, retrieving webpage content, or checking webpage response status codes.
+3. More versatile and suitable for general network requests requiring handling of webpage content or file downloads.
 ```
 
 ### Invoke-Expression
@@ -109,5 +124,6 @@ irm [-Uri] https://example.com/file.zip [-OutFile C:\path\to\save\file.zip]
 ```
 
 ```
-irm https://example.com/file | iex
+irm https://example.com/script_file | iex
 ```
+Note: the same as iwr
