@@ -86,3 +86,28 @@ modify context: **oh-my-posh init pwsh --config <\path> \ <\name>.omp.json | Inv
 ```
 More info: [reference](https://zhuanlan.zhihu.com/p/354603010)
 
+<br><br>
+
+## irm and iex
+
+### Invoke-RestMethod
+
+``` bash
+"It is used to retrieve content from a specified URL."
+```
+
+### Invoke-Expression
+
+```
+"iex" is a command in PowerShell, short for "Invoke-Expression". It executes the content passed to it as a PowerShell script or command. This method allows you to directly execute the output of the previous command.
+```
+
+### Examples
+
+```
+irm [-Uri] https://example.com/file.zip [-OutFile C:\path\to\save\file.zip]
+```
+
+```
+irm https://example.com/file | iex
+```
