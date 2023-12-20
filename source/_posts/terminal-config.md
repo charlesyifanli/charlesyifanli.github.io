@@ -126,4 +126,4 @@ irm [-Uri] https://example.com/file.zip [-OutFile C:\path\to\save\file.zip]
 ```
 irm https://example.com/script_file | iex
 ```
-Note: the same as iwr
+**Note:** the same as "iwr", and " | iex" will not save file into PC.
