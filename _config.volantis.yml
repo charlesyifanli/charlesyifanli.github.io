@@ -30,7 +30,32 @@ navbar:
       url: https://www.github.com/charlesyifanli
   search: Search...   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
+
+
+
+
+############################### friends links ############################### > start
 pages:
   # friends links
   friends:
     layout_scheme: simple # "simple" or "traditional"
+############################### friends links ############################### > end
+
+
+
+
+############################### page foot ############################### > start
+site_footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [aplayer, social, license, info, copyright]
+  social:
+    - icon: fas fa-rss
+      url: atom.xml
+    - icon: fas fa-envelope
+      url: mailto:goodlucktocharles@outlook.com
+    - icon: fab fa-github
+      url: https://github.com/charlesyifanli
+  copyright: '[Copyright © 2023-2035 Charles Yifan Li](/)'
+  # You can add your own property here. (Support markdown, for example: br: '<br>')
+  br: '<br>'
+############################### page foot ############################### > end
