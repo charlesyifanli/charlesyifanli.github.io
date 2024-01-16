@@ -19,7 +19,7 @@ navbar:
     - name: Archives
       icon: fa-solid fa-archive
       url: archives/
-    - name: Links
+    - name: Friends
       icon: fa-solid fa-link
       url: friends/
     - name: About
@@ -30,3 +30,7 @@ navbar:
       url: https://www.github.com/charlesyifanli
   search: Search...   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
+pages:
+  # friends links
+  friends:
+    layout_scheme: simple # "simple" or "traditional"
