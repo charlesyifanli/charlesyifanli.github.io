@@ -41,3 +41,17 @@ When merging without the `--no-ff` flag, the `master` branch pointer moves direc
 However, when merging using the `--no-ff` flag, a new merge commit is generated, **preserving the separate histories of both `master` and `feature` branches.**
 
 More info: [reference](https://zhuanlan.zhihu.com/p/452996934)
+
+<br><br>
+
+## ssh: connect to host github.com port 22: Connection timed out
+
+In "~/.ssh/config", 
+
+```
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+```
+
+More info: [reference](https://zhuanlan.zhihu.com/p/521340971)
