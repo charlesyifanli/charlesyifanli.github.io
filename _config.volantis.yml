@@ -1,0 +1,32 @@
+############################### Navigation Bar ############################### > start
+# 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
+navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    icon:
+    title:
+  menu:
+    - name: Blog
+      icon: fa-solid fa-rss
+      url: /
+    - name: Categories
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: Tags
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: Archives
+      icon: fa-solid fa-archive
+      url: archives/
+    - name: Links
+      icon: fa-solid fa-link
+      url: friends/
+    - name: About
+      icon: fa-solid fa-info-circle
+      url: about/
+    - name: Github
+      icon: fa-brands fa-github
+      url: https://www.github.com/charlesyifanli
+  search: Search...   # Search bar placeholder
+############################### Navigation Bar ############################### > end
