@@ -26,7 +26,7 @@ modify "_config.yml":
 deploy:
   type: git
   repo: "github url"
-  branch: master/main
+  branch: master
 ```
 
 command line
@@ -34,7 +34,7 @@ command line
 ```bash
 $ npm install hexo-deployer-git --save
 
-$ hexo clean
+$ hexo cl / clean
 $ hexo g / generate
 $ hexo d / deploy
 ```
