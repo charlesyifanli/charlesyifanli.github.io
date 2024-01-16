@@ -1,4 +1,5 @@
 ---
-title: categories
-date: 2024-01-17 01:41:35
+layout: category
+index: true
+title: All Categories
 ---
