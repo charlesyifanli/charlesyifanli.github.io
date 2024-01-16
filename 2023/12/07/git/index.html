@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Git Configuration | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="first attempt at using Git branchingThe main branch is responsible for merging other branches, while other branches are responsible for completing their respective tasks and continuing iterations. Sol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Configuration">
+<meta property="og:url" content="http://example.com/2023/12/07/git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="first attempt at using Git branchingThe main branch is responsible for merging other branches, while other branches are responsible for completing their respective tasks and continuing iterations. Sol">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-07T13:20:32.000Z">
+<meta property="article:modified_time" content="2023-12-11T08:43:57.096Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/07/git/" class="article-date">
+  <time class="dt-published" datetime="2023-12-07T13:20:32.000Z" itemprop="datePublished">2023-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Git Configuration
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="first-attempt-at-using-Git-branching"><a href="#first-attempt-at-using-Git-branching" class="headerlink" title="first attempt at using Git branching"></a>first attempt at using Git branching</h2><p>The main branch is responsible for merging other branches, while other branches are responsible for completing their respective tasks and continuing iterations.</p>
+<p>Solution: “A repository corresponds to a sub-branch, create a privileged repository corresponding to all branches, pull all branches in the privileged repository first, then perform a <code>--no-ff</code> merge of other branches into the main branch, and push.”</p>
+<p>Workflow: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/596345017/answer/2997761096">reference</a></p>
+<h2 id="command-git-merge-–no-ff-branch-name"><a href="#command-git-merge-–no-ff-branch-name" class="headerlink" title="command &gt;&gt; git merge –no-ff branch-name"></a>command &gt;&gt; git merge –no-ff branch-name</h2><p>E.g.,<br><br>Before merge:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">o---o---o---o  master</span><br><span class="line">     \</span><br><span class="line">      o---o    feature</span><br></pre></td></tr></table></figure>
+
+<p>Merge with Default (Fast-forward Enabled):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">o---o---o---o---o  master (fast-forwarded to feature)</span><br><span class="line">     \</span><br><span class="line">      o---o    feature</span><br></pre></td></tr></table></figure>
+
+<p>Merge with –no-ff Flag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">o---o---o---o-------o  master</span><br><span class="line">     \         /</span><br><span class="line">      o---o---o    feature</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note &gt;&gt;</strong><br><br>When merging without the <code>--no-ff</code> flag, the <code>master</code> branch pointer moves directly to the tip of the <code>feature</code> branch. This process doesn’t show a distinct merge operation in the commit history.</p>
+<p>However, when merging using the <code>--no-ff</code> flag, a new merge commit is generated, <strong>preserving the separate histories of both <code>master</code> and <code>feature</code> branches.</strong></p>
+<p>More info: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/452996934">reference</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/07/git/" data-id="clrg3ctts0002oo6oa2283j2k" data-title="Git Configuration" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/10/nodejs-nvm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Nodejs
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/02/terminal-config/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Terminal Configuration</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/19/LAN-sharing/">LAN Sharing</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/11/blog-config/">Blog Configuration</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/11/windows-config/">Windows Configuration Tips</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/nodejs-nvm/">Nodejs</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/07/git/">Git Configuration</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
