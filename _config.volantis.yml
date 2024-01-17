@@ -124,16 +124,16 @@ sidebar:
       avatar: https://cdn.jsdelivr.net/gh/charlesyifanli/image/local/lanyangyang.jpg # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
       shape: rectangle # circle, rectangle
       url: /about/
-      title: 'good'
+      title: 'Work hard'
       subtitle:
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      jinrishici: When you are rushing towards the future in a hurry, it means you no longer enjoy the present. # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fa-solid fa-rss
           url: /atom.xml
         - icon: fa-solid fa-envelope
-          url: mailto:me@xxx.com
+          url: mailto:goodlucktocharles@outlook.com
         - icon: fab fa-github
-          url: https://github.com/volantis-x/
+          url: https://github.com/charlesyifanli
         - icon: fa-solid fa-headphones-alt
           url: /
     # ---------------------------------------
