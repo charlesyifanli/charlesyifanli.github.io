@@ -280,8 +280,8 @@ plugins:
     enable: true
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
-    type: artist    # song, playlist, album, search, artist
-    id: 44266    # song id / playlist id / album id / search keyword
+    type: playlist    # song, playlist, album, search, artist
+    id: 9161227408    # song id / playlist id / album id / search keyword
     # Optional
     fixed: true      # enable fixed mode
     theme: '#1BCDFC'  # main color
