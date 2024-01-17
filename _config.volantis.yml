@@ -66,7 +66,7 @@ site_footer:
 ############################### Cover ############################### > start
 cover:
   height_scheme: full # full, half
-  layout_scheme: search # blank, search, dock, featured, focus
+  layout_scheme: focus # blank, search, dock, featured, focus
   display:
     home: true
     archive: true
