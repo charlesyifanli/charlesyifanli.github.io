@@ -56,3 +56,13 @@ tip:
 Every time 'hexo d' command is executed, it uploads the contents generated locally inside the '.deploy_git' directory. Other files, including those within the 'source' directory, configuration files, and theme files, are not uploaded to GitHub. Without the source files, it's impossible to regenerate the pages.
 ```
 Info: [reference](https://www.jianshu.com/p/358198143668)
+
+<br>
+
+<br>
+
+### theme--voluntis
+
+Thanks to [source code](https://github.com/volantis-x/hexo-theme-volantis) and [guide](https://www.bilibili.com/video/BV1GP4y1d729/?spm_id_from=333.788&vd_source=f367f43d00246a51bd639e9f1fcda3a9)! 
+
+By the way: [crash instructions](https://volantis.js.org/v6/theme-settings).
