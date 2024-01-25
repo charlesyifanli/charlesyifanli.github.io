@@ -63,6 +63,6 @@ Info: [reference](https://www.jianshu.com/p/358198143668)
 
 ### theme--voluntis
 
-Thanks to [source code](https://github.com/volantis-x/hexo-theme-volantis) and [guide](https://www.bilibili.com/video/BV1GP4y1d729/?spm_id_from=333.788&vd_source=f367f43d00246a51bd639e9f1fcda3a9)! 
+Thanks to [source code](https://github.com/volantis-x/hexo-theme-volantis) and [crash course](https://www.bilibili.com/video/BV1GP4y1d729/?spm_id_from=333.788&vd_source=f367f43d00246a51bd639e9f1fcda3a9)! 
 
-By the way: [crash instructions](https://volantis.js.org/v6/theme-settings).
+By the way: [documentation](https://volantis.js.org/v6/theme-settings).
