@@ -55,3 +55,37 @@ Host github.com
 ```
 
 More info: [reference](https://zhuanlan.zhihu.com/p/521340971)
+
+<br>
+
+<br>
+
+## create a new branch based on a specific historical version of the current branch
+
+### Clone the repository locally:
+
+```
+git clone <url>
+cd your-repository
+```
+
+### Create a new branch
+
+```
+git checkout -b new-branch-name
+```
+
+### Look through the hash value of specific history version
+
+```
+git log
+```
+
+### Reset the branch
+
+```
+git reset --hard commit-hash
+```
+
+
+
