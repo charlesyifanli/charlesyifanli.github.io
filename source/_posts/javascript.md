@@ -1,7 +1,9 @@
 ---
-title: Nodejs
+title: JavaScript
 date: 2023-12-10 18:41:42
 tags:
+categories:
+- programming languages
 ---
 
 ## change npm registry
@@ -15,7 +17,7 @@ $ npm config set registry https://registry.npmjs.org/
 ```
 <br><br>
 
-## nvm
+## nvm intro
 
 ### what is "nvm"
 
