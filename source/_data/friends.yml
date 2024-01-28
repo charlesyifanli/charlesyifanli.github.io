@@ -2,7 +2,7 @@
   description: friends # 分组描述
   items:
     - title: Rocky # 名称 mandatory
-      avatar: https://github.com/charlesyifanli/picture_bed/blog/friends_avatar/rocky_avatar.jpg # 头像 mandatory
+      avatar: https://github.com/charlesyifanli/picture_bed/tree/ef0f3a1137def374dac6a68b2d6697cd5689a23f/blog/friends_avatar/rocky_avatar.jpg # 头像 mandatory
       url: https://www.github.com/rocky-d # 链接 mandatory
       screenshot: # 截图
       keywords: # 关键词
