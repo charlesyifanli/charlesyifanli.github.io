@@ -4,7 +4,7 @@ date: 2023-12-07 21:20:32
 tags: 
 - git
 categories:
-- git
+- git config
 ---
 
 ## git branch intro

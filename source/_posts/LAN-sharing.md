@@ -1,11 +1,15 @@
 ---
 title: LAN Sharing
 date: 2023-12-19 19:48:07
-tags:
+tags: 
+categories:
+- windows config
 ---
 
-## Transfer files within the same Local Area Network (LAN)
-**Local machine settings**
+## transfer files within LAN
+
+### PC shared with 
+
 ```
 1. Select the folder you want to share, right-click and choose Properties, click on Sharing, Advanced Sharing, Share this folder, Permissions, select Full Control. Confirm.
 2. Choose Security, Edit, Add, Input Everyone, save and close.
@@ -13,7 +17,8 @@ tags:
 ```
 <br>
 
-**Other PC in LAN**
+### Other PC in LAN
+
 ```
 In file explorer:
 Input: \\ip_address
