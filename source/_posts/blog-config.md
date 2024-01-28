@@ -2,7 +2,7 @@
 title: Blog Configuration
 date: 2023-12-11 17:01:36
 tags: 
-- blog config
+- blog
 categories:
 - blog
 ---
