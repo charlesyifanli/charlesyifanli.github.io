@@ -144,3 +144,28 @@ irm [-Uri] https://example.com/file.zip [-OutFile C:\path\to\save\file.zip]
 irm https://example.com/script_file | iex
 ```
 **Note:** the same as "iwr", and " | iex" will not save file into PC.
+
+<br>
+
+<br>
+
+## count sub directories in powershell
+
+### only current sub directories
+
+```bash
+$ (Get-ChildItem -Directory | Where-Object { $_.FullName -match '\\[^\\]+\\[^\\]+$' }).Count
+```
+
+### all sub directories
+
+```bash
+(Get-ChildItem -Directory -Recurse | Where-Object { $_.FullName -match '\\[^\\]+\\[^\\]+$' }).Count
+```
+
+
+
+### 
+
+
+
