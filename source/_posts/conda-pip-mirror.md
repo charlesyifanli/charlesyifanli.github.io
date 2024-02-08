@@ -64,3 +64,7 @@ $ pip config list
 
 [United Mirrors](https://mirrors.cernet.edu.cn/list)
 
+[Tsinghua](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
+
+[Info](https://blog.csdn.net/ahahayaa/article/details/127482313)
+
