@@ -97,8 +97,8 @@ $ pip config list
 
 ```
 [global]
-index-url = https://mirror.nju.edu.cn/pypi/web/simple
-trusted-host = mirror.nju.edu.cn
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+trusted-host = pypi.tuna.tsinghua.edu.cn
 ```
 
 
