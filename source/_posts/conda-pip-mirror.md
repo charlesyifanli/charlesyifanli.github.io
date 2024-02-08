@@ -26,6 +26,32 @@ update ~/.condarc
 
 
 
+### example
+
+```
+channels:
+  - defaults
+default_channels:
+  - https://mirror.nju.edu.cn/anaconda/pkgs/main
+  - https://mirror.nju.edu.cn/anaconda/pkgs/r
+  - https://mirror.nju.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirror.nju.edu.cn/anaconda/cloud
+  msys2: https://mirror.nju.edu.cn/anaconda/cloud
+  bioconda: https://mirror.nju.edu.cn/anaconda/cloud
+  menpo: https://mirror.nju.edu.cn/anaconda/cloud
+  pytorch: https://mirror.nju.edu.cn/anaconda/cloud
+  simpleitk: https://mirror.nju.edu.cn/anaconda/cloud
+
+ssl_verify: true
+show_channel_urls: true
+auto_activate_base: false
+```
+
+
+
+
+
 ### create and delete envs
 
 ```bash
