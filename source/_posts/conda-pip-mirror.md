@@ -24,9 +24,22 @@ $ conda config --set show_channel_urls yes
 
 update ~/.condarc
 
+
+
+### create and delete envs
+
+```bash
+$ conda create -n <env_name> [python=3.10]
+$ conda remove -n <environment_name> --all
+```
+
+
+
 <br>
 
 <br>
+
+
 
 ## pip
 
