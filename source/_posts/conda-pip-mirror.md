@@ -35,6 +35,14 @@ $ conda remove -n <environment_name> --all
 
 
 
+### clear cache index
+
+```bash
+$ conda clean -i
+```
+
+
+
 <br>
 
 <br>
