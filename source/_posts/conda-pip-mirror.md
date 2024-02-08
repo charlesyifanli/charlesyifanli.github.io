@@ -66,5 +66,5 @@ $ pip config list
 
 [Tsinghua](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
-[Info](https://blog.csdn.net/ahahayaa/article/details/127482313)
+[Info](http://www.manongjc.com/detail/29-ftpasjhctocytqc.html)
 
