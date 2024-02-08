@@ -90,6 +90,20 @@ $ pip config list
 1. new ~/pip/pip.init
 2. update pip.ini
 
+
+
+### example
+
+```
+[global]
+index-url = https://mirror.nju.edu.cn/pypi/web/simple
+trusted-host = mirror.nju.edu.cn
+```
+
+
+
+
+
 <br>
 
 <br>
