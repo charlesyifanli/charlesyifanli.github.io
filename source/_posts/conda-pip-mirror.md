@@ -43,5 +43,11 @@ $ pip config list
 1. new ~/pip/pip.init
 2. update pip.ini
 
+<br>
 
+<br>
+
+## reference
+
+[United Mirrors](https://mirrors.cernet.edu.cn/list)
 
