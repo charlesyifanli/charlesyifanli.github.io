@@ -96,5 +96,9 @@ git log
 git reset --hard commit-hash
 ```
 
+### Set upstream
 
+```
+git push --set-upstream origin branch-name
+```
 
