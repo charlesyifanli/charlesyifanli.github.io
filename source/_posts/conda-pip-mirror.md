@@ -101,6 +101,13 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 trusted-host = pypi.tuna.tsinghua.edu.cn
 ```
 
+```
+[global]
+index-url = https://mirror.nju.edu.cn/pypi/web/simple
+[install]
+trusted-host = https://mirror.nju.edu.cn/pypi/web
+```
+
 
 
 
