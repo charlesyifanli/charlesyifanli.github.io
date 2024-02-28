@@ -84,6 +84,8 @@ $ conda clean -i
 $ pip config list
 ```
 
+[pip command line](https://pip.pypa.io/en/stable/cli/)
+
 
 
 ### methods
