@@ -74,8 +74,8 @@ For instance, make a new directory named usb in current directory, then run " mo
 
 ```reStructuredText
 If user-oriented, run fowllowing commands in order:
-umount /usb
-mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 usb/
+umount ./usb
+mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 ./usb/
 ```
 
 
@@ -85,5 +85,20 @@ mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 usb/
 ```reStructuredText
 mv source_file(folder) destination_folder
 rm file(folder)_name [-r -f -v -i]
+```
+
+
+
+## How to compress or decompress in linux
+
+### basic infos
+
+```reStructuredText
+.tar VS .tar.gz VS .tgz >> 
+".tar": This is the most basic archive file format, which bundles multiple files or directories into a single file without compression. Therefore, .tar files are commonly referred to as tarballs or tar archives.
+
+".tar.gz": This is a file format compressed using the gzip compression algorithm on top of the .tar format. It bundles multiple files or directories into a .tar file, which is then compressed using gzip to create a .tar.gz file.
+
+Hence, .tar.gz and .tgz are the same format, with different file extensions, both representing a file that has been bundled with tar and compressed with gzip.
 ```
 
