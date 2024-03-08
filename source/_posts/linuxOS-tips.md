@@ -8,22 +8,62 @@ categories:
 
 ## How to set terminal shortcuts
 
-```
+```reStructuredText
 click on "settings"
 ```
 
-```
+```reStructuredText
 click on "Customize Shortscuts" in Keyboard Shortcuts
 ```
 
-```
+```reStructuredText
 click on "Custom Shortcuts"
 ```
 
-```
+```reStructuredText
 name: terminal
 Command: /usr/bin/gnome-terminal
 Shortcut: Ctrl + Alt + L
 ```
 
 ###    
+
+##  Handle block device like USB drive
+
+ ### command line >> lsblk
+
+```reStructuredText
+sda:
+The naming convention for storage devices in Linux, such as hard drives, solid-state drives, and USB drives, uses "sda" and "sdb". This convention consists of the following parts:
+
+"sd": Represents SCSI devices. Although called SCSI devices, they are not necessarily true SCSI devices but rather follow a naming convention.
+"a", "b", etc.: Represents the device's identifier, starting from "a" and incrementing.
+
+Therefore, "sda" represents the first SCSI device in the system, typically the primary hard drive, while "sdb" represents the second SCSI device, typically another hard drive or external device like a USB drive. Following this pattern, "sdc", "sdd", and so on represent the third, fourth, and subsequent SCSI devices in the system, respectively.
+```
+
+```reStructuredText
+sr0:
+In the Linux system, "sr0" is a naming convention used to represent optical disc drives. It typically denotes the first optical disc drive in the system, where:
+
+- "sr": Represents SCSI CD-ROM devices. Despite being referred to as SCSI devices, they may not necessarily be true SCSI devices but rather follow a naming convention.
+- "0": Represents the device's identifier, starting from 0.
+
+Therefore, "sr0" signifies the first CD-ROM or DVD-ROM drive in the system.
+```
+
+```
+nvme0n1p1:
+nvme0n1 is a naming convention used in the Linux system to represent NVMe (Non-Volatile Memory Express) devices. NVMe is an interface and protocol designed for connecting high-performance solid-state drives (SSDs). nvme0n1 denotes the first NVMe device in the system, where:
+
+- nvme: Represents NVMe devices.
+- 0: Represents the device's identifier, starting from 0.
+- n1: Represents the first namespace (or partition) within the device.
+- p1: Represents the first partition within the device.
+
+Therefore, nvme0n1p1 represents the first partition of the first NVMe device in the system (typically an NVMe SSD). If there are multiple NVMe devices in the system, they might be named nvme0n1, nvme1n1, nvme2n1, and so on, following a similar pattern. If the devices have multiple partitions, they might be named nvme0n1p2, nvme0n1p3, and so forth.
+```
+
+
+
+### 
