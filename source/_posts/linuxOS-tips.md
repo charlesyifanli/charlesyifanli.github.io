@@ -88,6 +88,8 @@ cp source_file(folder)  destination_folder  [-r]
 
 ```bash
 mv source_file(folder) destination_folder
+
+mv demo.txt test.txt //rename the file
 ```
 
 ```bash
