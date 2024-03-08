@@ -102,3 +102,38 @@ rm file(folder)_name [-r -f -v -i]
 Hence, .tar.gz and .tgz are the same format, with different file extensions, both representing a file that has been bundled with tar and compressed with gzip.
 ```
 
+### compress
+
+#### using tar and zip
+
+```bash
+tar -czvf ./archive.tar.gz /path/to/directory_or_file
+```
+
+```reStructuredText
+-c: Create a compressed file.
+-z: Use gzip compression.
+-v: Display detailed output.
+-f: Specify the name of the compressed file.
+
+archive.tar.gz: The name of the compressed file.
+/path/to/directory_or_file: The directory or file to be compressed.
+```
+
+#### Using zip
+
+```bash
+zip -r ./archive.zip /path/to/directory_or_file
+```
+
+```reStructuredText
+-r: Recursively compress directories and their contents.
+
+archive.zip: The name of the compressed file.
+/path/to/directory_or_file: The directory or file to be compressed.
+```
+
+
+
+
+
