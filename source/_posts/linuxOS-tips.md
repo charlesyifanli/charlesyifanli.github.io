@@ -80,10 +80,17 @@ mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 ./usb/
 
 
 
-### command line >> cp source_file(folder)  destination_folder  [-r]
+## Copy-paste, move and remove file or folder
 
-```reStructuredText
+```bash
+cp source_file(folder)  destination_folder  [-r]
+```
+
+```bash
 mv source_file(folder) destination_folder
+```
+
+```bash
 rm file(folder)_name [-r -f -v -i]
 ```
 
@@ -150,3 +157,4 @@ unzip ./archive.zip -d /output
 ```
 
 - `archive.zip`: The name of the file to be decompressed.
+
