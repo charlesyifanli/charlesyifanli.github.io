@@ -81,3 +81,9 @@ mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 usb/
 
 
 ### command line >> cp source_file(folder)  destination_folder  [-r]
+
+```reStructuredText
+mv source_file(folder) destination_folder
+rm file(folder)_name [-r -f -v -i]
+```
+
