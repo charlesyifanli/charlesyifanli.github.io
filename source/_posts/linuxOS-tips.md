@@ -66,4 +66,15 @@ Therefore, nvme0n1p1 represents the first partition of the first NVMe device in 
 
 
 
-### 
+### command line >> mount /dev/sdb1 usb/
+
+```reStructuredText
+For instance, make a new directory named usb in current directory, then run " mount    /dev/sdb1    usb/ "
+```
+
+```reStructuredText
+If user-oriented, run fowllowing commands in order:
+umount /usb
+mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 usb/
+```
+
