@@ -78,3 +78,6 @@ umount /usb
 mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 usb/
 ```
 
+
+
+### command line >> cp source_file(folder)  destination_folder  [-r]
