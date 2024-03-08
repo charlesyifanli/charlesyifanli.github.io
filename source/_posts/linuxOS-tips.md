@@ -104,36 +104,49 @@ Hence, .tar.gz and .tgz are the same format, with different file extensions, bot
 
 ### compress
 
-#### using tar and zip
+#### Using tar and gzip:
 
-```bash
+```
 tar -czvf ./archive.tar.gz /path/to/directory_or_file
 ```
 
-```reStructuredText
--c: Create a compressed file.
--z: Use gzip compression.
--v: Display detailed output.
--f: Specify the name of the compressed file.
+- `-c`: Create a compressed file.
+- `-z`: Use gzip compression.
+- `-v`: Display detailed output.
+- `-f`: Specify the name of the compressed file.
+- `archive.tar.gz`: The name of the compressed file.
+- `/path/to/directory_or_file`: The directory or file to be compressed.
 
-archive.tar.gz: The name of the compressed file.
-/path/to/directory_or_file: The directory or file to be compressed.
+#### Using zip:
+
 ```
-
-#### Using zip
-
-```bash
 zip -r ./archive.zip /path/to/directory_or_file
 ```
 
-```reStructuredText
--r: Recursively compress directories and their contents.
+- `-r`: Recursively compress directories and their contents.
+- `archive.zip`: The name of the compressed file.
+- `/path/to/directory_or_file`: The directory or file to be compressed.
 
-archive.zip: The name of the compressed file.
-/path/to/directory_or_file: The directory or file to be compressed.
+
+
+### decompress
+
+#### Using tar and gzip:
+
+```
+tar -xzvf ./archive.tar.gz -C /output
 ```
 
+- `-x`: Extract files.
+- `-z`: Use gzip decompression.
+- `-v`: Display detailed output.
+- `-f`: Specify the file to be decompressed.
+- `archive.tar.gz`: The name of the file to be decompressed.
 
+#### Using unzip:
 
+```
+unzip ./archive.zip -d /output
+```
 
-
+- `archive.zip`: The name of the file to be decompressed.
