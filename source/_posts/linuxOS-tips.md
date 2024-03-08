@@ -30,7 +30,30 @@ Shortcut: Ctrl + Alt + L
 
 ##  Handle block device like USB drive
 
- ### command line >> lsblk
+ ### Command line:
+
+```bash
+lsblk
+```
+
+
+
+```bash
+mount /dev/sdb1 ./usb/
+```
+
+
+
+If user-oriented, run fowllowing commands in order:
+
+```bash
+umount ./usb
+mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 ./usb/
+```
+
+
+
+### Explanation
 
 ```reStructuredText
 sda:
@@ -52,7 +75,7 @@ In the Linux system, "sr0" is a naming convention used to represent optical disc
 Therefore, "sr0" signifies the first CD-ROM or DVD-ROM drive in the system.
 ```
 
-```
+```reStructuredText
 nvme0n1p1:
 nvme0n1 is a naming convention used in the Linux system to represent NVMe (Non-Volatile Memory Express) devices. NVMe is an interface and protocol designed for connecting high-performance solid-state drives (SSDs). nvme0n1 denotes the first NVMe device in the system, where:
 
@@ -63,100 +86,4 @@ nvme0n1 is a naming convention used in the Linux system to represent NVMe (Non-V
 
 Therefore, nvme0n1p1 represents the first partition of the first NVMe device in the system (typically an NVMe SSD). If there are multiple NVMe devices in the system, they might be named nvme0n1, nvme1n1, nvme2n1, and so on, following a similar pattern. If the devices have multiple partitions, they might be named nvme0n1p2, nvme0n1p3, and so forth.
 ```
-
-
-
-### command line >> mount /dev/sdb1 usb/
-
-```reStructuredText
-For instance, make a new directory named usb in current directory, then run " mount    /dev/sdb1    usb/ "
-```
-
-```reStructuredText
-If user-oriented, run fowllowing commands in order:
-umount ./usb
-mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 ./usb/
-```
-
-
-
-## Copy-paste, move and remove file or folder
-
-```bash
-cp source_file(folder)  destination_folder  [-r]
-```
-
-```bash
-mv source_file(folder) destination_folder
-
-mv demo.txt test.txt //rename the file
-```
-
-```bash
-rm file(folder)_name [-r -f -v -i]
-```
-
-
-
-## How to compress or decompress in linux
-
-### basic infos
-
-```reStructuredText
-.tar VS .tar.gz VS .tgz >> 
-".tar": This is the most basic archive file format, which bundles multiple files or directories into a single file without compression. Therefore, .tar files are commonly referred to as tarballs or tar archives.
-
-".tar.gz": This is a file format compressed using the gzip compression algorithm on top of the .tar format. It bundles multiple files or directories into a .tar file, which is then compressed using gzip to create a .tar.gz file.
-
-Hence, .tar.gz and .tgz are the same format, with different file extensions, both representing a file that has been bundled with tar and compressed with gzip.
-```
-
-### compress
-
-#### Using tar and gzip:
-
-```
-tar -czvf ./archive.tar.gz /path/to/directory_or_file
-```
-
-- `-c`: Create a compressed file.
-- `-z`: Use gzip compression.
-- `-v`: Display detailed output.
-- `-f`: Specify the name of the compressed file.
-- `archive.tar.gz`: The name of the compressed file.
-- `/path/to/directory_or_file`: The directory or file to be compressed.
-
-#### Using zip:
-
-```
-zip -r ./archive.zip /path/to/directory_or_file
-```
-
-- `-r`: Recursively compress directories and their contents.
-- `archive.zip`: The name of the compressed file.
-- `/path/to/directory_or_file`: The directory or file to be compressed.
-
-
-
-### decompress
-
-#### Using tar and gzip:
-
-```
-tar -xzvf ./archive.tar.gz -C /output
-```
-
-- `-x`: Extract files.
-- `-z`: Use gzip decompression.
-- `-v`: Display detailed output.
-- `-f`: Specify the file to be decompressed.
-- `archive.tar.gz`: The name of the file to be decompressed.
-
-#### Using unzip:
-
-```
-unzip ./archive.zip -d /output
-```
-
-- `archive.zip`: The name of the file to be decompressed.
 
