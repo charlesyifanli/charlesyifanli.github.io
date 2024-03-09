@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-03-08T12:17:10.000Z">
-<meta property="article:modified_time" content="2024-03-08T12:23:45.063Z">
+<meta property="article:modified_time" content="2024-03-09T08:03:11.289Z">
 <meta property="article:author" content="Charles Yifan Li">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -1726,7 +1726,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1709900634210),
+    lastupdate: new Date(1709971434818),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","text"],
       for_post: ["toc"],
@@ -2624,6 +2624,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <ul>
 <li><code>archive.zip</code>: The name of the file to be decompressed.</li>
 </ul>
+<h2 id="Unbind-process-from-current-terminal"><a href="#Unbind-process-from-current-terminal" class="headerlink" title="Unbind process from current terminal"></a>Unbind process from current terminal</h2><h3 id="hang-up"><a href="#hang-up" class="headerlink" title="hang up"></a>hang up</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &amp;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This method puts the command in the background, but if the terminal is closed, the command may receive the SIGHUP signal and be terminated.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="no-hang-up"><a href="#no-hang-up" class="headerlink" title="no hang up"></a>no hang up</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> <span class="built_in">command</span> &amp;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Using the nohup command redirects the output of the command to the file nohup.out, so even if the terminal is closed, the execution of the command will not be terminated.</span><br></pre></td></tr></table></figure>
+
+
+
 
   </div>
   
@@ -2648,10 +2660,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-08T20:23:45+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-09T16:03:11+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Updated on: Mar 8, 2024</p>
+    <p>Updated on: Mar 9, 2024</p>
   </a>
 </div>
 
@@ -2794,7 +2806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Copy-paste-move-and-remove-file-or-folder"><span class="toc-text">Copy-paste, move and remove file or folder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-compress-or-decompress-in-linux"><span class="toc-text">How to compress or decompress in linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-infos"><span class="toc-text">basic infos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compress"><span class="toc-text">compress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-zip"><span class="toc-text">Using zip:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#decompress"><span class="toc-text">decompress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip-1"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-unzip"><span class="toc-text">Using unzip:</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Copy-paste-move-and-remove-file-or-folder"><span class="toc-text">Copy-paste, move and remove file or folder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-compress-or-decompress-in-linux"><span class="toc-text">How to compress or decompress in linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-infos"><span class="toc-text">basic infos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compress"><span class="toc-text">compress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-zip"><span class="toc-text">Using zip:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#decompress"><span class="toc-text">decompress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip-1"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-unzip"><span class="toc-text">Using unzip:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unbind-process-from-current-terminal"><span class="toc-text">Unbind process from current terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hang-up"><span class="toc-text">hang up</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#no-hang-up"><span class="toc-text">no hang up</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3382,7 +3394,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"record"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Charles's Channel"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/linux-config/","name":"linux config"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/03/08/linuxOS-basics/","name":"linuxOS-basics"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Charles's Channel","url":"http://example.com/","keywords":null,"description":"record","author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"record"},"publisher":{"@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"linuxOS-basics","description":"record","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/03/08/linuxOS-basics/"},"author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Charles's Channel","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/03/08/linuxOS-basics/","wordCount":0,"datePublished":"2024-03-08T12:17:10.000Z","dateModified":"2024-03-08T12:23:45.063Z","articleSection":"linux config","keywords":"linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"record"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Charles's Channel"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/linux-config/","name":"linux config"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/03/08/linuxOS-basics/","name":"linuxOS-basics"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Charles's Channel","url":"http://example.com/","keywords":null,"description":"record","author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"record"},"publisher":{"@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"linuxOS-basics","description":"record","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/03/08/linuxOS-basics/"},"author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Charles's Channel","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/03/08/linuxOS-basics/","wordCount":0,"datePublished":"2024-03-08T12:17:10.000Z","dateModified":"2024-03-09T08:03:11.289Z","articleSection":"linux config","keywords":"linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
