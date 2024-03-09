@@ -114,3 +114,37 @@ Using the nohup command redirects the output of the command to the file nohup.ou
 
 
 
+### kill the process in the background
+
+View real-time system process information
+
+```bash
+top
+```
+
+Display the processes:
+
+```bash
+ps
+ps -e
+ps aux
+ps auxf
+ps -e | grep process_name
+```
+
+```reStructuredText
+only current user
+all users
+detailed process information
+a tree-like process list
+a specific process
+```
+
+Close process
+
+```bash
+kill pid
+```
+
+
+
