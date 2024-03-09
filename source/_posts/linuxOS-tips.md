@@ -138,3 +138,7 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 - Wget is a command-line utility used to retrieve files from web servers using HTTP, HTTPS, FTP, and FTPS protocols.
 - It is commonly used to download files, including software packages, from the internet to a local system.
 
+
+
+## Environment variables
+
