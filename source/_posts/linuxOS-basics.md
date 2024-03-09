@@ -86,3 +86,31 @@ unzip ./archive.zip -d /output
 
 - `archive.zip`: The name of the file to be decompressed.
 
+
+
+##  Unbind process from current terminal
+
+###  hang up
+
+```bash
+command &
+```
+
+```reStructuredText
+This method puts the command in the background, but if the terminal is closed, the command may receive the SIGHUP signal and be terminated.
+```
+
+
+
+### no hang up
+
+``` bash
+nohup command &
+```
+
+```reStructuredText
+Using the nohup command redirects the output of the command to the file nohup.out, so even if the terminal is closed, the execution of the command will not be terminated.
+```
+
+
+
