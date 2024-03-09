@@ -92,25 +92,45 @@ unzip ./archive.zip -d /output
 
 ###  hang up
 
+This method puts the command in the background, but if the terminal is closed, the command may receive the SIGHUP signal and be terminated.
+
 ```bash
 command &
-```
-
-```reStructuredText
-This method puts the command in the background, but if the terminal is closed, the command may receive the SIGHUP signal and be terminated.
 ```
 
 
 
 ### no hang up
 
+Using the `nohup` command redirects the output of the command to the file `nohup.out`, so even if the terminal is closed, the execution of the command will not be terminated.
+
 ``` bash
 nohup command &
 ```
 
-```reStructuredText
-Using the nohup command redirects the output of the command to the file nohup.out, so even if the terminal is closed, the execution of the command will not be terminated.
+
+
+#### however,
+
+When using the `nohup` command to run a process in the background, the `nohup.out` file is created by default in the current working directory. It is used to store the standard output and standard error messages of the process started by the `nohup` command.
+
+
+
+#### select output path
+
+```bash
+nohup command > /path &
 ```
+
+
+
+#### discard the `nohup.out` file
+
+```bash
+nohup command > /dev/null &
+```
+
+
 
 
 
@@ -145,6 +165,4 @@ Close process
 ```bash
 kill pid
 ```
-
-
 
