@@ -136,13 +136,21 @@ nohup command > /dev/null &
 
 ### kill the process in the background
 
-View real-time system process information
+#### View real-time system process information
 
 ```bash
 top
 ```
 
-Display the processes:
+
+
+#### Display the processes:
+
+only current user
+all users
+detailed process information
+a tree-like process list
+***a specific process***
 
 ```bash
 ps
@@ -152,15 +160,9 @@ ps auxf
 ps -e | grep process_name
 ```
 
-```reStructuredText
-only current user
-all users
-detailed process information
-a tree-like process list
-a specific process
-```
 
-Close process
+
+#### Close process
 
 ```bash
 kill pid
