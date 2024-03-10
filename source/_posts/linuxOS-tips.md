@@ -135,10 +135,28 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 #### rpm & wget
 
-- Wget is a command-line utility used to retrieve files from web servers using HTTP, HTTPS, FTP, and FTPS protocols.
+- `Wget` is a command-line utility used to retrieve files from web servers using HTTP, HTTPS, FTP, and FTPS protocols.
 - It is commonly used to download files, including software packages, from the internet to a local system.
 
 
 
 ## Environment variables
 
+`/etc/profile` and `/etc/profile.d` are two important directories or files used to configure the global shell environment in Linux systems.
+
+1. **/etc/profile**:
+   - `/etc/profile` is a **global shell configuration file** used to set default environment variables **for all users** and perform some global configuration tasks.
+   - When a user logs in, the system first executes the `/etc/profile` file to initialize global environment variables and set some system-wide configurations. Therefore, this file applies to all users.
+
+2. **/etc/profile.d**:
+   - `/etc/profile.d` **directory contains a series of shell script files** used to **supplement and extend** the settings in `/etc/profile`.
+   - During user login, the system automatically executes all executable script files in the `/etc/profile.d` directory to complete additional environment variable settings and global configurations.
+   - The design of this directory allows administrators to decompose system-wide configurations into multiple modular script files, making management and maintenance more convenient.
+
+3. runtime config:
+
+The files inside the `/etc/profile.d` directory will be loaded into the `/etc/profile` script.
+
+During user login, the system first executes the `/etc/profile` script to set up the initial environment. As part of this process, the `/etc/profile` script will source any executable files present in the `/etc/profile.d` directory. This means that the shell will read and execute the commands contained in each of these files, effectively extending the settings and configurations defined in `/etc/profile`.
+
+By sourcing additional files from `/etc/profile.d`, system administrators can modularize the configuration process and manage system-wide settings more flexibly.
