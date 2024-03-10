@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-03-08T01:01:29.000Z">
-<meta property="article:modified_time" content="2024-03-09T11:51:36.534Z">
+<meta property="article:modified_time" content="2024-03-10T14:14:29.129Z">
 <meta property="article:author" content="Charles Yifan Li">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -1726,7 +1726,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1709985106855),
+    lastupdate: new Date(1710080107100),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","text"],
       for_post: ["toc"],
@@ -2625,10 +2625,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="dnf"><a href="#dnf" class="headerlink" title="dnf"></a>dnf</h3><p><code>dnf</code> (Dandified Yum) is <strong>the successor to yum</strong>, designed to be <strong>a replacement for yum</strong>. dnf uses different dependency resolution algorithms and has made improvements in performance, stability, and functionality compared to yum. It provides faster package management capabilities and is easier to use.</p>
 <h3 id="comparation"><a href="#comparation" class="headerlink" title="comparation"></a>comparation</h3><h4 id="rpm-yum"><a href="#rpm-yum" class="headerlink" title="rpm &amp; yum"></a>rpm &amp; yum</h4><p>Compared to rpm, <strong>yum has an additional feature of automatically resolving dependencies</strong>. The method yum uses to resolve dependencies is by automatically downloading them.</p>
 <h4 id="rpm-wget"><a href="#rpm-wget" class="headerlink" title="rpm &amp; wget"></a>rpm &amp; wget</h4><ul>
-<li>Wget is a command-line utility used to retrieve files from web servers using HTTP, HTTPS, FTP, and FTPS protocols.</li>
+<li><code>Wget</code> is a command-line utility used to retrieve files from web servers using HTTP, HTTPS, FTP, and FTPS protocols.</li>
 <li>It is commonly used to download files, including software packages, from the internet to a local system.</li>
 </ul>
-<h2 id="Environment-variables"><a href="#Environment-variables" class="headerlink" title="Environment variables"></a>Environment variables</h2>
+<h2 id="Environment-variables"><a href="#Environment-variables" class="headerlink" title="Environment variables"></a>Environment variables</h2><p><code>/etc/profile</code> and <code>/etc/profile.d</code> are two important directories or files used to configure the global shell environment in Linux systems.</p>
+<ol>
+<li><p><strong>&#x2F;etc&#x2F;profile</strong>:</p>
+<ul>
+<li><code>/etc/profile</code> is a <strong>global shell configuration file</strong> used to set default environment variables <strong>for all users</strong> and perform some global configuration tasks.</li>
+<li>When a user logs in, the system first executes the <code>/etc/profile</code> file to initialize global environment variables and set some system-wide configurations. Therefore, this file applies to all users.</li>
+</ul>
+</li>
+<li><p><strong>&#x2F;etc&#x2F;profile.d</strong>:</p>
+<ul>
+<li><code>/etc/profile.d</code> <strong>directory contains a series of shell script files</strong> used to <strong>supplement and extend</strong> the settings in <code>/etc/profile</code>.</li>
+<li>During user login, the system automatically executes all executable script files in the <code>/etc/profile.d</code> directory to complete additional environment variable settings and global configurations.</li>
+<li>The design of this directory allows administrators to decompose system-wide configurations into multiple modular script files, making management and maintenance more convenient.</li>
+</ul>
+</li>
+<li><p>runtime config:</p>
+</li>
+</ol>
+<p>The files inside the <code>/etc/profile.d</code> directory will be loaded into the <code>/etc/profile</code> script.</p>
+<p>During user login, the system first executes the <code>/etc/profile</code> script to set up the initial environment. As part of this process, the <code>/etc/profile</code> script will source any executable files present in the <code>/etc/profile.d</code> directory. This means that the shell will read and execute the commands contained in each of these files, effectively extending the settings and configurations defined in <code>/etc/profile</code>.</p>
+<p>By sourcing additional files from <code>/etc/profile.d</code>, system administrators can modularize the configuration process and manage system-wide settings more flexibly.</p>
+
   </div>
   
   
@@ -2652,10 +2673,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-09T19:51:36+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-10T22:14:29+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Updated on: Mar 9, 2024</p>
+    <p>Updated on: Mar 10, 2024</p>
   </a>
 </div>
 
@@ -3395,7 +3416,7 @@ display config file1$ conda conf...</p>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"record"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Charles's Channel"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/linux-config/","name":"linux config"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/03/08/linuxOS-tips/","name":"linuxOS-tips"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Charles's Channel","url":"http://example.com/","keywords":null,"description":"record","author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"record"},"publisher":{"@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"linuxOS-tips","description":"record","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/03/08/linuxOS-tips/"},"author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Charles's Channel","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/03/08/linuxOS-tips/","wordCount":0,"datePublished":"2024-03-08T01:01:29.000Z","dateModified":"2024-03-09T11:51:36.534Z","articleSection":"linux config","keywords":"linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"record"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Charles's Channel"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/linux-config/","name":"linux config"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/03/08/linuxOS-tips/","name":"linuxOS-tips"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Charles's Channel","url":"http://example.com/","keywords":null,"description":"record","author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"record"},"publisher":{"@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"linuxOS-tips","description":"record","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/03/08/linuxOS-tips/"},"author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Charles's Channel","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/03/08/linuxOS-tips/","wordCount":0,"datePublished":"2024-03-08T01:01:29.000Z","dateModified":"2024-03-10T14:14:29.129Z","articleSection":"linux config","keywords":"linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
