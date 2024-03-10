@@ -168,3 +168,7 @@ ps -e | grep process_name
 kill pid
 ```
 
+
+
+## Use editor in linux
+

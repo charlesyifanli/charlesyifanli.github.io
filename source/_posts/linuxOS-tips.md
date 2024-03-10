@@ -160,3 +160,4 @@ The files inside the `/etc/profile.d` directory will be loaded into the `/etc/pr
 During user login, the system first executes the `/etc/profile` script to set up the initial environment. As part of this process, the `/etc/profile` script will source any executable files present in the `/etc/profile.d` directory. This means that the shell will read and execute the commands contained in each of these files, effectively extending the settings and configurations defined in `/etc/profile`.
 
 By sourcing additional files from `/etc/profile.d`, system administrators can modularize the configuration process and manage system-wide settings more flexibly.
+
