@@ -1,7 +1,8 @@
 ---
 title: linuxOS-tips
 date: 2024-03-08 09:01:29
-tags: linux
+tags: 
+- linux
 categories:
 - linux config
 ---
