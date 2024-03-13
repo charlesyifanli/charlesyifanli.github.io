@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-03-08T12:17:10.000Z">
-<meta property="article:modified_time" content="2024-03-11T05:02:39.892Z">
+<meta property="article:modified_time" content="2024-03-13T13:25:07.815Z">
 <meta property="article:author" content="Charles Yifan Li">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -1726,7 +1726,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1710335637894),
+    lastupdate: new Date(1710336314532),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","text"],
       for_post: ["toc"],
@@ -2658,7 +2658,50 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<h2 id="Use-editor-in-linux"><a href="#Use-editor-in-linux" class="headerlink" title="Use editor in linux"></a>Use editor in linux</h2>
+<h2 id="Use-vim-in-linux"><a href="#Use-vim-in-linux" class="headerlink" title="Use vim in linux"></a>Use <strong>vim</strong> in linux</h2><h3 id="Set-row-number"><a href="#Set-row-number" class="headerlink" title="Set row number"></a>Set row number</h3><ul>
+<li><code>:set nu</code></li>
+<li><code>:set number</code></li>
+</ul>
+<h3 id="Enter-Insert-Mode"><a href="#Enter-Insert-Mode" class="headerlink" title="Enter Insert Mode:"></a>Enter Insert Mode:</h3><ul>
+<li><code>i</code>: Insert text before the cursor.</li>
+<li><code>a</code>: Insert text after the cursor.</li>
+<li><code>o</code>: Open a new line below the current line and switch to insert mode.</li>
+<li><code>I</code>: Insert text before the cursor on the current line.</li>
+<li><code>A</code>: Append text after the cursor on the current line.</li>
+<li><code>O</code>: Open a new line above the current line and switch to insert mode.</li>
+</ul>
+<h3 id="Exit-Insert-Mode"><a href="#Exit-Insert-Mode" class="headerlink" title="Exit Insert Mode:"></a>Exit Insert Mode:</h3><ul>
+<li><code>Esc</code>: Exit the current insert mode.</li>
+</ul>
+<h3 id="Save-File"><a href="#Save-File" class="headerlink" title="Save File:"></a>Save File:</h3><ul>
+<li><code>:w</code>: Save the file without exiting Vim.</li>
+<li><code>:wq</code> or <code>:x</code>: Save the file and quit Vim.</li>
+</ul>
+<h3 id="Quit-Without-Saving"><a href="#Quit-Without-Saving" class="headerlink" title="Quit Without Saving:"></a>Quit Without Saving:</h3><ul>
+<li><code>:q!</code>: Quit without saving changes.</li>
+</ul>
+<h2 id="Move-Cursor"><a href="#Move-Cursor" class="headerlink" title="Move Cursor:"></a>Move Cursor:</h2><ul>
+<li><code>h</code>: Move left one character.</li>
+<li><code>j</code>: Move down one line.</li>
+<li><code>k</code>: Move up one line.</li>
+<li><code>l</code>: Move right one character.</li>
+<li><code>gg</code>: Go to the beginning of the file.</li>
+<li><code>G</code>: Go to the end of the file.</li>
+</ul>
+<h3 id="Copy-Cut-and-Paste"><a href="#Copy-Cut-and-Paste" class="headerlink" title="Copy, Cut, and Paste:"></a>Copy, Cut, and Paste:</h3><ul>
+<li><code>yy</code>: Copy the current line.</li>
+<li><code>dd</code>: Cut the current line.</li>
+<li><code>p</code>: Paste the contents of the clipboard after the current position.</li>
+</ul>
+<h3 id="Undo-and-Redo"><a href="#Undo-and-Redo" class="headerlink" title="Undo and Redo:"></a>Undo and Redo:</h3><ul>
+<li><code>u</code>: Undo the last operation.</li>
+<li><code>Ctrl + r</code>: Redo the last undone operation.</li>
+</ul>
+<h3 id="Search-and-Replace"><a href="#Search-and-Replace" class="headerlink" title="Search and Replace:"></a>Search and Replace:</h3><ul>
+<li><code>/keyword</code>: Search for the specified keyword.</li>
+<li><code>:%s/old/new/g</code>: Replace all occurrences of <code>old</code> with <code>new</code> throughout the file.</li>
+</ul>
+
   </div>
   
   
@@ -2682,10 +2725,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-11T13:02:39+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-13T21:25:07+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Updated on: Mar 11, 2024</p>
+    <p>Updated on: Mar 13, 2024</p>
   </a>
 </div>
 
@@ -2828,7 +2871,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Copy-paste-move-and-remove-file-or-folder"><span class="toc-text">Copy-paste, move and remove file or folder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-compress-or-decompress-in-linux"><span class="toc-text">How to compress or decompress in linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-infos"><span class="toc-text">basic infos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compress"><span class="toc-text">compress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-zip"><span class="toc-text">Using zip:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#decompress"><span class="toc-text">decompress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip-1"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-unzip"><span class="toc-text">Using unzip:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unbind-process-from-current-terminal"><span class="toc-text">Unbind process from current terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hang-up"><span class="toc-text">hang up</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#no-hang-up"><span class="toc-text">no hang up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#however"><span class="toc-text">however,</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select-output-path"><span class="toc-text">select output path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#discard-the-nohup-out-file"><span class="toc-text">discard the nohup.out file</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill-the-process-in-the-background"><span class="toc-text">kill the process in the background</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#View-real-time-system-process-information"><span class="toc-text">View real-time system process information</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Display-the-processes"><span class="toc-text">Display the processes:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Close-process"><span class="toc-text">Close process</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-editor-in-linux"><span class="toc-text">Use editor in linux</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Copy-paste-move-and-remove-file-or-folder"><span class="toc-text">Copy-paste, move and remove file or folder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-compress-or-decompress-in-linux"><span class="toc-text">How to compress or decompress in linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-infos"><span class="toc-text">basic infos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compress"><span class="toc-text">compress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-zip"><span class="toc-text">Using zip:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#decompress"><span class="toc-text">decompress</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-tar-and-gzip-1"><span class="toc-text">Using tar and gzip:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Using-unzip"><span class="toc-text">Using unzip:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unbind-process-from-current-terminal"><span class="toc-text">Unbind process from current terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hang-up"><span class="toc-text">hang up</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#no-hang-up"><span class="toc-text">no hang up</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#however"><span class="toc-text">however,</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select-output-path"><span class="toc-text">select output path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#discard-the-nohup-out-file"><span class="toc-text">discard the nohup.out file</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill-the-process-in-the-background"><span class="toc-text">kill the process in the background</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#View-real-time-system-process-information"><span class="toc-text">View real-time system process information</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Display-the-processes"><span class="toc-text">Display the processes:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Close-process"><span class="toc-text">Close process</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-vim-in-linux"><span class="toc-text">Use vim in linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-row-number"><span class="toc-text">Set row number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enter-Insert-Mode"><span class="toc-text">Enter Insert Mode:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exit-Insert-Mode"><span class="toc-text">Exit Insert Mode:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Save-File"><span class="toc-text">Save File:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quit-Without-Saving"><span class="toc-text">Quit Without Saving:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Move-Cursor"><span class="toc-text">Move Cursor:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Copy-Cut-and-Paste"><span class="toc-text">Copy, Cut, and Paste:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Undo-and-Redo"><span class="toc-text">Undo and Redo:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Search-and-Replace"><span class="toc-text">Search and Replace:</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3416,7 +3459,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"record"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Charles's Channel"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/linux-config/","name":"linux config"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/03/08/linuxOS-basics/","name":"linuxOS-basics"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Charles's Channel","url":"http://example.com/","keywords":null,"description":"record","author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"record"},"publisher":{"@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"linuxOS-basics","description":"record","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/03/08/linuxOS-basics/"},"author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Charles's Channel","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/03/08/linuxOS-basics/","wordCount":0,"datePublished":"2024-03-08T12:17:10.000Z","dateModified":"2024-03-11T05:02:39.892Z","articleSection":"linux config","keywords":"linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"record"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Charles's Channel"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/linux-config/","name":"linux config"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/03/08/linuxOS-basics/","name":"linuxOS-basics"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Charles's Channel","url":"http://example.com/","keywords":null,"description":"record","author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"record"},"publisher":{"@type":"Organization","name":"Charles's Channel","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"linuxOS-basics","description":"record","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/03/08/linuxOS-basics/"},"author":{"@type":"Person","name":"Charles Yifan Li","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Charles's Channel","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/03/08/linuxOS-basics/","wordCount":0,"datePublished":"2024-03-08T12:17:10.000Z","dateModified":"2024-03-13T13:25:07.815Z","articleSection":"linux config","keywords":"linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
