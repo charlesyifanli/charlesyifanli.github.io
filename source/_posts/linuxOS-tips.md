@@ -151,22 +151,42 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 ## Environment variables
 
-`/etc/profile` and `/etc/profile.d` are two important directories or files used to configure the global shell environment in Linux systems.
+### add 
 
-1. **/etc/profile**:
-   - `/etc/profile` is a **global shell configuration file** used to set default environment variables **for all users** and perform some global configuration tasks.
-   - When a user logs in, the system first executes the `/etc/profile` file to initialize global environment variables and set some system-wide configurations. Therefore, this file applies to all users.
 
-2. **/etc/profile.d**:
-   - `/etc/profile.d` **directory contains a series of shell script files** used to **supplement and extend** the settings in `/etc/profile`.
-   - During user login, the system automatically executes all executable script files in the `/etc/profile.d` directory to complete additional environment variable settings and global configurations.
-   - The design of this directory allows administrators to decompose system-wide configurations into multiple modular script files, making management and maintenance more convenient.
 
-3. runtime config:
+### environment  VS  bashrc  VS  profile  VS  profile.d
 
-The files inside the `/etc/profile.d` directory will be loaded into the `/etc/profile` script.
+#### `/etc/environment`: 
 
-During user login, the system first executes the `/etc/profile` script to set up the initial environment. As part of this process, the `/etc/profile` script will source any executable files present in the `/etc/profile.d` directory. This means that the shell will read and execute the commands contained in each of these files, effectively extending the settings and configurations defined in `/etc/profile`.
+- This file is used to **set global environment variables**. It is not directly invoked by other files. Instead, system services load it during startup and set the environment variables defined within it globally. These environment variables take effect when users log in and are applicable to all users and processes.
 
-By sourcing additional files from `/etc/profile.d`, system administrators can modularize the configuration process and manage system-wide settings more flexibly.
+#### `/etc/bashrc`: 
 
+- This is the **global configuration file for the Bash shell**. It contains system-wide Bash shell configurations. When a user logs in, the Bash shell automatically executes commands from the `/etc/bashrc` file, making its settings effective upon user login. The `/etc/bashrc` file usually does not directly call other files but contains specific settings and configurations for the Bash shell.
+
+#### `/etc/profile`: 
+
+- This is a **global configuration file read by the Bourne shell (e.g., Bash)**. It is loaded during user login and is used to **set global environment variables** and other system-wide configurations. When a user logs in, the Bourne shell first loads the `/etc/profile` file and then executes its commands and configurations. The `/etc/profile` file typically calls script files within the `/etc/profile.d` directory.
+
+####  `/etc/profile.d`: 
+
+- This directory contains system-wide shell script files that are automatically executed during user login. When a user logs in, **the `/etc/profile` file executes all script files within the `/etc/profile.d` directory**. These script files usually contain additional environment variable settings, system-level configurations, etc.
+
+
+
+### /etc/bashrc  VS  ~/.bashrc
+
+#### Location:
+
+`~/.bashrc`: Located in the user's home directory, each user can have their own `.bashrc` file.
+`/etc/bashrc`: Located in the system's global configuration directory, it is a shared configuration file for all users in the system.
+
+#### Purpose:
+
+`~/.bashrc`: Used to configure the Bash Shell environment for the current user, including setting personalized command aliases, environment variables, custom functions, etc.
+`/etc/bashrc`: Used to configure the Bash Shell environment for all users in the system, and may contain global settings and defaults applicable to all users.
+
+#### Loading Order:
+
+When a user logs in, the `/etc/bashrc` file is loaded first, followed by the `~/.bashrc` file. 
