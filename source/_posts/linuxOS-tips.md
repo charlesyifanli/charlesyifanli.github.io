@@ -153,6 +153,24 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 ### add 
 
+#### Temporary environment variable settings: 
+
+```bash
+export PATH=/usr/local/bin:$PATH
+```
+
+
+#### Permanent environment variable settings: 
+
+Add to `~/.bashrc`:
+
+```bash
+export PATH=/usr/local/bin:$PATH
+```
+Or add to `/etc/environment`:
+```bash
+PATH="/usr/local/bin:$PATH"
+```
 
 
 ### environment  VS  bashrc  VS  profile  VS  profile.d
