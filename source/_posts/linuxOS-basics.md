@@ -171,5 +171,56 @@ kill pid
 
 
 
-## Use editor in linux
+## Use **vim** in linux
 
+### Set row number
+
+- `:set nu`
+- `:set number`
+
+### Enter Insert Mode:
+
+- `i`: Insert text before the cursor.
+- `a`: Insert text after the cursor.
+- `o`: Open a new line below the current line and switch to insert mode.
+- `I`: Insert text before the cursor on the current line.
+- `A`: Append text after the cursor on the current line.
+- `O`: Open a new line above the current line and switch to insert mode.
+
+### Exit Insert Mode:
+
+- `Esc`: Exit the current insert mode.
+
+###  Save File:
+
+- `:w`: Save the file without exiting Vim.
+- `:wq` or `:x`: Save the file and quit Vim.
+
+### Quit Without Saving:
+
+- `:q!`: Quit without saving changes.
+
+## Move Cursor:
+
+- `h`: Move left one character.
+- `j`: Move down one line.
+- `k`: Move up one line.
+- `l`: Move right one character.
+- `gg`: Go to the beginning of the file.
+- `G`: Go to the end of the file.
+
+### Copy, Cut, and Paste:
+
+- `yy`: Copy the current line.
+- `dd`: Cut the current line.
+- `p`: Paste the contents of the clipboard after the current position.
+
+### Undo and Redo:
+
+- `u`: Undo the last operation.
+- `Ctrl + r`: Redo the last undone operation.
+
+### Search and Replace:
+
+- `/keyword`: Search for the specified keyword.
+- `:%s/old/new/g`: Replace all occurrences of `old` with `new` throughout the file.
