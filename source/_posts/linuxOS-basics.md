@@ -200,7 +200,7 @@ kill pid
 
 - `:q!`: Quit without saving changes.
 
-## Move Cursor:
+### Move Cursor:
 
 - `h`: Move left one character.
 - `j`: Move down one line.
@@ -224,3 +224,6 @@ kill pid
 
 - `/keyword`: Search for the specified keyword.
 - `:%s/old/new/g`: Replace all occurrences of `old` with `new` throughout the file.
+
+***It is recommended to use `vim` to edit something and use `less` to look through the text.***
+
