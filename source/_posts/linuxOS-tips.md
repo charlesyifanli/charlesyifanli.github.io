@@ -108,6 +108,14 @@ Therefore, nvme0n1p1 represents the first partition of the first NVMe device in 
 
 
 
+### rpm command
+
+```bash
+rpm -qa | grep name
+```
+
+
+
 ### rpm
 
 `rpm` (Red Hat Package Manager) is a low-level tool used to install, upgrade, and remove software packages on RPM-based Linux systems. RPM **operates directly on local .rpm files but does not involve package downloading or dependency resolution**. It is primarily used for direct management of local software packages, **requiring manual resolution of package dependencies**.
