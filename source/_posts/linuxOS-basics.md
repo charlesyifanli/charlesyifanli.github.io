@@ -444,3 +444,27 @@ Follow these steps to make the changes:
    ```bash
    systemctl reload sshd
    ```
+
+
+
+## Permissions
+
+### command
+
+Each permission is represented by a number, ranging from 0 to 7, which represents the combination of read (4), write (2), and execute (1) permissions. 
+
+```bash
+chmod 755 file.txt
+```
+
+### info
+
+1. **Owner Permissions**: Permissions held by the creator of the file or directory, controlling ownership and permission settings for the file.
+
+2. **Group Permissions**: Specifies the permissions for the user group to which the file belongs. Besides the owner, a group of users is granted the same set of permissions.
+
+3. **Others Permissions**: Specifies permissions for all other users.
+
+These permissions are often represented by a string of characters, such as `rwxr-xr-x`, where:
+
+- The first character represents the file type (`-` indicates a regular file, `d` indicates a directory, and so on).
