@@ -151,26 +151,40 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 ## Environment variables
 
-### add 
+### add env var  for all users
 
-#### Temporary environment variable settings: 
+
+
+#### Edit the `/etc/environment` file:
+
+```bash
+PATH="/root/<path>:$PATH"
+```
+
+
+
+#### Apply the changes:
+
+```bash
+source /etc/environment
+```
+
+
+
+#### Introduction:
+
+`"/root/Desktop:$PATH"`: This command adds the directory `/root/Desktop` to the beginning of the `PATH` variable. The colon separates the new path from the existing `PATH` variable value, and `$PATH` **appends the original `PATH` variable value after the new path**, maintaining the original order of paths.
+
+
+
+#### Append
+
+This command will modify the `~/.bashrc` file of the current user.
 
 ```bash
 export PATH=/usr/local/bin:$PATH
 ```
 
-
-#### Permanent environment variable settings: 
-
-Add to `~/.bashrc`:
-
-```bash
-export PATH=/usr/local/bin:$PATH
-```
-Or add to `/etc/environment`:
-```bash
-PATH="/usr/local/bin:$PATH"
-```
 
 
 ### environment  VS  bashrc  VS  profile  VS  profile.d
