@@ -268,7 +268,7 @@ zip -r ./archive.zip /path/to/directory_or_file
 #### Using tar and gzip:
 
 ```
-tar -xzvf ./archive.tar.gz -C /output
+tar -xzvf ./archive.tar.gz [-C /output]
 ```
 
 - `-x`: Extract files.
