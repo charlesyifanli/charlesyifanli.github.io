@@ -280,7 +280,7 @@ tar -xzvf ./archive.tar.gz [-C /output]
 #### Using unzip:
 
 ```
-unzip ./archive.zip -d /output
+unzip ./archive.zip [-d /output]
 ```
 
 - `archive.zip`: The name of the file to be decompressed.
