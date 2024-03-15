@@ -90,8 +90,15 @@ $ pip config list
 
 ### methods
 
+####  windows
+
 1. new ~/pip/pip.init
 2. update pip.ini
+
+#### linux
+
+1. new ~/.config/pip/pip.conf
+2. update pip.conf
 
 
 
