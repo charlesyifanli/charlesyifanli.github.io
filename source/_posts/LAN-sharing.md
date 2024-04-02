@@ -47,7 +47,7 @@ Remote Desktop >> Only "Allow remote connections to this computer"(No sub item)
 ```reStructuredText
 right click win icon >>
 computer management => Local Users and Groups => Users
-create a new user(recommended -> only password never expires) or use an existed user, double click
+create a new user or use an existed user(recommended: password never expires), double click
 Member of => Add => write "remote desktop users" => Check Names =>ok
 ```
 
