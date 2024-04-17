@@ -72,7 +72,15 @@ Therefore, nvme0n1p1 represents the first partition of the first NVMe device in 
 
 ### suggested downloading and installing approach
 
-1. Use `wget` to download the `.rpm` file to the system (or by browser or USB drive):
+```reStructuredText
+dnf config-manager --add-repo URL+[name].repo
+dnf install [name]
+[systemctl enable --now [name]]
+```
+
+**Or**
+
+1. Use `wget` to download the `.rpm` file to the system (or by browser or **USB drive**):
 
    ```bash
    wget [-O /path/to/destination/package.rpm] https://example.com/package.rpm
