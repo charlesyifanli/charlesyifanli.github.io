@@ -21,3 +21,30 @@ docker login
 docker login ghcr.io -u [github name]  -p [token]
 ```
 
+
+
+image format
+
+```reStructuredText
+ghcr.io/[github name]/repo_name/image_name:tag
+```
+
+
+
+push && pull
+
+```bash
+docker push ghcr.io/[github name]/repo_name/coder:v1.2
+
+docker pull ghcr.io/[github name]/repo_name/coder:v1.2
+```
+
+
+
+<br>
+
+<br>
+
+## reference
+
+[Info](https://blog.csdn.net/github_38294679/article/details/135754374?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171412000316800225517633%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=171412000316800225517633&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-135754374-null-null.142^v100^pc_search_result_base2&utm_term=docker%E5%A6%82%E4%BD%95%E5%B0%86%E9%95%9C%E5%83%8F%E5%AD%98%E5%82%A8%E5%88%B0github&spm=1018.2226.3001.4187)
