@@ -7,6 +7,42 @@ categories:
 - docker
 ---
 
+## Basic Operation
+
+### create &&  query && delete image
+
+```bash
+docker build -t repo_name:tag .
+```
+
+```bash
+docker images
+```
+
+```bash
+docker rmi repo_name:tag/id
+```
+
+
+
+### run && query && delete container
+
+```bash
+docker run[create] --name container_name -p host_port:container_port -d
+```
+
+```bash
+docker ps [-a]
+```
+
+```bash
+docker rm container_name/id
+```
+
+
+
+
+
 ## Docker and Github Package
 
 ### preparation
