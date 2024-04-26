@@ -139,6 +139,23 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 ## Environment variables
 
+### recommended (for instance):
+
+vim /etc/profile
+
+append >> {
+
+export JAVA_HOME=/root/Downloads/jdk1.8.0_181
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+export HADOOP_HOME=/root/Downloads/hadoop-3.2.4
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+}
+
+
+
 ### add env var  for all users
 
 
