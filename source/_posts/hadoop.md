@@ -177,3 +177,31 @@ HADOOP_SECURE_USER=yarn
 YARN_NODEMANAGER_USER=root
 ```
 
+
+
+###  ssh config if needed
+
+create public/private keys
+
+```bash
+ssh-keygen -t rsa
+```
+
+
+
+create authorized_keys and change mod
+
+```bash
+cd ~/.ssh
+touch authorized_keys
+chmod 600 authorized_keys
+```
+
+
+
+### add public key into authorized_keys
+
+```bash
+cat id_rsa.pub >> authorized_keys
+```
+
