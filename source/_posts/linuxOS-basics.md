@@ -1,8 +1,7 @@
 ---
 title: linuxOS-basics
 date: 2024-03-08 20:17:10
-tags: 
-- linux
+tags: linux
 categories:
 - linux config
 ---
