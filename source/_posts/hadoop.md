@@ -73,7 +73,7 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
     <!-- Specify the directory for storing Hadoop data -->
     <property>
         <name>hadoop.tmp.dir</name>
-        <value>/root/Downloads/hadoop-3.2.4/data</value>
+        <value>/root/Downloads/hadoop-3.2.4/data</value> <!--data folder needs to be created in advance-->
     </property>
 </configuration>
 ```
@@ -205,3 +205,55 @@ chmod 600 authorized_keys
 cat id_rsa.pub >> authorized_keys
 ```
 
+
+
+## Format and Start Hadoop
+
+### format
+
+```bash
+hadoop namenode -format
+```
+
+
+
+### start && stop hadoop
+
+``` bash
+start-all.sh
+stop-all.sh
+```
+
+
+
+### use hadoop
+
+look through the hadoop process
+
+```bash
+jps
+```
+
+look through port service
+
+```
+netstat -tpnl | grep java
+```
+
+test:
+
+brower >> http://ip:8088
+
+terminal >> curl http://ip:8088/cluster
+
+
+
+<br>
+
+<br>
+
+## reference
+
+[blog](https://zhuanlan.zhihu.com/p/45166521) is partial
+
+[Video](https://www.bilibili.com/video/BV1E4411e7v9/?spm_id_from=333.999.0.0&vd_source=f367f43d00246a51bd639e9f1fcda3a9) is complete
