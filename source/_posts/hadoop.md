@@ -199,7 +199,7 @@ chmod 600 authorized_keys
 
 
 
-### add public key into authorized_keys
+add public key into authorized_keys
 
 ```bash
 cat id_rsa.pub >> authorized_keys
