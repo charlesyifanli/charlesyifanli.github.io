@@ -257,3 +257,5 @@ terminal >> curl http://ip:8088/cluster
 [blog](https://zhuanlan.zhihu.com/p/45166521) is partial
 
 [Video](https://www.bilibili.com/video/BV1E4411e7v9/?spm_id_from=333.999.0.0&vd_source=f367f43d00246a51bd639e9f1fcda3a9) is complete
+
+by the way, [Ubunto](https://blog.csdn.net/qq_33980756/article/details/130568379) is here
