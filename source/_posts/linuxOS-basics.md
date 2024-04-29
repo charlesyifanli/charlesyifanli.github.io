@@ -155,77 +155,15 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
 
-### add env var  for all users
+### ~/.bashrc  && /etc/profile
 
+```reStructuredText
+`.bashrc` is a user-level configuration file that only affects the Bash environment of the current user. `/etc/profile` is a system-level configuration file that affects the Bash environment for all users.
 
+`.bashrc` is executed when a user starts an interactive Bash shell, whereas `/etc/profile` is executed when a user logs in.
 
-#### Edit the `/etc/environment` file:
-
-```bash
-PATH="/root/<path>:$PATH"
+Users can customize their settings in `.bashrc`, while configurations in `/etc/profile` are typically managed by system administrators for consistency across all users.
 ```
-
-
-
-#### Apply the changes:
-
-```bash
-source /etc/environment
-```
-
-
-
-#### Introduction:
-
-`"/root/Desktop:$PATH"`: This command adds the directory `/root/Desktop` to the beginning of the `PATH` variable. The colon separates the new path from the existing `PATH` variable value, and `$PATH` **appends the original `PATH` variable value after the new path**, maintaining the original order of paths.
-
-
-
-#### Append
-
-This command will modify the `~/.bashrc` file of the current user.
-
-```bash
-export PATH=/usr/local/bin:$PATH
-```
-
-
-
-### environment  VS  bashrc  VS  profile  VS  profile.d
-
-#### `/etc/environment`: 
-
-- This file is used to **set global environment variables**. It is not directly invoked by other files. Instead, system services load it during startup and set the environment variables defined within it globally. These environment variables take effect when users log in and are applicable to all users and processes.
-
-#### `/etc/bashrc`: 
-
-- This is the **global configuration file for the Bash shell**. It contains system-wide Bash shell configurations. When a user logs in, the Bash shell automatically executes commands from the `/etc/bashrc` file, making its settings effective upon user login. The `/etc/bashrc` file usually does not directly call other files but contains specific settings and configurations for the Bash shell.
-
-#### `/etc/profile`: 
-
-- This is a **global configuration file read by the Bourne shell (e.g., Bash)**. It is loaded during user login and is used to **set global environment variables** and other system-wide configurations. When a user logs in, the Bourne shell first loads the `/etc/profile` file and then executes its commands and configurations. The `/etc/profile` file typically calls script files within the `/etc/profile.d` directory.
-
-####  `/etc/profile.d`: 
-
-- This directory contains system-wide shell script files that are automatically executed during user login. When a user logs in, **the `/etc/profile` file executes all script files within the `/etc/profile.d` directory**. These script files usually contain additional environment variable settings, system-level configurations, etc.
-
-
-
-### /etc/bashrc  VS  ~/.bashrc
-
-#### Location:
-
-`~/.bashrc`: Located in the user's home directory, each user can have their own `.bashrc` file.
-`/etc/bashrc`: Located in the system's global configuration directory, it is a shared configuration file for all users in the system.
-
-#### Purpose:
-
-`~/.bashrc`: Used to configure the Bash Shell environment for the current user, including setting personalized command aliases, environment variables, custom functions, etc.
-`/etc/bashrc`: Used to configure the Bash Shell environment for all users in the system, and may contain global settings and defaults applicable to all users.
-
-#### Loading Order:
-
-When a user logs in, the `/etc/bashrc` file is loaded first, followed by the `~/.bashrc` file. 
 
 
 
