@@ -64,7 +64,7 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 
 ```reStructuredText
 <configuration>
-    <!-- Specify the HDFS nameservice address as node-1.51doit.com with port 9000 -->
+    <!-- Specify the HDFS nameservice address as charlesyifanli with port 9000 -->
     <property>
         <name>fs.defaultFS</name>
         <value>hdfs://charlesyifanli:9000</value>
