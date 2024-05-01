@@ -28,7 +28,8 @@ docker rmi repo_name:tag/id
 ### run && query && delete container
 
 ```bash
-docker run [-it/-d] --name container_name [-p host_port:container_port] [-v /host/data:/container/data] repo_name:tag
+docker run [-it/-d] [-p host_port:container_port] [-v /host/data:/container/data] 
+--name container_name --hostname hostname repo_name:tag
 ```
 
 - -it: interact with current console
@@ -114,6 +115,12 @@ docker network list
 
 ```bash
 docker network inspect [name] | less
+```
+
+-  view the IP address information on the network device `veth_name`, output it in JSON format, and use `jq` to format and process the JSON data.
+
+```bash
+ip -json address show dev [veth_name] | jq
 ```
 
 
