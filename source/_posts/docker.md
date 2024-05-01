@@ -28,8 +28,12 @@ docker rmi repo_name:tag/id
 ### run && query && delete container
 
 ```bash
-docker run[create] --name container_name -p host_port:container_port -d repo_name:tag
+docker run [-it] --name container_name [-p host_port:container_port] [-d] repo_name:tag
 ```
+
+- -it: interact with current console
+- -p: set port
+- -d: detach
 
 ```bash
 docker ps [-a]
