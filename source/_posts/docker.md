@@ -54,6 +54,7 @@ docker start/stop container_name
 ```
 
 ```bash
+docker exec -it container_name  bash
 docker attach container_name
 ```
 
