@@ -133,3 +133,5 @@ trusted-host = https://mirror.nju.edu.cn/pypi/web
 
 [Info](http://www.manongjc.com/detail/29-ftpasjhctocytqc.html)
 
+[Linux](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
+
