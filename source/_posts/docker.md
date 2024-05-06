@@ -57,6 +57,7 @@ docker stop $(docker ps -q) //stop all container
 ```bash
 docker exec -it container_name  bash
 docker attach container_name
+"Ctrl + P + Q"
 ```
 
 - interact with current console
