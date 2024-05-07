@@ -12,9 +12,9 @@ RockyLinux9.3 && Docker && JDK8 && Hadoop3.2.4 (jdk21 is NOT compatible with had
 
 
 
-## Basic Operations
+## Basic Operations If Needed
 
-### mapping  if needed
+### mapping 
 
 ```bash
 vim /etc/hosts
@@ -24,7 +24,7 @@ append >> "192.168.2.4 hostname"
 
 
 
-### close the firewall if needed
+### close the firewall
 
 ```bash
 systemctl stop firewalld
@@ -35,7 +35,7 @@ systemctl disable firewalld
 
 ### handle JDK  and hadoop env variable
 
-in /etc/profile
+in /etc/profile or some other places:
 
 ```reStructuredText
 export JAVA_HOME=/root/Downloads/jdk1.8.0_181
@@ -48,9 +48,9 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
 
-## Hadoop Config
+## Hadoop Configuration
 
-###  ?/hadoop-3.2.4/etc/hadoop
+###  /path/hadoop-3.2.4/etc/hadoop
 
 #### hadoop-env.sh
 
@@ -130,7 +130,7 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 
 
 
-### ?/hadoop-3.2.4/sbin
+### /path/hadoop-3.2.4/sbin
 
 #### start-all.sh && stop-all.sh
 
