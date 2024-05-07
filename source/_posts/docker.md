@@ -64,6 +64,16 @@ docker attach container_name
 
 
 
+### query container volume
+
+```bash
+docker inspect --format='{{json .Mounts}}' <container_name or container_id>
+```
+
+
+
+
+
 ## Docker and Github Package
 
 ### preparation
