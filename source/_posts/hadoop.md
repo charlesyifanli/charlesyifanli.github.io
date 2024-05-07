@@ -6,7 +6,7 @@ categories:
 - linux config
 ---
 
-## Environment Preparation For Hadoop Cluster
+## Hadoop Cluster
 
 RockyLinux9.3 && Docker && JDK8 && Hadoop3.2.4 (jdk21 is NOT compatible with hadoop3.4.0)
 
@@ -35,7 +35,7 @@ systemctl disable firewalld
 
 ### handle JDK  and hadoop env variable
 
-in /etc/profile or some other places:
+in /etc/profile or ~/.bashrc:
 
 ```reStructuredText
 export JAVA_HOME=/root/Downloads/jdk1.8.0_181
@@ -48,14 +48,14 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 
 
-## Hadoop Configuration
+## Docker Image with hadoop installed
 
-###  /path/hadoop-3.2.4/etc/hadoop
+###   /path/hadoop-3.2.4/etc/hadoop
 
 #### hadoop-env.sh
 
-```reStructuredText
-add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
+```bash
+export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 ```
 
 
@@ -130,7 +130,7 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 
 
 
-### /path/hadoop-3.2.4/sbin
+### /path/hadoop-3.2.4/sbin if  root needed 
 
 #### start-all.sh && stop-all.sh
 
@@ -169,6 +169,38 @@ add public key into authorized_keys
 ```bash
 cat id_rsa.pub >> authorized_keys
 ```
+
+
+
+### create image
+
+```bash
+docker commit [container_id] [image_name]
+```
+
+
+
+## Config master and slaves
+
+### create containers:
+
+```bash
+docker run -it [-v path/hosts:/etc/hosts] -h master --name master ubuntu/hadoopinstalled
+
+docker run -it [-v path/hosts:/etc/hosts] -h slave01 --name slave01 ubuntu/hadoopinstalled
+
+docker run -it [-v path/hosts:/etc/hosts] -h slave02 --name slave02 ubuntu/hadoopinstalled
+```
+
+- If needed(hostname <==> ip address), [-v path/hosts:/etc/hosts] **or** create new docker network.
+
+
+
+### add slave computer
+
+vim /path/hadoop/etc/hadoop/workers,
+
+replace localhost with the hostnames of two slaves.
 
 
 
