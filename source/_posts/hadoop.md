@@ -6,9 +6,9 @@ categories:
 - linux config
 ---
 
-## Environment Preparation
+## Environment Preparation For Hadoop Cluster
 
-RockyLinux9.3 && JDK8 && Hadoop3.2.4 
+RockyLinux9.3 && Docker && JDK8 && Hadoop3.2.4 (jdk21 is NOT compatible with hadoop3.4.0)
 
 
 
@@ -64,17 +64,15 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 
 ```reStructuredText
 <configuration>
-    <!-- Specify the HDFS nameservice address as charlesyifanli with port 9000 -->
-    <property>
-        <name>fs.defaultFS</name>
-        <value>hdfs://charlesyifanli:9000</value>
-    </property>
-    
-    <!-- Specify the directory for storing Hadoop data -->
-    <property>
-        <name>hadoop.tmp.dir</name>
-        <value>/root/Downloads/hadoop-3.2.4/data</value> <!--data folder needs to be created in advance-->
-    </property>
+      <property>
+          <name>hadoop.tmp.dir</name>
+          <value>file:/usr/local/hadoop/tmp</value>
+          <description>Abase for other temporary directories.</description>
+      </property>
+      <property>
+          <name>fs.defaultFS</name>
+          <value>hdfs://master:9000</value>
+      </property>
 </configuration>
 ```
 
@@ -84,10 +82,17 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 
 ```reStructuredText
 <configuration>
-    <!-- The replication factor of HDFS is 1, meaning the data is only saved once -->
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:/usr/local/hadoop/namenode_dir</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:/usr/local/hadoop/datanode_dir</value>
+    </property>
     <property>
         <name>dfs.replication</name>
-        <value>1</value>
+        <value>3</value>
     </property>
 </configuration>
 ```
@@ -97,13 +102,12 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 #### mapred-site.xml
 
 ```reStructuredText
-<configuration>
-    <!-- Specify that MapReduce runs on YARN -->
+  <configuration>
     <property>
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
     </property>
-</configuration>
+  </configuration>
 ```
 
 
@@ -111,70 +115,31 @@ add >> export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 #### yarn-site.xml
 
 ```reStructuredText
-<configuration>
-    <!-- Specify the address of the ResourceManager separately -->
-    <property>
-       <name>yarn.resourcemanager.hostname</name>
-       <value>charlesyifanli</value>
-    </property>
-
-    <property>
-       <name>yarn.resourcemanager.address</name>
-       <value>charlesyifanli:8032</value>
-    </property>
-
-    <property>
-       <name>yarn.resourcemanager.scheduler.address</name>
-       <value>charlesyifanli:8030</value>
-    </property>
-
-    <property>
-       <name>yarn.resourcemanager.resource-tracker.address</name>
-       <value>charlesyifanli:8031</value>
-    </property>
-
-    <property>
-       <name>yarn.resourcemanager.admin.address</name>
-       <value>charlesyifanli:8033</value>
-    </property>
-    
-    <property>
-       <name>yarn.resourcemanager.webapp.address</name>
-       <value>charlesyifanli:8088</value>
-    </property>
-
-    <!-- Specify the MapReduce mode separately -->
-    <property>
-       <name>yarn.nodemanager.aux-services</name>
-       <value>mapreduce_shuffle</value>
-    </property>
-</configuration>
-
+ <configuration>
+  <!-- Site specific YARN configuration properties -->
+      <property>
+          <name>yarn.nodemanager.aux-services</name>
+          <value>mapreduce_shuffle</value>
+      </property>
+      <property>
+          <name>yarn.resourcemanager.hostname</name>
+          <value>master</value>
+      </property>
+  </configuration>
 ```
 
 
 
 ### ?/hadoop-3.2.4/sbin
 
-#### start-dfs.sh && stop-dfs.sh
+#### start-all.sh && stop-all.sh
 
-```reStructuredText
-add >> 
-HDFS_DATANODE_USER=root
-HDFS_DATANODE_SECURE_USER=hdfs
-HDFS_NAMENODE_USER=root
-HDFS_SECONDARYNAMENODE_USER=root
-```
-
-
-
- #### start-yarn.sh && stop-yarn.sh
-
-```reStructuredText
-add >>
-YARN_RESOURCEMANAGER_USER=root
-HADOOP_SECURE_USER=yarn
-YARN_NODEMANAGER_USER=root
+```bash
+export HDFS_NAMENODE_USER=root
+export HDFS_DATANODE_USER=root
+export HDFS_SECONDARYNAMENODE_USER=root
+export YARN_RESOURCEMANAGER_USER=root
+export YARN_NODEMANAGER_USER=root
 ```
 
 
@@ -252,10 +217,6 @@ terminal >> curl http://ip:8088/cluster
 
 <br>
 
-## reference
+## Reference
 
-[blog](https://zhuanlan.zhihu.com/p/45166521) is partial
-
-[Video](https://www.bilibili.com/video/BV1E4411e7v9/?spm_id_from=333.999.0.0&vd_source=f367f43d00246a51bd639e9f1fcda3a9) is complete
-
-by the way, [Ubunto](https://blog.csdn.net/qq_33980756/article/details/130568379) is here
+[blog](https://dblab.xmu.edu.cn/blog/1233/)
