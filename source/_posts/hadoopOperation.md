@@ -8,25 +8,55 @@ categories:
 
 ## Basic Operation
 
-``` reStructuredText
-hadoop fs -ls /
+### read folder and file information
+
+``` bash
+hdfs dfs -ls [-R] [-h] /
 ```
 
-```reStructuredText
-hadoop fs -mkdir -p /user/root
+- recursive
+- human-readable
+
+
+
+### create/remove  file/folder
+
+```bash
+hdfs dfs -mkdir -p /user/root
+
+hdfs dfs -touchz /path/to/hdfs/emptyfile
+
+hdfs dfs -rm [-rf] /path/to/hdfs/directory_or_file
 ```
 
-```reStructuredText
-hadoop fs -test -e /user/root/demo.txt 
-if [ $? -eq 0 ]; then
-    echo "File exists at path: $file_path"
-else
-    echo "File does not exist at path: $file_path"
-fi
+
+
+### judge existence and look through
+
+```bash
+hdfs dfs  -test -e /user/root/demo.txt
+echo $?
+
+hdfs dfs -cat /user/root/demo.txt
 ```
 
+
+
+### upload && download && append file
+
+```bash
+hdfs dfs -put [-f] demo.txt /user/root
+hdfs dfs -get demo.txt /root/
+
+hdfs dfs -appendToFile /root/demo.txt /user/root/demo.txt
+hdfs dfs -copyFromLocal [-f] /root/demo.txt /user/root/demo.txt
 ```
-hadoop fs -put /root/demo.txt /user/root/
-hadoop fs -appendToFile /root/demo.txt /user/root/demo.txt
+
+
+
+### move or rename file
+
+```bash
+hdfs dfs -mv test.txt dir/test.txt
 ```
 

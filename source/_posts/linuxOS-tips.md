@@ -28,3 +28,15 @@ Shortcut: Ctrl + Alt + L
 
 ###    
 
+## Set  Vim
+
+create ~/.vimrc
+
+```bash
+set nu
+```
+
+```bash
+. ~/.vimrc
+```
+

@@ -1723,7 +1723,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1715159069917),
+    lastupdate: new Date(1715173653674),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate","text"],
       for_post: ["toc"],
@@ -2554,11 +2554,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Basic Operation1hadoop fs -ls /
+        Basic Operationread folder and file information1hdfs dfs -ls [-R] [-h] /
 
-1hadoop fs -mkdir -p /user/root
 
-123456hadoop fs -test -e /user/root/demo.txt if [ $? -eq 0 ]; then    echo &quot;File exists at path: $file_path&quot;else    echo ...
+recursive
+human-readable
+
+create&#x2F;remove  file&#x2F;folder12345hdfs dfs -mkdir -p /user/roothdfs dfs -touchz /path/to/...
       
     
   </div>

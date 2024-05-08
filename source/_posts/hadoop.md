@@ -175,7 +175,7 @@ cat id_rsa.pub >> authorized_keys
 ### create image
 
 ```bash
-docker commit [container_id] [image_name]
+docker commit [container_id/name] [image_name]
 ```
 
 
@@ -185,11 +185,11 @@ docker commit [container_id] [image_name]
 ### create containers:
 
 ```bash
-docker run -it [-v path/hosts:/etc/hosts] -h master --name master ubuntu/hadoopinstalled
+docker run -it [-v ~/hadoopMapping/hosts:/etc/hosts] -h master --name master ubuntu/hadoopinstalled
 
-docker run -it [-v path/hosts:/etc/hosts] -h slave01 --name slave01 ubuntu/hadoopinstalled
+docker run -it [-v ~/hadoopMapping/hosts:/etc/hosts] -h slave01 --name slave01 ubuntu/hadoopinstalled
 
-docker run -it [-v path/hosts:/etc/hosts] -h slave02 --name slave02 ubuntu/hadoopinstalled
+docker run -it [-v ~/hadoopMapping/hosts:/etc/hosts] -h slave02 --name slave02 ubuntu/hadoopinstalled
 ```
 
 - If needed(hostname <==> ip address), [-v path/hosts:/etc/hosts] **or** create new docker network.
