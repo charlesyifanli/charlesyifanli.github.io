@@ -27,6 +27,6 @@ fi
 
 ```
 hadoop fs -put /root/demo.txt /user/root/
-hadoop fs -appendToFile /root/demo.txt /user/root/
+hadoop fs -appendToFile /root/demo.txt /user/root/demo.txt
 ```
 

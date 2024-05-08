@@ -92,7 +92,7 @@ export JAVA_HOME=/root/Downloads/jdk1.8.0_181
     </property>
     <property>
         <name>dfs.replication</name>
-        <value>3</value>
+        <value>2</value>
     </property>
 </configuration>
 ```
