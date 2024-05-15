@@ -72,6 +72,16 @@ docker inspect --format='{{json .Mounts}}' <container_name or container_id>
 
 
 
+### copy during hosts and containers
+
+```bash
+docker cp /root/build/demo.txt master:/root/build
+```
+
+```bash
+docker cp master:/root/build/demo.txt /root/build
+```
+
 
 
 ## Docker and Github Package
