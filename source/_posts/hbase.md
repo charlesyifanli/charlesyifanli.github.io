@@ -44,3 +44,95 @@ server.3=slave02:2888:3888
 /usr/local/zookeeper/bin/zkServer.sh status
 ```
 
+
+
+## HBase Config
+
+### hbase-site.xml
+
+```reStructuredText
+  <property>
+    <name>hbase.rootdir</name>  
+    <value>hdfs://master:9000/hbase</value>
+  </property>
+  
+  <property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value> <!--false-->
+  </property>
+  
+  <property>
+    <name>hbase.master.port</name>
+    <value>16000</value>
+  </property>
+  
+  <property>
+    <name>hbase.zookeeper.quorum</name>
+    <value>master,slave01,slave02</value>
+  </property>
+  
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/usr/local/zookeeper/data</value>
+  </property>
+  
+  <property>
+    <name>hbase.tmp.dir</name>
+    <value>./tmp</value>
+  </property>
+  
+  <property>
+    <name>hbase.unsafe.stream.capability.enforce</name>
+    <value>false</value>
+  </property>
+```
+
+
+
+### hbase-env.sh
+
+```reStructuredText
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/usr/local/hadoop
+export HBASE_HOME=/usr/local/hbase
+export HBASE_MANAGES_ZK=false
+```
+
+
+
+### regionservers
+
+```reStructuredText
+slave01
+slave02
+```
+
+
+
+**Copy the hbase folder and paste it to the other hosts.**
+
+
+
+## Start HBase
+
+- start zookeeper first
+
+Each computer needs to be started.
+
+- start hdfs(hadoop) then
+
+- start hbase
+
+ ```bash
+ /usr/local/hbase/bin/start-hbase.sh
+ ```
+
+
+
+<br>
+
+<br>
+
+## Reference
+
+[Info](https://www.bilibili.com/video/BV1ym4y1w7u6/?spm_id_from=333.337.search-card.all.click&vd_source=f367f43d00246a51bd639e9f1fcda3a9)
