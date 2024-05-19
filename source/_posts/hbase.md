@@ -98,6 +98,14 @@ export HBASE_HOME=/usr/local/hbase
 export HBASE_MANAGES_ZK=false
 ```
 
+and in the last,
+
+uncommit:
+
+```bash
+export HBASE_DISABLE_HADOOP_CLASSPATH_LOOKUP="true"
+```
+
 
 
 ### regionservers
