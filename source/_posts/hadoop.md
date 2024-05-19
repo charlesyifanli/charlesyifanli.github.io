@@ -132,7 +132,7 @@ export JAVA_HOME=/root/Downloads/jdk1.8.0_181
 
 ### /path/hadoop-3.2.4/sbin if  root needed 
 
-#### start-all.sh && stop-all.sh
+#### start-all.sh && stop-all.sh (must be in the front the file)
 
 ```bash
 export HDFS_NAMENODE_USER=root
