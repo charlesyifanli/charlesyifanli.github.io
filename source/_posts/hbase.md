@@ -65,6 +65,11 @@ server.3=slave02:2888:3888
     <name>hbase.master.port</name>
     <value>16000</value>
   </property>
+  
+  <property>
+    <name>hbase.master.info.port</name>
+    <value>60010</value>
+  </property>
 
   <property>
     <name>hbase.zookeeper.quorum</name>
