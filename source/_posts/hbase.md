@@ -148,6 +148,40 @@ Each computer needs to be started.
 
 
 
+## Deploy
+
+```bash
+ hbase thrift -p 9090 start
+```
+
+- python connection
+
+```reStructuredText
+import happybase
+
+try:
+    # Connect to HBase
+    connection = happybase.Connection('172.17.0.2', port=9090)
+
+    # Get the names of all tables
+    tables = connection.tables()
+
+    # Print the names of all tables
+    print("Names of all tables:")
+    for table_name in tables:
+        print(table_name.decode('utf-8'))
+
+    # Close the connection
+    connection.close()
+
+except Exception as e:
+    print(f"Error connecting to HBase: {e}")
+```
+
+
+
+
+
 <br>
 
 <br>
