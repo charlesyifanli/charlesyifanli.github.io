@@ -70,6 +70,11 @@ server.3=slave02:2888:3888
     <name>hbase.zookeeper.quorum</name>
     <value>master,slave01,slave02</value>
   </property>
+ 
+  <property>
+      <name>hbase.zookeeper.property.clientPort</name>
+      <value>2181</value>
+  </property>
   
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
