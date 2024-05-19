@@ -9,7 +9,7 @@ categories:
 ## Preparation
 
 - Hadoop has already been installed successfully.
-- JDK8 && hadoop3.2.4 && hbase2.3.4 && zookeeper3.5.9
+- JDK8 && hadoop3.2.4 && hbase2.4.17 && zookeeper3.7.2
 
 
 
@@ -52,44 +52,45 @@ server.3=slave02:2888:3888
 
 ```reStructuredText
   <property>
-    <name>hbase.rootdir</name>  
+    <name>hbase.rootdir</name>
     <value>hdfs://master:9000/hbase</value>
   </property>
-  
+
   <property>
     <name>hbase.cluster.distributed</name>
     <value>true</value> <!--false-->
   </property>
-  
+
   <property>
     <name>hbase.master.port</name>
     <value>16000</value>
   </property>
-  
+
   <property>
     <name>hbase.zookeeper.quorum</name>
     <value>master,slave01,slave02</value>
   </property>
- 
+
   <property>
-      <name>hbase.zookeeper.property.clientPort</name>
-      <value>2181</value>
+    <name>hbase.zookeeper.property.clientPort</name>
+    <value>2181</value>
   </property>
-  
+
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
     <value>/usr/local/zookeeper/data</value>
   </property>
-  
+
   <property>
     <name>hbase.tmp.dir</name>
     <value>./tmp</value>
   </property>
-  
+
   <property>
     <name>hbase.unsafe.stream.capability.enforce</name>
     <value>false</value>
   </property>
+</configuration>
 ```
 
 
