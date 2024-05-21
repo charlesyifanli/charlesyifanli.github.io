@@ -135,3 +135,4 @@ trusted-host = https://mirror.nju.edu.cn/pypi/web
 
 [Linux](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
 
+[Jupyer](https://www.jianshu.com/p/6cc047bc94e5)
