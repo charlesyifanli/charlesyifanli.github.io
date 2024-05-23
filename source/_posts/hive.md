@@ -90,6 +90,10 @@ vim hive-site.xml
     <value>123123</value>
     <description>!!!password to use against metastore database</description>
   </property>
+  <property>
+    <name>hive.server2.active.passive.ha.enable</name>
+    <value>true</value>
+  </property>
 </configuration>
 ```
 
