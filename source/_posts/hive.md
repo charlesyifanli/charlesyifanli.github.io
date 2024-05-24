@@ -109,3 +109,31 @@ hive
 show databases;
 ```
 
+
+
+## Remote Connection
+
+vim ~~/hadoop/etc/hadoop/core-site.xml
+
+add:
+
+```reStructuredText
+<property>
+    <name>hadoop.proxyuser.root.hosts</name>
+    <value>*</value>
+</property>
+
+<property>
+    <name>hadoop.proxyuser.root.groups</name>
+    <value>*</value>
+</property>
+```
+
+
+
+start server:
+
+```bash
+hiveserver2
+```
+
