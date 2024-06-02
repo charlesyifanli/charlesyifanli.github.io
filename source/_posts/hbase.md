@@ -20,8 +20,8 @@ categories:
 3. Modify zoo.cfg
 
 ```reStructuredText
-dataDir=/usr/local/zookeeper/data # (create first)
-dataLogDir=/usr/local/zookeeper/log # (create first)
+dataDir=/usr/local/zookeeper/data
+dataLogDir=/usr/local/zookeeper/log
 
 server.1=master:2888:3888
 server.2=slave01:2888:3888
