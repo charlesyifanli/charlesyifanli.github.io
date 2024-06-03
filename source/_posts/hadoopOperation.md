@@ -3,7 +3,7 @@ title: hadoopOperation
 date: 2024-05-07 21:29:05
 tags: hadoop
 categories:
-- linux config
+- big_data
 ---
 
 ## Basic Operation

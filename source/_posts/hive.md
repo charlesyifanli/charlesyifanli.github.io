@@ -1,9 +1,9 @@
 ---
 title: hive
 date: 2024-05-22 21:13:11
-tags: hadoop
+tags: hive
 categories:
-- linux config
+- big_data
 ---
 
 ## Preparation

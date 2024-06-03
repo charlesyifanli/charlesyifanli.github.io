@@ -3,7 +3,7 @@ title: hadoop
 date: 2024-04-27 16:33:20
 tags: hadoop
 categories:
-- linux config
+- big_data
 ---
 
 ## Hadoop Cluster

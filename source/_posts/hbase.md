@@ -1,9 +1,9 @@
 ---
 title: hbase
 date: 2024-05-17 08:22:24
-tags: hadoop
+tags: hbase
 categories:
-- linux config
+- big_data
 ---
 
 ## Preparation
