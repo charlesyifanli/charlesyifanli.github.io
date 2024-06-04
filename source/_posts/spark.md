@@ -26,3 +26,19 @@ export SPARK_MASTER_HOST=master
 export JAVA_HOME=/usr/local/java8
 ```
 
+
+
+## Test
+
+- cluster >> standalone
+
+```bash
+spark-submit --master spark://master:7077 /usr/local/spark/examples/src/main/python/pi.py 2>&1 | grep "Pi is roughly"
+```
+
+- cluster >> yarn
+
+```bash
+spark-submit --master yarn /usr/local/spark/examples/src/main/python/pi.py 2>&1 | grep "Pi is roughly"
+```
+
