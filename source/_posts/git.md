@@ -73,32 +73,54 @@ More info: [reference](https://zhuanlan.zhihu.com/p/521340971)
 
 ### Clone the repository locally:
 
-```
+```reStructuredText
 git clone <url>
 cd your-repository
 ```
 
 ### Create a new branch
 
-```
+```bash
 git checkout -b new-branch-name
 ```
 
 ### Look through the hash value of specific history version
 
-```
+```bash
 git log
 ```
 
 ### Reset the branch
 
-```
+```bash
 git reset --hard commit-hash
 ```
 
 ### Set upstream
 
-```
+```bash
 git push --set-upstream origin branch-name
 ```
+
+### Merge branch
+
+```bash
+git switch name
+git merge name_to_be_merged
+```
+
+### Delete branch
+
+```bash
+git branch -d name_to_be_delete
+```
+
+### Delete remote corresponding brach
+
+```bash
+git add .;git commit -m *;git push
+git push origin --delete name_to_be_delete
+```
+
+
 
