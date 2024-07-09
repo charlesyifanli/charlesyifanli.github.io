@@ -501,3 +501,22 @@ chmod 755 file.txt
 These permissions are often represented by a string of characters, such as `rwxr-xr-x`, where:
 
 - The first character represents the file type (`-` indicates a regular file, `d` indicates a directory, and so on).
+
+## Nvidia Driver Config in ubuntu
+
+### what kind of gpu
+
+```bash
+lspci | grep -i vga
+```
+
+### driver
+
+```bash
+[ dpkg -l | grep nvidia ]
+[ sudo apt remove --purge '^nvidia-.*' ]
+sudo apt install nvidia-driver-550
+sudo apt install nvidia-utils-550
+nvidia-smi
+```
+
