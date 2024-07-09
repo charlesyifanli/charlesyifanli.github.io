@@ -504,6 +504,20 @@ These permissions are often represented by a string of characters, such as `rwxr
 
 ## Nvidia Driver Config in ubuntu
 
+### look through suitable version 
+
+```bash
+sudo ubuntu-drivers devices
+```
+
+search for what like "........non free recommended"
+
+### click:  software update >> additional drivers
+
+select recommended driver
+
+
+
 ### what kind of gpu
 
 ```bash
