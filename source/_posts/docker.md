@@ -7,6 +7,16 @@ categories:
 - docker
 ---
 
+## Install docker in ubuntu
+
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose
+[ sudo usermod -aG docker ${USER_NAME} ]
+```
+
+
+
 ## Basic Operation
 
 ### create &&  query && delete image
