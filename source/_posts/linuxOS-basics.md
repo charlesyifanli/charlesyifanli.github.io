@@ -513,8 +513,9 @@ lspci | grep -i vga
 ### driver
 
 ```bash
-[ dpkg -l | grep nvidia ]
 [ sudo apt remove --purge '^nvidia-.*' ]
+[ sudo apt remove --purge '^libnvidia-.*' ]
+[ dpkg -l | grep nvidia ]
 sudo apt install nvidia-driver-550
 sudo apt install nvidia-utils-550
 nvidia-smi
