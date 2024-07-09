@@ -6,6 +6,42 @@ categories:
 - linux config
 ---
 
+## How to set terminal shortcuts
+
+```reStructuredText
+click on "settings"
+```
+
+```reStructuredText
+click on "Customize Shortscuts" in Keyboard Shortcuts
+```
+
+```reStructuredText
+click on "Custom Shortcuts"
+```
+
+```reStructuredText
+name: terminal
+Command: /usr/bin/gnome-terminal
+Shortcut: Ctrl + Alt + L
+```
+
+###    
+
+## Set  Vim
+
+create ~/.vimrc
+
+```bash
+set nu
+```
+
+```bash
+. ~/.vimrc
+```
+
+
+
 ##  Handle block device like USB drive
 
  ### Command line:
