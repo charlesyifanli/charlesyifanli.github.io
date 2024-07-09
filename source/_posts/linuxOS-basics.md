@@ -26,7 +26,7 @@ Command: /usr/bin/gnome-terminal
 Shortcut: Ctrl + Alt + L
 ```
 
-###    
+###   
 
 ## Set  Vim
 
