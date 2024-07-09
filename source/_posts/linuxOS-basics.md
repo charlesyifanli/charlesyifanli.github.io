@@ -504,7 +504,9 @@ These permissions are often represented by a string of characters, such as `rwxr
 
 ## Nvidia Driver Config in ubuntu
 
-### look through suitable version 
+### method01（recommended）
+
+#### look through suitable version 
 
 ```bash
 sudo ubuntu-drivers devices
@@ -512,19 +514,19 @@ sudo ubuntu-drivers devices
 
 search for what like "........non free recommended"
 
-### click:  software update >> additional drivers
+#### click:  software update >> additional drivers
 
 select recommended driver
 
+### method02
 
-
-### what kind of gpu
+#### what kind of gpu
 
 ```bash
 lspci | grep -i vga
 ```
 
-### driver
+#### driver
 
 ```bash
 [ sudo apt remove --purge '^nvidia-.*' ]
