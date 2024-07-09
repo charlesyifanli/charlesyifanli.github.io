@@ -502,7 +502,7 @@ These permissions are often represented by a string of characters, such as `rwxr
 
 - The first character represents the file type (`-` indicates a regular file, `d` indicates a directory, and so on).
 
-## Nvidia Driver Config in ubuntu
+## Nvidia Driver and Cuda Config in ubuntu
 
 ### method01（recommended）
 
@@ -535,5 +535,11 @@ lspci | grep -i vga
 sudo apt install nvidia-driver-550
 sudo apt install nvidia-utils-550
 nvidia-smi
+```
+
+### cuda
+
+```bash
+sudo apt install nvidia-cuda-toolkit
 ```
 
