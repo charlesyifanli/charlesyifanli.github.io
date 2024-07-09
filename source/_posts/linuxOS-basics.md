@@ -1,5 +1,5 @@
 ---
-title: linuxOS-basics
+title: linuxOS-tips
 date: 2024-03-08 20:17:10
 tags: linux
 categories:
@@ -425,7 +425,7 @@ kill pid
 
 
 
-## Allow remote connections using the root user
+## Allow remote connections using the root user 
 
 If you want to allow the root user to log in via SSH using a password, you can modify the `PermitRootLogin` parameter in the `/etc/ssh/sshd_config` file. Set it to `yes` to allow the root user to log in via SSH using a password.
 
@@ -437,11 +437,46 @@ Follow these steps to make the changes:
    ```reStructuredText
    PermitRootLogin yes
    ```
+   
+   if no sshd_config, install oepnssh-server first
 4. Save the file and exit the editor.
 5. Reload the SSH service to apply the changes. You can do this by running the following command:
    ```bash
    systemctl reload sshd
    ```
+
+
+
+## Allow root  to login directly  in ubuntu
+
+### update password
+
+```bash
+sudo passwd root
+```
+
+### modify pam.d/
+
+```bash
+cd /etc/pam.d
+sudo gedit gdm-autologin
+sudo gedit gdm-passwd
+```
+
+```reStructuredText
+make:
+#auth required pam_succeed_if.so user != root quiet_success
+```
+
+### modify ~/.profile
+
+```reStructuredText
+make:
+#mesg n 2> /dev/null || true
+tty -s && mesg n || true
+```
+
+### reboot
 
 
 
