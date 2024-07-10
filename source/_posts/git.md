@@ -53,6 +53,29 @@ More info: [reference](https://zhuanlan.zhihu.com/p/452996934)
 
 <br><br>
 
+## ssh and github
+
+### generate key
+
+```bash
+ssh-keygen -t rsa -C "xxx@xxx.com"
+```
+
+### get public key
+
+```bash
+cd ~/.ssh
+cat id_rsa.pub
+```
+
+### add public key into github and test
+
+```bash
+ssh -T git@github.com
+```
+
+
+
 ## ssh: connect to host github.com port 22: Connection timed out
 
 ### In "~/.ssh/config", 
