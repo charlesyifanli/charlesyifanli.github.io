@@ -543,3 +543,27 @@ nvidia-smi
 sudo apt install nvidia-cuda-toolkit
 ```
 
+
+
+## Ubuntu Installation with Intel RST closed during double systems
+
+### enter windows system
+
+- win + R
+- input >> msconfig
+- select Boot, click "Safe boot" in Boot options
+- restart
+
+### enter bios
+
+change "SATA" mode to AHCI
+
+### enter windows system safe mode
+
+- win + R
+- input >> msconfig
+- select Boot, cancel "Safe boot" in Boot options
+- restart
+
+### install ubuntu normally
+
