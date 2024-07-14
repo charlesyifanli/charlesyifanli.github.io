@@ -543,6 +543,8 @@ nvidia-smi
 sudo apt install nvidia-cuda-toolkit
 ```
 
+[reference](https://www.cnblogs.com/klchang/p/14353384.html)
+
 
 
 ## Ubuntu Installation with Intel RST closed during double systems
