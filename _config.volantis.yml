@@ -22,9 +22,10 @@ navbar:
     - name: Friends
       icon: fa-solid fa-link
       url: friends/
-    - name: About
-      icon: fa-solid fa-info-circle
-      url: about/
+    # delete the following 4 rows in 09-27-2024
+    # - name: About
+    #   icon: fa-solid fa-info-circle
+    #   url: about/
     - name: Github
       icon: fa-brands fa-github
       url: https://www.github.com/charlesyifanli
