@@ -165,7 +165,13 @@ $ (Get-ChildItem -Directory | Where-Object { $_.FullName -match '\\[^\\]+\\[^\\]
 
 
 
-### 
+## en-win11, garbled issue in Chinese software and drivers
 
-
+```reStructuredText
+- control panel
+- clock and region
+- Region (Change date, time, or number formats)
+- Administrative
+- Change system locale
+```
 

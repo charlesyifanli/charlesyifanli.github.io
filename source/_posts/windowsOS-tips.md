@@ -16,7 +16,7 @@ settings -> Update&Security -> delivery optimization
 
 ### effect
 
-```
+```reStructuredText
 Automatic Source Selection
 Privacy Concerns
 ```
