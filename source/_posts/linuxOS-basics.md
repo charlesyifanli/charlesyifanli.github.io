@@ -6,7 +6,7 @@ categories:
 - linux config
 ---
 
-## How to set terminal shortcuts
+## 1. Set terminal shortcuts
 
 ```reStructuredText
 click on "settings"
@@ -28,7 +28,7 @@ Shortcut: Ctrl + Alt + L
 
 ###   
 
-## Set  Vim
+## 2. Set  Vim
 
 create ~/.vimrc
 
@@ -40,9 +40,63 @@ set nu
 . ~/.vimrc
 ```
 
+### Set row number
+
+- `:set nu`
+- `:set number`
+
+### Enter Insert Mode:
+
+- `i`: Insert text before the cursor.
+- `a`: Insert text after the cursor.
+- `o`: Open a new line below the current line and switch to insert mode.
+- `I`: Insert text before the cursor on the current line.
+- `A`: Append text after the cursor on the current line.
+- `O`: Open a new line above the current line and switch to insert mode.
+
+### Exit Insert Mode:
+
+- `Esc`: Exit the current insert mode.
+
+###  Save File:
+
+- `:w`: Save the file without exiting Vim.
+- `:wq` or `:x`: Save the file and quit Vim.
+
+### Quit Without Saving:
+
+- `:q!`: Quit without saving changes.
+
+### Move Cursor:
+
+- `h`: Move left one character.
+- `j`: Move down one line.
+- `k`: Move up one line.
+- `l`: Move right one character.
+- `gg`: Go to the beginning of the file.
+- `G`: Go to the end of the file.
+
+### Copy, Cut, and Paste:
+
+- `yy`: Copy the current line.
+- `dd`: Cut the current line.
+- `p`: Paste the contents of the clipboard after the current position.
+
+### Undo and Redo:
+
+- `u`: Undo the last operation.
+- `Ctrl + r`: Redo the last undone operation.
+
+### Search and Replace:
+
+- `/keyword`: Search for the specified keyword.
+- `:%s/old/new/g`: Replace all occurrences of `old` with `new` throughout the file.
+
+***It is recommended to use `vim` to edit something and use `less` to look through the text.***
 
 
-##  Handle block device like USB drive
+
+##  3. Block device (USB)
 
  ### Command line:
 
@@ -54,6 +108,7 @@ lsblk
 
 ```bash
 mount /dev/sdb1 ./usb/
+umount ./usb
 ```
 
 
@@ -61,8 +116,8 @@ mount /dev/sdb1 ./usb/
 If user-oriented, run fowllowing commands in order:
 
 ```bash
-umount ./usb
 mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 ./usb/
+umount ./usb
 ```
 
 
@@ -103,7 +158,7 @@ Therefore, nvme0n1p1 represents the first partition of the first NVMe device in 
 
 
 
-## Package manager  in versions like fedora
+## 4. Package manager (fedora)
 
 ### suggested downloading and installing approach
 
@@ -172,7 +227,7 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 
 
-## Environment variables
+## 5. Environment variables
 
 ### recommended (for instance):
 
@@ -203,7 +258,7 @@ Users can customize their settings in `.bashrc`, while configurations in `/etc/p
 
 
 
-## Copy-paste, move and remove file or folder
+## 6. Copy-paste
 
 ```bash
 cp source_file(folder)  destination_folder  [-r]
@@ -221,7 +276,7 @@ rm file(folder)_name [-r -f -v -i]
 
 
 
-## How to compress or decompress in linux
+## 7. Compress & decompress
 
 ### basic infos
 
@@ -285,7 +340,7 @@ unzip ./archive.zip [-d /output]
 
 
 
-##  Unbind process from current terminal
+##  8. Unbind process from terminal
 
 ###  hang up
 
@@ -329,7 +384,7 @@ nohup [your command] > /dev/null &
 
 
 
-## process status
+## 9. process status
 
 ### kill the process in the background
 
@@ -367,65 +422,9 @@ kill pid
 
 
 
-## Use **vim** in linux
+## 10. Remote connections
 
-### Set row number
-
-- `:set nu`
-- `:set number`
-
-### Enter Insert Mode:
-
-- `i`: Insert text before the cursor.
-- `a`: Insert text after the cursor.
-- `o`: Open a new line below the current line and switch to insert mode.
-- `I`: Insert text before the cursor on the current line.
-- `A`: Append text after the cursor on the current line.
-- `O`: Open a new line above the current line and switch to insert mode.
-
-### Exit Insert Mode:
-
-- `Esc`: Exit the current insert mode.
-
-###  Save File:
-
-- `:w`: Save the file without exiting Vim.
-- `:wq` or `:x`: Save the file and quit Vim.
-
-### Quit Without Saving:
-
-- `:q!`: Quit without saving changes.
-
-### Move Cursor:
-
-- `h`: Move left one character.
-- `j`: Move down one line.
-- `k`: Move up one line.
-- `l`: Move right one character.
-- `gg`: Go to the beginning of the file.
-- `G`: Go to the end of the file.
-
-### Copy, Cut, and Paste:
-
-- `yy`: Copy the current line.
-- `dd`: Cut the current line.
-- `p`: Paste the contents of the clipboard after the current position.
-
-### Undo and Redo:
-
-- `u`: Undo the last operation.
-- `Ctrl + r`: Redo the last undone operation.
-
-### Search and Replace:
-
-- `/keyword`: Search for the specified keyword.
-- `:%s/old/new/g`: Replace all occurrences of `old` with `new` throughout the file.
-
-***It is recommended to use `vim` to edit something and use `less` to look through the text.***
-
-
-
-## Allow remote connections using the root user 
+### fedora
 
 If you want to allow the root user to log in via SSH using a password, you can modify the `PermitRootLogin` parameter in the `/etc/ssh/sshd_config` file. Set it to `yes` to allow the root user to log in via SSH using a password.
 
@@ -445,17 +444,15 @@ Follow these steps to make the changes:
    systemctl reload sshd
    ```
 
+### ubuntu
 
-
-## Allow root  to login directly  in ubuntu
-
-### update password
+update password
 
 ```bash
 sudo passwd root
 ```
 
-### modify pam.d/
+modify pam.d/
 
 ```bash
 cd /etc/pam.d
@@ -468,7 +465,7 @@ make:
 #auth required pam_succeed_if.so user != root quiet_success
 ```
 
-### modify ~/.profile
+modify ~/.profile
 
 ```reStructuredText
 make:
@@ -476,11 +473,15 @@ make:
 tty -s && mesg n || true
 ```
 
-### reboot
+then
+
+```bash
+reboot
+```
 
 
 
-## Permissions
+## 11. File permissions
 
 ### command
 
@@ -502,7 +503,7 @@ These permissions are often represented by a string of characters, such as `rwxr
 
 - The first character represents the file type (`-` indicates a regular file, `d` indicates a directory, and so on).
 
-## Nvidia Driver and Cuda Config in ubuntu
+## 12. Nvidia Driver and Cuda Config in ubuntu
 
 ### method01（recommended）
 
@@ -547,7 +548,7 @@ sudo apt install nvidia-cuda-toolkit
 
 
 
-## Ubuntu Installation with Intel RST closed during double systems
+## 13. Ubuntu Installation with Intel RST closed during double systems
 
 ### enter windows system
 
