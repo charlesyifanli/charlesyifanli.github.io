@@ -292,7 +292,7 @@ unzip ./archive.zip [-d /output]
 This method puts the command in the background, but if the terminal is closed, the command may receive the SIGHUP signal and be terminated.
 
 ```bash
-command &
+[your command] &
 ```
 
 
@@ -302,7 +302,7 @@ command &
 Using the `nohup` command redirects the output of the command to the file `nohup.out`, so even if the terminal is closed, the execution of the command will not be terminated.
 
 ``` bash
-nohup command &
+nohup [your command] &
 ```
 
 
@@ -316,7 +316,7 @@ When using the `nohup` command to run a process in the background, the `nohup.ou
 #### select output path
 
 ```bash
-nohup command > /path &
+nohup [your command] > /path &
 ```
 
 
@@ -324,7 +324,7 @@ nohup command > /path &
 #### discard the `nohup.out` file
 
 ```bash
-nohup command > /dev/null &
+nohup [your command] > /dev/null &
 ```
 
 
