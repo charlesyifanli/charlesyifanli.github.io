@@ -386,15 +386,11 @@ nohup [your command] > /dev/null &
 
 ## 9. process status
 
-### kill the process in the background
-
 #### View real-time system process information
 
 ```bash
 top
 ```
-
-
 
 #### Display the processes:
 
@@ -411,8 +407,6 @@ ps aux
 ps auxf
 ps -e | grep process_name
 ```
-
-
 
 #### Close process
 
