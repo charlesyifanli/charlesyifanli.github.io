@@ -403,7 +403,7 @@ a tree-like process list
 ```bash
 ps
 ps -e
-ps aux
+ps aux (ps aux | grep <process_name>)
 ps auxf
 ps -e | grep process_name
 ```
