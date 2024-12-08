@@ -329,7 +329,7 @@ nohup [your command] > /dev/null &
 
 
 
-
+## process status
 
 ### kill the process in the background
 
