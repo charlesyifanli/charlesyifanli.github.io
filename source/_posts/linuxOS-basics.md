@@ -6,7 +6,7 @@ categories:
 - linux config
 ---
 
-## 1. Set terminal shortcuts
+## 1, Set terminal shortcuts
 
 ```reStructuredText
 click on "settings"
@@ -28,7 +28,7 @@ Shortcut: Ctrl + Alt + L
 
 
 
-## 2. Set  Vim
+## 2, Set  Vim
 
 create ~/.vimrc
 
@@ -96,7 +96,7 @@ set nu
 
 
 
-##  3. Block device (USB)
+## 3, Block device (USB)
 
  ### Command line:
 
@@ -158,7 +158,7 @@ Therefore, nvme0n1p1 represents the first partition of the first NVMe device in 
 
 
 
-## 4. Package manager (fedora)
+## 4, Package manager (fedora)
 
 ### suggested downloading and installing approach
 
@@ -227,7 +227,7 @@ Compared to rpm, **yum has an additional feature of automatically resolving depe
 
 
 
-## 5. Environment variables
+## 5, Environment variables
 
 ### recommended (for instance):
 
@@ -258,7 +258,7 @@ Users can customize their settings in `.bashrc`, while configurations in `/etc/p
 
 
 
-## 6. Copy-paste
+## 6, Copy-paste
 
 ```bash
 cp source_file(folder)  destination_folder  [-r]
@@ -276,7 +276,7 @@ rm file(folder)_name [-r -f -v -i]
 
 
 
-## 7. Compress & decompress
+## 7, Compress & decompress
 
 ### basic infos
 
@@ -340,7 +340,7 @@ unzip ./archive.zip [-d /output]
 
 
 
-##  8. Unbind process from terminal
+## 8, Unbind process from terminal
 
 ###  hang up
 
@@ -384,7 +384,7 @@ nohup [your command] > /dev/null &
 
 
 
-## 9. process status
+## 9, process status
 
 #### View real-time system process information
 
@@ -416,7 +416,7 @@ kill pid
 
 
 
-## 10. Remote connections
+## 10, Remote connections
 
 ### fedora
 
@@ -475,7 +475,7 @@ reboot
 
 
 
-## 11. File permissions
+## 11, File permissions
 
 ### command
 
@@ -497,7 +497,9 @@ These permissions are often represented by a string of characters, such as `rwxr
 
 - The first character represents the file type (`-` indicates a regular file, `d` indicates a directory, and so on).
 
-## 12. Nvidia Driver and Cuda Config in ubuntu
+
+
+## 12, Nvidia Driver and Cuda Config in ubuntu
 
 ### method01（recommended）
 
@@ -542,7 +544,7 @@ sudo apt install nvidia-cuda-toolkit
 
 
 
-## 13. Ubuntu Installation with Intel RST closed during double systems
+## 13, Ubuntu Installation with Intel RST closed during double systems
 
 ### enter windows system
 
