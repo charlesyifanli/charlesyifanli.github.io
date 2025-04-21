@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="conda and pip config">
+<title>hadoop</title>
+
+<link rel='canonical' href='https://charlesyifanli.github.io/p/hadoop/'>
+
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="hadoop">
+<meta property='og:description' content="conda and pip config">
+<meta property='og:url' content='https://charlesyifanli.github.io/p/hadoop/'>
+<meta property='og:site_name' content='Space of Yifan'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hadoop' /><meta property='article:tag' content='hive' /><meta property='article:tag' content='hbase' /><meta property='article:tag' content='spark' /><meta property='article:published_time' content='2024-04-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-04-27T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="hadoop">
+<meta name="twitter:description" content="conda and pip config">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_f509edb42ecc0ebd.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Space of Yifan</a></h1>
+            <h2 class="site-description">Space of Yifan</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/charlesyifanli'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#hadoop-cluster">Hadoop Cluster</a></li>
+    <li><a href="#basic-operations-if-needed">Basic Operations If Needed</a>
+      <ol>
+        <li><a href="#mapping">mapping</a></li>
+        <li><a href="#close-the-firewall">close the firewall</a></li>
+        <li><a href="#handle-jdk--and-hadoop-env-variable">handle JDK  and hadoop env variable</a></li>
+      </ol>
+    </li>
+    <li><a href="#docker-image-with-hadoop-installed">Docker Image with hadoop installed</a>
+      <ol>
+        <li><a href="#pathhadoop-324etchadoop">/path/hadoop-3.2.4/etc/hadoop</a>
+          <ol>
+            <li><a href="#hadoop-envsh">hadoop-env.sh</a></li>
+            <li><a href="#core-sitexml">core-site.xml</a></li>
+            <li><a href="#hdfs-sitexml">hdfs-site.xml</a></li>
+            <li><a href="#mapred-sitexml">mapred-site.xml</a></li>
+            <li><a href="#yarn-sitexml">yarn-site.xml</a></li>
+          </ol>
+        </li>
+        <li><a href="#pathhadoop-324sbin-if--root-needed">/path/hadoop-3.2.4/sbin if  root needed</a>
+          <ol>
+            <li><a href="#start-allsh--stop-allsh-must-be-in-the-front-the-file">start-all.sh &amp;&amp; stop-all.sh (must be in the front the file)</a></li>
+          </ol>
+        </li>
+        <li><a href="#ssh-config-if-needed">ssh config if needed</a></li>
+        <li><a href="#create-image">create image</a></li>
+      </ol>
+    </li>
+    <li><a href="#config-master-and-slaves">Config master and slaves</a>
+      <ol>
+        <li><a href="#create-containers">create containers:</a></li>
+        <li><a href="#add-slave-computer">add slave computer</a></li>
+      </ol>
+    </li>
+    <li><a href="#format-and-start-hadoop">Format and Start Hadoop</a>
+      <ol>
+        <li><a href="#format">format</a></li>
+        <li><a href="#start--stop-hadoop">start &amp;&amp; stop hadoop</a></li>
+        <li><a href="#use-hadoop">use hadoop</a></li>
+      </ol>
+    </li>
+    <li><a href="#reference">Reference</a></li>
+    <li><a href="#basic-operation">Basic Operation</a>
+      <ol>
+        <li><a href="#read-folder-and-file-information">read folder and file information</a></li>
+        <li><a href="#createremove--filefolder">create/remove  file/folder</a></li>
+        <li><a href="#judge-existence-and-look-through">judge existence and look through</a></li>
+        <li><a href="#upload--download--append-file">upload &amp;&amp; download &amp;&amp; append file</a></li>
+        <li><a href="#move-or-rename-file">move or rename file</a></li>
+      </ol>
+    </li>
+    <li><a href="#hive-preparation">Hive Preparation</a></li>
+    <li><a href="#config-mysql">Config Mysql</a>
+      <ol>
+        <li><a href="#install-mysql-client">install mysql client</a></li>
+        <li><a href="#operate-database">operate database</a></li>
+      </ol>
+    </li>
+    <li><a href="#config-hive">Config Hive</a>
+      <ol>
+        <li><a href="#uncompose-hivetgz-file">uncompose hive.tgz file</a></li>
+        <li><a href="#remove-conflicting-jar-files-if-needed">remove conflicting jar files <strong>if needed</strong></a></li>
+        <li><a href="#copy-and-paste-higher-version">copy and paste higher version</a></li>
+        <li><a href="#in-hiveconf">in ~~/hive/conf</a></li>
+      </ol>
+    </li>
+    <li><a href="#initialize-and-start">Initialize and start</a></li>
+    <li><a href="#remote-connection">Remote Connection</a></li>
+    <li><a href="#hbase-preparation">Hbase Preparation</a></li>
+    <li><a href="#zookeeper-config">Zookeeper Config</a></li>
+    <li><a href="#hbase-config">HBase Config</a>
+      <ol>
+        <li><a href="#hbase-sitexml">hbase-site.xml</a></li>
+        <li><a href="#hbase-envsh">hbase-env.sh</a></li>
+        <li><a href="#regionservers">regionservers</a></li>
+      </ol>
+    </li>
+    <li><a href="#start-hbase">Start HBase</a></li>
+    <li><a href="#deploy">Deploy</a></li>
+    <li><a href="#reference-1">Reference</a></li>
+    <li><a href="#spark-preparation">spark preparation</a></li>
+    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#test">Test</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/bigdata/" >
+                BigData
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/hadoop/">hadoop</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            conda and pip config
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 27, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="hadoop-cluster">Hadoop Cluster
+</h2><p>RockyLinux9.3 &amp;&amp; Docker &amp;&amp; JDK8 &amp;&amp; Hadoop3.2.4 (jdk21 is NOT compatible with hadoop3.4.0)</p>
+<h2 id="basic-operations-if-needed">Basic Operations If Needed
+</h2><h3 id="mapping">mapping
+</h3><ul>
+<li>vim /etc/hosts</li>
+</ul>
+<p>append &raquo; &ldquo;192.168.2.4 hostname&rdquo;</p>
+<h3 id="close-the-firewall">close the firewall
+</h3><ul>
+<li>systemctl stop firewalld</li>
+<li>systemctl disable firewalld</li>
+</ul>
+<h3 id="handle-jdk--and-hadoop-env-variable">handle JDK  and hadoop env variable
+</h3><p>in /etc/profile or ~/.bashrc:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">export JAVA_HOME=/root/Downloads/jdk1.8.0_181<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export PATH=$PATH:$JAVA_HOME/bin<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export HADOOP_HOME=/root/Downloads/hadoop-3.2.4<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker-image-with-hadoop-installed">Docker Image with hadoop installed
+</h2><h3 id="pathhadoop-324etchadoop">/path/hadoop-3.2.4/etc/hadoop
+</h3><h4 id="hadoop-envsh">hadoop-env.sh
+</h4><ul>
+<li>export JAVA_HOME=/root/Downloads/jdk1.8.0_181</li>
+</ul>
+<h4 id="core-sitexml">core-site.xml
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl"><span class="nt">&lt;configuration&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;value&gt;file:/usr/local/hadoop/tmp&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;description&gt;Abase for other temporary directories.&lt;/description&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;name&gt;fs.defaultFS&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;value&gt;hdfs://master:9000&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nt">&lt;/configuration&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="hdfs-sitexml">hdfs-site.xml
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl"><span class="nt">&lt;configuration&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;value&gt;file:/usr/local/hadoop/namenode_dir&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;value&gt;file:/usr/local/hadoop/datanode_dir&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;name&gt;dfs.replication&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;value&gt;2&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nt">&lt;/configuration&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="mapred-sitexml">mapred-site.xml
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">  &lt;configuration&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        &lt;value&gt;yarn&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/configuration&gt;<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="yarn-sitexml">yarn-site.xml
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl"> &lt;configuration&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;!-- Site specific YARN configuration properties --&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;value&gt;mapreduce_shuffle&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>          &lt;value&gt;master&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/configuration&gt;<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="pathhadoop-324sbin-if--root-needed">/path/hadoop-3.2.4/sbin if  root needed
+</h3><h4 id="start-allsh--stop-allsh-must-be-in-the-front-the-file">start-all.sh &amp;&amp; stop-all.sh (must be in the front the file)
+</h4><ul>
+<li>export HDFS_NAMENODE_USER=root</li>
+<li>export HDFS_DATANODE_USER=root</li>
+<li>export HDFS_SECONDARYNAMENODE_USER=root</li>
+<li>export YARN_RESOURCEMANAGER_USER=root</li>
+<li>export YARN_NODEMANAGER_USER=root</li>
+</ul>
+<h3 id="ssh-config-if-needed">ssh config if needed
+</h3><p>create public/private keys</p>
+<ul>
+<li>ssh-keygen -t rsa</li>
+</ul>
+<p>create authorized_keys and change mod</p>
+<ul>
+<li>cd ~/.ssh</li>
+<li>touch authorized_keys</li>
+<li>chmod 600 authorized_keys</li>
+</ul>
+<p>add public key into authorized_keys</p>
+<ul>
+<li>cat id_rsa.pub &raquo; authorized_keys</li>
+</ul>
+<h3 id="create-image">create image
+</h3><ul>
+<li>docker commit [container_id/name] [image_name]</li>
+</ul>
+<h2 id="config-master-and-slaves">Config master and slaves
+</h2><h3 id="create-containers">create containers:
+</h3><ul>
+<li>
+<p>docker run -it [-v ~/hadoopMapping/hosts:/etc/hosts] -h master &ndash;name master ubuntu/hadoopinstalled</p>
+</li>
+<li>
+<p>docker run -it [-v ~/hadoopMapping/hosts:/etc/hosts] -h slave01 &ndash;name slave01 ubuntu/hadoopinstalled</p>
+</li>
+<li>
+<p>docker run -it [-v ~/hadoopMapping/hosts:/etc/hosts] -h slave02 &ndash;name slave02 ubuntu/hadoopinstalled</p>
+</li>
+</ul>
+<p>If needed(hostname &lt;==&gt; ip address), [-v path/hosts:/etc/hosts] <strong>or</strong> create new docker network.</p>
+<h3 id="add-slave-computer">add slave computer
+</h3><p>vim /path/hadoop/etc/hadoop/workers,</p>
+<p>replace localhost with the hostnames of two slaves.</p>
+<h2 id="format-and-start-hadoop">Format and Start Hadoop
+</h2><h3 id="format">format
+</h3><ul>
+<li>hadoop namenode -format</li>
+</ul>
+<h3 id="start--stop-hadoop">start &amp;&amp; stop hadoop
+</h3><ul>
+<li>start-all.sh</li>
+<li>stop-all.sh</li>
+</ul>
+<h3 id="use-hadoop">use hadoop
+</h3><p>look through the hadoop process</p>
+<ul>
+<li>jps</li>
+</ul>
+<p>look through port service</p>
+<ul>
+<li>netstat -tpnl | grep java</li>
+</ul>
+<p>test:</p>
+<p>brower &raquo; http://ip:8088</p>
+<p>terminal &raquo; curl http://ip:8088/cluster</p>
+<h2 id="reference">Reference
+</h2><p><a class="link" href="https://dblab.xmu.edu.cn/blog/1233/"  target="_blank" rel="noopener"
+    >blog</a></p>
+<h2 id="basic-operation">Basic Operation
+</h2><h3 id="read-folder-and-file-information">read folder and file information
+</h3><ul>
+<li>hdfs dfs -ls [-R] [-h] /
+<ul>
+<li>recursive</li>
+<li>human-readable</li>
+</ul>
+</li>
+</ul>
+<h3 id="createremove--filefolder">create/remove  file/folder
+</h3><ul>
+<li>hdfs dfs -mkdir -p /user/root</li>
+<li>hdfs dfs -touchz /path/to/hdfs/emptyfile</li>
+<li>hdfs dfs -rm [-rf] /path/to/hdfs/directory_or_file</li>
+</ul>
+<h3 id="judge-existence-and-look-through">judge existence and look through
+</h3><ul>
+<li>hdfs dfs  -test -e /user/root/demo.txt</li>
+<li>echo $?</li>
+<li>hdfs dfs -cat /user/root/demo.txt</li>
+</ul>
+<h3 id="upload--download--append-file">upload &amp;&amp; download &amp;&amp; append file
+</h3><ul>
+<li>hdfs dfs -put [-f] demo.txt /user/root</li>
+<li>hdfs dfs -get demo.txt /root/</li>
+<li>hdfs dfs -appendToFile /root/demo.txt /user/root/demo.txt</li>
+<li>hdfs dfs -copyFromLocal [-f] /root/demo.txt /user/root/demo.txt</li>
+</ul>
+<h3 id="move-or-rename-file">move or rename file
+</h3><ul>
+<li>hdfs dfs -mv test.txt dir/test.txt</li>
+</ul>
+<h2 id="hive-preparation">Hive Preparation
+</h2><ol>
+<li>hadoop3.2.4 has already been installed successfully</li>
+<li>downloaded hive 3.1.2 and mysql jdbc</li>
+<li>pull mysql image and run it</li>
+</ol>
+<ul>
+<li>docker run -p 3306:3306 &ndash;name mysql -v <del>/data:</del>/data
+-e MYSQL_ROOT_PASSWORD=123123 &ndash;privileged=true [images_name]</li>
+</ul>
+<h2 id="config-mysql">Config Mysql
+</h2><h3 id="install-mysql-client">install mysql client
+</h3><ul>
+<li>apt-get update</li>
+<li>apt-cache policy mysql-client</li>
+<li>apt-get install mysql-client=8.0.?-?ubuntu?</li>
+<li>mysql -h ?ip -P 3306 -u myuser -p</li>
+</ul>
+<h3 id="operate-database">operate database
+</h3><ul>
+<li>mysql&gt; create database hive;</li>
+<li>mysql&gt; flush privileges;</li>
+</ul>
+<h2 id="config-hive">Config Hive
+</h2><h3 id="uncompose-hivetgz-file">uncompose hive.tgz file
+</h3><p>mv mysql-connector-java-8.0.28.tar ~~/hive/lib</p>
+<h3 id="remove-conflicting-jar-files-if-needed">remove conflicting jar files <strong>if needed</strong>
+</h3><p>delete ~~/hive/lib/log4j-slf4j-*-2.10.0.jar</p>
+<h3 id="copy-and-paste-higher-version">copy and paste higher version
+</h3><p>~~/hadoop/share/hadoop/common/lib/guava*.jar</p>
+<p>~~/hive/lib/guava*.jar</p>
+<h3 id="in-hiveconf">in ~~/hive/conf
+</h3><ul>
+<li>mv hive-default.xml.template hive-default.xml</li>
+<li>vim hive-site.xml</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;
+</span></span><span class="line"><span class="cl">&lt;?xml-stylesheet type=&#34;text/xsl&#34; href=&#34;configuration.xsl&#34;?&gt;
+</span></span><span class="line"><span class="cl">&lt;configuration&gt;
+</span></span><span class="line"><span class="cl">  &lt;property&gt;
+</span></span><span class="line"><span class="cl">    &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;
+</span></span><span class="line"><span class="cl">    &lt;value&gt;jdbc:mysql://??????????:3306/hive(db_name created)?createDatabaseIfNotExist=true&lt;/value&gt;
+</span></span><span class="line"><span class="cl">    &lt;description&gt;JDBC connect string for a JDBC metastore&lt;/description&gt;
+</span></span><span class="line"><span class="cl">  &lt;/property&gt;
+</span></span><span class="line"><span class="cl">  &lt;property&gt;
+</span></span><span class="line"><span class="cl">    &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;
+</span></span><span class="line"><span class="cl">    &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
+</span></span><span class="line"><span class="cl">    &lt;description&gt;Driver class name for a JDBC metastore&lt;/description&gt;
+</span></span><span class="line"><span class="cl">  &lt;/property&gt;
+</span></span><span class="line"><span class="cl">  &lt;property&gt;
+</span></span><span class="line"><span class="cl">    &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;
+</span></span><span class="line"><span class="cl">    &lt;value&gt;root&lt;/value&gt;
+</span></span><span class="line"><span class="cl">    &lt;description&gt;!!!username to use against metastore database&lt;/description&gt;
+</span></span><span class="line"><span class="cl">  &lt;/property&gt;
+</span></span><span class="line"><span class="cl">  &lt;property&gt;
+</span></span><span class="line"><span class="cl">    &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;
+</span></span><span class="line"><span class="cl">    &lt;value&gt;123123&lt;/value&gt;
+</span></span><span class="line"><span class="cl">    &lt;description&gt;!!!password to use against metastore database&lt;/description&gt;
+</span></span><span class="line"><span class="cl">  &lt;/property&gt;
+</span></span><span class="line"><span class="cl">  &lt;property&gt;
+</span></span><span class="line"><span class="cl">    &lt;name&gt;hive.server2.active.passive.ha.enable&lt;/name&gt;
+</span></span><span class="line"><span class="cl">    &lt;value&gt;true&lt;/value&gt;
+</span></span><span class="line"><span class="cl">  &lt;/property&gt;
+</span></span><span class="line"><span class="cl">&lt;/configuration&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="initialize-and-start">Initialize and start
+</h2><ul>
+<li>
+<p>schematool -dbType mysql -initSchema -verbose</p>
+</li>
+<li>
+<p>hive</p>
+</li>
+<li>
+<p>show databases;</p>
+</li>
+</ul>
+<h2 id="remote-connection">Remote Connection
+</h2><p>vim ~~/hadoop/etc/hadoop/core-site.xml</p>
+<p>add:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl"><span class="nt">&lt;property&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hadoop.proxyuser.root.hosts&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;*<span class="nt">&lt;/value&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nt">&lt;/property&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nt">&lt;property&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hadoop.proxyuser.root.groups&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;*<span class="nt">&lt;/value&gt;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nt">&lt;/property&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>start server:</p>
+<ul>
+<li>hiveserver2</li>
+</ul>
+<h2 id="hbase-preparation">Hbase Preparation
+</h2><ol>
+<li>Hadoop has already been installed successfully.</li>
+<li>JDK8 &amp;&amp; hadoop3.2.4 &amp;&amp; hbase2.4.17 &amp;&amp; zookeeper3.7.2</li>
+</ol>
+<h2 id="zookeeper-config">Zookeeper Config
+</h2><ol>
+<li>Download and install zookeeper in <strong>/usr/local</strong>(recommended)</li>
+<li>Run command: <strong>mv zoo_sample.cfg zoo.cfg</strong> in zookeeper/conf</li>
+<li>Modify zoo.cfg</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">dataDir=/usr/local/zookeeper/data<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>dataLogDir=/usr/local/zookeeper/log<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>server.1=master:2888:3888<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>server.2=slave01:2888:3888<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>server.3=slave02:2888:3888<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>
+<p>Copy the current folder and paste it to the other hosts</p>
+</li>
+<li>
+<p>In the ~~/zookeeper/data of each computer, create a file named &lsquo;myid&rsquo; and write 1, 2, 3 in each respectively</p>
+</li>
+<li>
+<p>Start each PC respectively</p>
+</li>
+</ol>
+<ul>
+<li>/usr/local/zookeeper/bin/zkServer.sh start</li>
+</ul>
+<p>​Look through the status</p>
+<ul>
+<li>/usr/local/zookeeper/bin/zkServer.sh status</li>
+</ul>
+<h2 id="hbase-config">HBase Config
+</h2><h3 id="hbase-sitexml">hbase-site.xml
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.rootdir&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;hdfs://master:9000/hbase&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;true&lt;/value&gt; &lt;!--false--&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.master.port&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;16000&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  <span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.master.info.port&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;60010&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;master,slave01,slave02&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.zookeeper.property.clientPort&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;2181&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;/usr/local/zookeeper/data&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.tmp.dir&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;./tmp&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;name&gt;hbase.unsafe.stream.capability.enforce&lt;/name&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    &lt;value&gt;false&lt;/value&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  &lt;/property&gt;<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nt">&lt;/configuration&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="hbase-envsh">hbase-env.sh
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export HADOOP_HOME=/usr/local/hadoop<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export HBASE_HOME=/usr/local/hbase<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>export HBASE_MANAGES_ZK=false<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>and in the last,</p>
+<p>uncommit:</p>
+<ul>
+<li>export HBASE_DISABLE_HADOOP_CLASSPATH_LOOKUP=&ldquo;true&rdquo;</li>
+</ul>
+<h3 id="regionservers">regionservers
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">slave01<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>slave02<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Copy the hbase folder and paste it to the other hosts.</strong></p>
+<h2 id="start-hbase">Start HBase
+</h2><ol>
+<li>start zookeeper first</li>
+</ol>
+<p>Each computer needs to be started.</p>
+<ol start="2">
+<li>
+<p>start hdfs(hadoop) then</p>
+</li>
+<li>
+<p>start hbase</p>
+</li>
+</ol>
+<ul>
+<li>/usr/local/hbase/bin/start-hbase.sh</li>
+</ul>
+<h2 id="deploy">Deploy
+</h2><ul>
+<li>hbase thrift -p 9090 start</li>
+</ul>
+<p>python connection</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">import happybase<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>try:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    # Connect to HBase<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    connection = happybase.Connection(&#39;172.17.0.2&#39;, port=9090)<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    # Get the names of all tables<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    tables = connection.tables()<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    # Print the names of all tables<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    print(&#34;Names of all tables:&#34;)<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    for table_name in tables:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>        print(table_name.decode(&#39;utf-8&#39;))<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    # Close the connection<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    connection.close()<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>except Exception as e:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    print(f&#34;Error connecting to HBase: {e}&#34;)<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="reference-1">Reference
+</h2><p><a class="link" href="https://www.bilibili.com/video/BV1ym4y1w7u6/?spm_id_from=333.337.search-card.all.click&amp;vd_source=f367f43d00246a51bd639e9f1fcda3a9"  target="_blank" rel="noopener"
+    >Info</a></p>
+<h2 id="spark-preparation">spark preparation
+</h2><ol>
+<li>hadoop3.2.4</li>
+<li>spark3.4.3-bin-without-hadoop.tgz</li>
+</ol>
+<h2 id="procedure">Procedure
+</h2><p>vim ~~/spark/conf/workers</p>
+<p>vim ~~/spark/conf/spark-env.sh</p>
+<p>add &raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">SPARK_DIST_CLASSPATH</span><span class="o">=$</span><span class="p">(</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">hadoop</span><span class="o">-</span><span class="mf">3.2</span><span class="o">.</span><span class="mi">4</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">hadoop</span> <span class="n">classpath</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">HADOOP_CONF_DIR</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">hadoop</span><span class="o">-</span><span class="mf">3.2</span><span class="o">.</span><span class="mi">4</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hadoop</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">SPARK_MASTER_HOST</span><span class="o">=</span><span class="n">master</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">JAVA_HOME</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">java8</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="test">Test
+</h2><p>cluster &raquo; standalone</p>
+<ul>
+<li>spark-submit &ndash;master spark://master:7077 /usr/local/- spark/examples/src/main/python/pi.py 2&gt;&amp;1 | grep &ldquo;Pi is roughly&rdquo;</li>
+</ul>
+<p>cluster &raquo; yarn</p>
+<ul>
+<li>spark-submit &ndash;master yarn /usr/local/spark/examples/src/main/python/pi.py 2&gt;&amp;1 | grep &ldquo;Pi is roughly&rdquo;</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hadoop/">Hadoop</a>
+        
+            <a href="/tags/hive/">Hive</a>
+        
+            <a href="/tags/hbase/">Hbase</a>
+        
+            <a href="/tags/spark/">Spark</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Charles-Yifan_li
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

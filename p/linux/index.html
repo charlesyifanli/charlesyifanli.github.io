@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="conda and pip config">
+<title>linux</title>
+
+<link rel='canonical' href='https://charlesyifanli.github.io/p/linux/'>
+
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="linux">
+<meta property='og:description' content="conda and pip config">
+<meta property='og:url' content='https://charlesyifanli.github.io/p/linux/'>
+<meta property='og:site_name' content='Space of Yifan'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='linux' /><meta property='article:tag' content='centos' /><meta property='article:tag' content='ubuntu' /><meta property='article:published_time' content='2024-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-08T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="linux">
+<meta name="twitter:description" content="conda and pip config">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_f509edb42ecc0ebd.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Space of Yifan</a></h1>
+            <h2 class="site-description">Space of Yifan</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/charlesyifanli'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#set-terminal-shortcuts">Set terminal shortcuts</a></li>
+    <li><a href="#set--vim">Set  Vim</a>
+      <ol>
+        <li><a href="#set-row-number">Set row number</a></li>
+        <li><a href="#enter-insert-mode">Enter Insert Mode:</a></li>
+        <li><a href="#exit-insert-mode">Exit Insert Mode:</a></li>
+        <li><a href="#save-file">Save File:</a></li>
+        <li><a href="#quit-without-saving">Quit Without Saving:</a></li>
+        <li><a href="#move-cursor">Move Cursor:</a></li>
+        <li><a href="#copy-cut-and-paste">Copy, Cut, and Paste:</a></li>
+        <li><a href="#undo-and-redo">Undo and Redo:</a></li>
+        <li><a href="#search-and-replace">Search and Replace:</a></li>
+      </ol>
+    </li>
+    <li><a href="#block-device-usb">Block device (USB)</a>
+      <ol>
+        <li><a href="#command-line">Command line:</a></li>
+        <li><a href="#explanation">Explanation</a></li>
+      </ol>
+    </li>
+    <li><a href="#package-manager-fedora">Package manager (fedora)</a>
+      <ol>
+        <li><a href="#suggested-downloading-and-installing-approach">suggested downloading and installing approach</a></li>
+        <li><a href="#rpm-command">rpm command</a></li>
+        <li><a href="#rpm">rpm</a></li>
+        <li><a href="#yum">yum</a></li>
+        <li><a href="#dnf">dnf</a></li>
+        <li><a href="#comparation">comparation</a>
+          <ol>
+            <li><a href="#rpm--yum">rpm &amp; yum</a></li>
+            <li><a href="#rpm--wget">rpm &amp; wget</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#environment-variables">Environment variables</a>
+      <ol>
+        <li><a href="#recommended-for-instance">recommended (for instance):</a></li>
+        <li><a href="#bashrc---etcprofile">~/.bashrc  &amp;&amp; /etc/profile</a></li>
+      </ol>
+    </li>
+    <li><a href="#copy-paste">Copy-paste</a></li>
+    <li><a href="#compress--decompress">Compress &amp; decompress</a>
+      <ol>
+        <li><a href="#basic-infos">basic infos</a></li>
+        <li><a href="#compress">compress</a>
+          <ol>
+            <li><a href="#using-tar-and-gzip">Using tar and gzip:</a></li>
+            <li><a href="#using-zip">Using zip:</a></li>
+          </ol>
+        </li>
+        <li><a href="#decompress">decompress</a>
+          <ol>
+            <li><a href="#using-tar-and-gzip-1">Using tar and gzip:</a></li>
+            <li><a href="#using-unzip">Using unzip:</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#unbind-process-from-terminal">Unbind process from terminal</a>
+      <ol>
+        <li><a href="#hang-up">hang up</a></li>
+        <li><a href="#no-hang-up">no hang up</a>
+          <ol>
+            <li><a href="#however">however,</a></li>
+            <li><a href="#select-output-path">select output path</a></li>
+            <li><a href="#discard-the-nohupout-file">discard the <code>nohup.out</code> file</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#process-status">process status</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#view-real-time-system-process-information">View real-time system process information</a></li>
+            <li><a href="#display-the-processes">Display the processes:</a></li>
+            <li><a href="#close-process">Close process</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#remote-connections">Remote connections</a>
+      <ol>
+        <li><a href="#fedora">fedora</a></li>
+        <li><a href="#ubuntu">ubuntu</a></li>
+      </ol>
+    </li>
+    <li><a href="#file-permissions">File permissions</a>
+      <ol>
+        <li><a href="#command">command</a></li>
+        <li><a href="#info">info</a></li>
+      </ol>
+    </li>
+    <li><a href="#nvidia-driver-and-cuda-config-in-ubuntu">Nvidia Driver and Cuda Config in ubuntu</a>
+      <ol>
+        <li><a href="#method01recommended">method01（recommended）</a>
+          <ol>
+            <li><a href="#look-through-suitable-version">look through suitable version</a></li>
+            <li><a href="#click--software-update--additional-drivers">click:  software update &raquo; additional drivers</a></li>
+          </ol>
+        </li>
+        <li><a href="#method02">method02</a>
+          <ol>
+            <li><a href="#what-kind-of-gpu">what kind of gpu</a></li>
+            <li><a href="#driver">driver</a></li>
+          </ol>
+        </li>
+        <li><a href="#cuda">cuda</a></li>
+      </ol>
+    </li>
+    <li><a href="#ubuntu-installation-with-intel-rst-closed-during-double-systems">Ubuntu Installation with Intel RST closed during double systems</a>
+      <ol>
+        <li><a href="#enter-windows-system">enter windows system</a></li>
+        <li><a href="#enter-bios">enter bios</a></li>
+        <li><a href="#enter-windows-system-safe-mode">enter windows system safe mode</a></li>
+        <li><a href="#install-ubuntu-normally">install ubuntu normally</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/operatingsystem/" >
+                OperatingSystem
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux/">linux</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            conda and pip config
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 08, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    10 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="set-terminal-shortcuts">Set terminal shortcuts
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">click on &#34;settings&#34;<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">click on &#34;Customize Shortscuts&#34; in Keyboard Shortcuts<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">click on &#34;Custom Shortcuts&#34;<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">name: terminal<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>Command: /usr/bin/gnome-terminal<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>Shortcut: Ctrl + Alt + L<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="set--vim">Set  Vim
+</h2><p>create ~/.vimrc</p>
+<ul>
+<li>set nu</li>
+<li>. ~/.vimrc</li>
+</ul>
+<h3 id="set-row-number">Set row number
+</h3><ul>
+<li><code>:set nu</code></li>
+<li><code>:set number</code></li>
+</ul>
+<h3 id="enter-insert-mode">Enter Insert Mode:
+</h3><ul>
+<li><code>i</code>: Insert text before the cursor.</li>
+<li><code>a</code>: Insert text after the cursor.</li>
+<li><code>o</code>: Open a new line below the current line and switch to insert mode.</li>
+<li><code>I</code>: Insert text before the cursor on the current line.</li>
+<li><code>A</code>: Append text after the cursor on the current line.</li>
+<li><code>O</code>: Open a new line above the current line and switch to insert mode.</li>
+</ul>
+<h3 id="exit-insert-mode">Exit Insert Mode:
+</h3><ul>
+<li><code>Esc</code>: Exit the current insert mode.</li>
+</ul>
+<h3 id="save-file">Save File:
+</h3><ul>
+<li><code>:w</code>: Save the file without exiting Vim.</li>
+<li><code>:wq</code> or <code>:x</code>: Save the file and quit Vim.</li>
+</ul>
+<h3 id="quit-without-saving">Quit Without Saving:
+</h3><ul>
+<li><code>:q!</code>: Quit without saving changes.</li>
+</ul>
+<h3 id="move-cursor">Move Cursor:
+</h3><ul>
+<li><code>h</code>: Move left one character.</li>
+<li><code>j</code>: Move down one line.</li>
+<li><code>k</code>: Move up one line.</li>
+<li><code>l</code>: Move right one character.</li>
+<li><code>gg</code>: Go to the beginning of the file.</li>
+<li><code>G</code>: Go to the end of the file.</li>
+</ul>
+<h3 id="copy-cut-and-paste">Copy, Cut, and Paste:
+</h3><ul>
+<li><code>yy</code>: Copy the current line.</li>
+<li><code>dd</code>: Cut the current line.</li>
+<li><code>p</code>: Paste the contents of the clipboard after the current position.</li>
+</ul>
+<h3 id="undo-and-redo">Undo and Redo:
+</h3><ul>
+<li><code>u</code>: Undo the last operation.</li>
+<li><code>Ctrl + r</code>: Redo the last undone operation.</li>
+</ul>
+<h3 id="search-and-replace">Search and Replace:
+</h3><ul>
+<li><code>/keyword</code>: Search for the specified keyword.</li>
+<li><code>:%s/old/new/g</code>: Replace all occurrences of <code>old</code> with <code>new</code> throughout the file.</li>
+</ul>
+<p><em><strong>It is recommended to use <code>vim</code> to edit something and use <code>less</code> to look through the text.</strong></em></p>
+<h2 id="block-device-usb">Block device (USB)
+</h2><h3 id="command-line">Command line:
+</h3><ul>
+<li>lsblk</li>
+<li>mount /dev/sdb1 ./usb/</li>
+<li>umount ./usb</li>
+</ul>
+<p>If user-oriented, run fowllowing commands in order:</p>
+<ul>
+<li>mount /dev/sdb1 -o uid=? gid=? /dev/sdb1 ./usb/</li>
+<li>umount ./usb</li>
+</ul>
+<h3 id="explanation">Explanation
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">sda:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>The naming convention for storage devices in Linux, such as hard drives, solid-state drives, and USB drives, uses &#34;sda&#34; and &#34;sdb&#34;. This convention consists of the following parts:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>&#34;sd&#34;: Represents SCSI devices. Although called SCSI devices, they are not necessarily true SCSI devices but rather follow a naming convention.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>&#34;a&#34;, &#34;b&#34;, etc.: Represents the device&#39;s identifier, starting from &#34;a&#34; and incrementing.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>Therefore, &#34;sda&#34; represents the first SCSI device in the system, typically the primary hard drive, while &#34;sdb&#34; represents the second SCSI device, typically another hard drive or external device like a USB drive. Following this pattern, &#34;sdc&#34;, &#34;sdd&#34;, and so on represent the third, fourth, and subsequent SCSI devices in the system, respectively.<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">sr0:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>In the Linux system, &#34;sr0&#34; is a naming convention used to represent optical disc drives. It typically denotes the first optical disc drive in the system, where:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>
+</span></span><span class="line"><span class="cl"><span class="m">-</span> &#34;sr&#34;: Represents SCSI CD-ROM devices. Despite being referred to as SCSI devices, they may not necessarily be true SCSI devices but rather follow a naming convention.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="m">-</span> &#34;0&#34;: Represents the device&#39;s identifier, starting from 0.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>Therefore, &#34;sr0&#34; signifies the first CD-ROM or DVD-ROM drive in the system.<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">nvme0n1p1:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>nvme0n1 is a naming convention used in the Linux system to represent NVMe (Non-Volatile Memory Express) devices. NVMe is an interface and protocol designed for connecting high-performance solid-state drives (SSDs). nvme0n1 denotes the first NVMe device in the system, where:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>
+</span></span><span class="line"><span class="cl"><span class="m">-</span> nvme: Represents NVMe devices.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="m">-</span> 0: Represents the device&#39;s identifier, starting from 0.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="m">-</span> n1: Represents the first namespace (or partition) within the device.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="m">-</span> p1: Represents the first partition within the device.<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>Therefore, nvme0n1p1 represents the first partition of the first NVMe device in the system (typically an NVMe SSD). If there are multiple NVMe devices in the system, they might be named nvme0n1, nvme1n1, nvme2n1, and so on, following a similar pattern. If the devices have multiple partitions, they might be named nvme0n1p2, nvme0n1p3, and so forth.<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="package-manager-fedora">Package manager (fedora)
+</h2><h3 id="suggested-downloading-and-installing-approach">suggested downloading and installing approach
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">dnf config-manager --add-repo URL+[name].repo<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>dnf install [name]<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>[systemctl enable --now [name]]<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Or</strong></p>
+<ol>
+<li>Use <code>wget</code> to download the <code>.rpm</code> file to the system (or by browser or <strong>USB drive</strong>):</li>
+</ol>
+<ul>
+<li>wget [-O /path/to/destination/package.rpm] <a class="link" href="https://example.com/package.rpm"  target="_blank" rel="noopener"
+    >https://example.com/package.rpm</a></li>
+</ul>
+<ol start="2">
+<li>Use the <code>dnf</code> command to install the <code>.rpm</code> file:</li>
+</ol>
+<ul>
+<li>dnf install package.rpm</li>
+</ul>
+<p><code>dnf</code> will handle dependency resolution during the installation process and retrieve any necessary dependencies from configured software sources. Therefore, this is a convenient method to install <code>.rpm</code> files and their dependencies.</p>
+<h3 id="rpm-command">rpm command
+</h3><ul>
+<li>rpm -qa | grep name</li>
+</ul>
+<h3 id="rpm">rpm
+</h3><p><code>rpm</code> (Red Hat Package Manager) is a low-level tool used to install, upgrade, and remove software packages on RPM-based Linux systems. RPM <strong>operates directly on local .rpm files but does not involve package downloading or dependency resolution</strong>. It is primarily used for direct management of local software packages, <strong>requiring manual resolution of package dependencies</strong>.</p>
+<h3 id="yum">yum
+</h3><p><code>yum</code> (Yellowdog Updater Modified) is an advanced package management tool built on top of rpm. It is an <strong>automated package manager</strong> capable of handling package downloads, <strong>dependency resolution</strong>, installation, updates, and removal. yum utilizes pre-configured software repositories to obtain packages and can <strong>automatically resolve dependencies between packages</strong>, making package management more convenient and efficient.</p>
+<h3 id="dnf">dnf
+</h3><p><code>dnf</code> (Dandified Yum) is <strong>the successor to yum</strong>, designed to be <strong>a replacement for yum</strong>. dnf uses different dependency resolution algorithms and has made improvements in performance, stability, and functionality compared to yum. It provides faster package management capabilities and is easier to use.</p>
+<h3 id="comparation">comparation
+</h3><h4 id="rpm--yum">rpm &amp; yum
+</h4><p>Compared to rpm, <strong>yum has an additional feature of automatically resolving dependencies</strong>. The method yum uses to resolve dependencies is by automatically downloading them.</p>
+<h4 id="rpm--wget">rpm &amp; wget
+</h4><ul>
+<li><code>Wget</code> is a command-line utility used to retrieve files from web servers using HTTP, HTTPS, FTP, and FTPS protocols.</li>
+<li>It is commonly used to download files, including software packages, from the internet to a local system.</li>
+</ul>
+<h2 id="environment-variables">Environment variables
+</h2><h3 id="recommended-for-instance">recommended (for instance):
+</h3><p>vim /etc/profile</p>
+<p>append &raquo; {</p>
+<p>export JAVA_HOME=/root/Downloads/jdk1.8.0_181
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</p>
+<p>export HADOOP_HOME=/root/Downloads/hadoop-3.2.4
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin</p>
+<p>}</p>
+<h3 id="bashrc---etcprofile">~/.bashrc  &amp;&amp; /etc/profile
+</h3><ul>
+<li>touch ~/.bash_profile</li>
+<li>load ~/.bash_profile into ~/.bashrc</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">`.bashrc` is a user-level configuration file that only affects the Bash environment of the current user. `/etc/profile` is a system-level configuration file that affects the Bash environment for all users.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">`.bashrc` is executed when a user starts an interactive Bash shell, whereas `/etc/profile` is executed when a user logs in.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Users can customize their settings in `.bashrc`, while configurations in `/etc/profile` are typically managed by system administrators for consistency across all users.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="copy-paste">Copy-paste
+</h2><ul>
+<li>cp source_file(folder)  destination_folder  [-r]</li>
+<li>mv source_file(folder) destination_folder</li>
+<li>mv demo.txt test.txt //rename the file</li>
+<li>rm file(folder)_name [-r -f -v -i]</li>
+</ul>
+<h2 id="compress--decompress">Compress &amp; decompress
+</h2><h3 id="basic-infos">basic infos
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.tar VS .tar.gz VS .tgz &gt;&gt; 
+</span></span><span class="line"><span class="cl">&#34;.tar&#34;: This is the most basic archive file format, which bundles multiple files or directories into a single file without compression. Therefore, .tar files are commonly referred to as tarballs or tar archives.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&#34;.tar.gz&#34;: This is a file format compressed using the gzip compression algorithm on top of the .tar format. It bundles multiple files or directories into a .tar file, which is then compressed using gzip to create a .tar.gz file.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Hence, .tar.gz and .tgz are the same format, with different file extensions, both representing a file that has been bundled with tar and compressed with gzip.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="compress">compress
+</h3><h4 id="using-tar-and-gzip">Using tar and gzip:
+</h4><ul>
+<li>tar -czvf ./archive.tar.gz /path/to/directory_or_file
+<ul>
+<li><code>-c</code>: Create a compressed file.</li>
+<li><code>-z</code>: Use gzip compression.</li>
+<li><code>-v</code>: Display detailed output.</li>
+<li><code>-f</code>: Specify the name of the compressed file.</li>
+<li><code>archive.tar.gz</code>: The name of the compressed file.</li>
+<li><code>/path/to/directory_or_file</code>: The directory or file to be compressed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="using-zip">Using zip:
+</h4><ul>
+<li>zip -r ./archive.zip /path/to/directory_or_file
+<ul>
+<li><code>-r</code>: Recursively compress directories and their contents.</li>
+<li><code>archive.zip</code>: The name of the compressed file.</li>
+<li><code>/path/to/directory_or_file</code>: The directory or file to be compressed.</li>
+</ul>
+</li>
+</ul>
+<h3 id="decompress">decompress
+</h3><h4 id="using-tar-and-gzip-1">Using tar and gzip:
+</h4><ul>
+<li>tar -xzvf ./archive.tar.gz [-C /output]
+<ul>
+<li><code>-x</code>: Extract files.</li>
+<li><code>-z</code>: Use gzip decompression.</li>
+<li><code>-v</code>: Display detailed output.</li>
+<li><code>-f</code>: Specify the file to be decompressed.</li>
+<li><code>archive.tar.gz</code>: The name of the file to be decompressed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="using-unzip">Using unzip:
+</h4><ul>
+<li>unzip ./archive.zip [-d /output]
+<ul>
+<li><code>archive.zip</code>: The name of the file to be decompressed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="unbind-process-from-terminal">Unbind process from terminal
+</h2><h3 id="hang-up">hang up
+</h3><p>This method puts the command in the background, but if the terminal is closed, the command may receive the SIGHUP signal and be terminated.</p>
+<ul>
+<li>[your command] &amp;</li>
+</ul>
+<h3 id="no-hang-up">no hang up
+</h3><p>Using the <code>nohup</code> command redirects the output of the command to the file <code>nohup.out</code>, so even if the terminal is closed, the execution of the command will not be terminated.</p>
+<ul>
+<li>nohup [your command] &amp;</li>
+</ul>
+<h4 id="however">however,
+</h4><p>When using the <code>nohup</code> command to run a process in the background, the <code>nohup.out</code> file is created by default in the current working directory. It is used to store the standard output and standard error messages of the process started by the <code>nohup</code> command.</p>
+<h4 id="select-output-path">select output path
+</h4><ul>
+<li>nohup [your command] &gt; /path &amp;</li>
+</ul>
+<h4 id="discard-the-nohupout-file">discard the <code>nohup.out</code> file
+</h4><ul>
+<li>nohup [your command] &gt; /dev/null &amp;</li>
+</ul>
+<h2 id="process-status">process status
+</h2><h4 id="view-real-time-system-process-information">View real-time system process information
+</h4><ul>
+<li>top</li>
+</ul>
+<h4 id="display-the-processes">Display the processes:
+</h4><p>only current user
+all users
+detailed process information
+a tree-like process list
+<em><strong>a specific process</strong></em></p>
+<ul>
+<li>ps</li>
+<li>ps -e</li>
+<li>ps aux (ps aux | grep &lt;process_name&gt;)</li>
+<li>ps auxf</li>
+<li>ps -e | grep process_name</li>
+</ul>
+<h4 id="close-process">Close process
+</h4><ul>
+<li>kill pid</li>
+</ul>
+<h2 id="remote-connections">Remote connections
+</h2><h3 id="fedora">fedora
+</h3><p>If you want to allow the root user to log in via SSH using a password, you can modify the <code>PermitRootLogin</code> parameter in the <code>/etc/ssh/sshd_config</code> file. Set it to <code>yes</code> to allow the root user to log in via SSH using a password.</p>
+<p>Follow these steps to make the changes:</p>
+<ol>
+<li>
+<p>Open a terminal and log in to your server as the root user.</p>
+</li>
+<li>
+<p>Use a text editor such as nano, vim, etc., to open the <code>/etc/ssh/sshd_config</code> file.</p>
+</li>
+<li>
+<p>Find the <code>PermitRootLogin</code> line and modify it to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">PermitRootLogin yes<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>if no sshd_config, install oepnssh-server first</p>
+</li>
+<li>
+<p>Save the file and exit the editor.</p>
+</li>
+<li>
+<p>Reload the SSH service to apply the changes. You can do this by running the following command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl reload sshd
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="ubuntu">ubuntu
+</h3><p>update password</p>
+<ul>
+<li>sudo passwd root</li>
+</ul>
+<p>modify pam.d/</p>
+<ul>
+<li>cd /etc/pam.d</li>
+<li>sudo gedit gdm-autologin</li>
+<li>sudo gedit gdm-passwd</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">make:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>#auth required pam_succeed_if.so user != root quiet_success<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>modify ~/.profile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-reStructuredText" data-lang="reStructuredText"><span class="line"><span class="cl">make:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>#mesg n 2&gt; /dev/null || true<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>tty -s &amp;&amp; mesg n || true<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>then</p>
+<ul>
+<li>reboot</li>
+</ul>
+<h2 id="file-permissions">File permissions
+</h2><h3 id="command">command
+</h3><p>Each permission is represented by a number, ranging from 0 to 7, which represents the combination of read (4), write (2), and execute (1) permissions.</p>
+<ul>
+<li>chmod 755 file.txt</li>
+</ul>
+<h3 id="info">info
+</h3><ol>
+<li>
+<p><strong>Owner Permissions</strong>: Permissions held by the creator of the file or directory, controlling ownership and permission settings for the file.</p>
+</li>
+<li>
+<p><strong>Group Permissions</strong>: Specifies the permissions for the user group to which the file belongs. Besides the owner, a group of users is granted the same set of permissions.</p>
+</li>
+<li>
+<p><strong>Others Permissions</strong>: Specifies permissions for all other users.</p>
+</li>
+</ol>
+<p>These permissions are often represented by a string of characters, such as <code>rwxr-xr-x</code>, where:</p>
+<ul>
+<li>The first character represents the file type (<code>-</code> indicates a regular file, <code>d</code> indicates a directory, and so on).</li>
+</ul>
+<h2 id="nvidia-driver-and-cuda-config-in-ubuntu">Nvidia Driver and Cuda Config in ubuntu
+</h2><h3 id="method01recommended">method01（recommended）
+</h3><h4 id="look-through-suitable-version">look through suitable version
+</h4><ul>
+<li>sudo ubuntu-drivers devices</li>
+</ul>
+<p>search for what like &ldquo;&hellip;&hellip;..non free recommended&rdquo;</p>
+<h4 id="click--software-update--additional-drivers">click:  software update &raquo; additional drivers
+</h4><p>select recommended driver</p>
+<h3 id="method02">method02
+</h3><h4 id="what-kind-of-gpu">what kind of gpu
+</h4><ul>
+<li>lspci | grep -i vga</li>
+</ul>
+<h4 id="driver">driver
+</h4><ul>
+<li>[ sudo apt remove &ndash;purge &lsquo;^nvidia-.*&rsquo; ]</li>
+<li>[ sudo apt remove &ndash;purge &lsquo;^libnvidia-.*&rsquo; ]</li>
+<li>[ dpkg -l | grep nvidia ]</li>
+<li>sudo apt install nvidia-driver-550</li>
+<li>sudo apt install nvidia-utils-550</li>
+<li>nvidia-smi</li>
+</ul>
+<h3 id="cuda">cuda
+</h3><ul>
+<li>sudo apt install nvidia-cuda-toolkit</li>
+</ul>
+<p><a class="link" href="https://www.cnblogs.com/klchang/p/14353384.html"  target="_blank" rel="noopener"
+    >reference</a></p>
+<h2 id="ubuntu-installation-with-intel-rst-closed-during-double-systems">Ubuntu Installation with Intel RST closed during double systems
+</h2><h3 id="enter-windows-system">enter windows system
+</h3><ul>
+<li>win + R</li>
+<li>input &raquo; msconfig</li>
+<li>select Boot, click &ldquo;Safe boot&rdquo; in Boot options</li>
+<li>restart</li>
+</ul>
+<h3 id="enter-bios">enter bios
+</h3><p>change &ldquo;SATA&rdquo; mode to AHCI</p>
+<h3 id="enter-windows-system-safe-mode">enter windows system safe mode
+</h3><ul>
+<li>win + R</li>
+<li>input &raquo; msconfig</li>
+<li>select Boot, cancel &ldquo;Safe boot&rdquo; in Boot options</li>
+<li>restart</li>
+</ul>
+<h3 id="install-ubuntu-normally">install ubuntu normally
+</h3><p>s</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/centos/">Centos</a>
+        
+            <a href="/tags/ubuntu/">Ubuntu</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/windows/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Charles-Yifan_li
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

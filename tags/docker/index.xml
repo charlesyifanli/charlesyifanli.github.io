@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Docker on Space of Yifan</title>
+        <link>https://charlesyifanli.github.io/tags/docker/</link>
+        <description>Recent content in Docker on Space of Yifan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Charles-Yifan_li</copyright>
+        <lastBuildDate>Fri, 26 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charlesyifanli.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>docker</title>
+        <link>https://charlesyifanli.github.io/p/docker/</link>
+        <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://charlesyifanli.github.io/p/docker/</guid>
+        <description>&lt;h2 id=&#34;install-docker-in-ubuntu&#34;&gt;install docker in ubuntu
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;sudo apt update&lt;/li&gt;
+&lt;li&gt;sudo apt install docker.io docker-compose
+[ sudo usermod -aG docker ${USER_NAME} ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-mirror&#34;&gt;docker mirror
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;sudo cd /etc/docker&lt;/li&gt;
+&lt;li&gt;vim daemon.json (if no, create)&lt;/li&gt;
+&lt;li&gt;add:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;registry-mirrors&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.registry.cyou&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker-cf.registry.cyou&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockercf.jsdelivr.fyi&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.jsdelivr.fyi&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockertest.jsdelivr.fyi&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://mirror.aliyuncs.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockerproxy.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://mirror.baidubce.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.m.daocloud.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.nju.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.mirrors.sjtug.sjtu.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://mirror.iscas.ac.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.rainbond.cc&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;basic-operation&#34;&gt;basic operation
+&lt;/h2&gt;&lt;h3 id=&#34;create---query--delete-image&#34;&gt;create &amp;amp;&amp;amp;  query &amp;amp;&amp;amp; delete image
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker build -t repo_name:tag .&lt;/li&gt;
+&lt;li&gt;docker images&lt;/li&gt;
+&lt;li&gt;docker rmi repo_name:tag/id&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;run--query--delete-container&#34;&gt;run &amp;amp;&amp;amp; query &amp;amp;&amp;amp; delete container
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;docker run [-it/-d] [-p host_port:container_port] [-v /host/data:/container/data]
+&amp;ndash;name container_name &amp;ndash;hostname hostname repo_name:tag&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-it: interact with current console&lt;/li&gt;
+&lt;li&gt;-d: detach&lt;/li&gt;
+&lt;li&gt;-p: set port&lt;/li&gt;
+&lt;li&gt;-v: set volume&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;docker ps [-a]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;docker rm container_name/id&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;start--stop-container&#34;&gt;start &amp;amp;&amp;amp; stop container
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker start/stop container_name&lt;/li&gt;
+&lt;li&gt;docker stop $(docker ps -q) //stop all container&lt;/li&gt;
+&lt;li&gt;docker exec -it container_name  bash&lt;/li&gt;
+&lt;li&gt;docker attach container_name&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Ctrl + P + Q&amp;rdquo; [interact with current console]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;query-container-volume&#34;&gt;query container volume
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker inspect &amp;ndash;format=&amp;rsquo;{{json .Mounts}}&amp;rsquo; &amp;lt;container_name or container_id&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;copy-during-hosts-and-containers&#34;&gt;copy during hosts and containers
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker cp /root/build/demo.txt master:/root/build&lt;/li&gt;
+&lt;li&gt;docker cp master:/root/build/demo.txt /root/build&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-and-github-package&#34;&gt;Docker and Github Package
+&lt;/h2&gt;&lt;h3 id=&#34;preparation&#34;&gt;preparation
+&lt;/h3&gt;&lt;p&gt;github &amp;raquo;  settings &amp;raquo; developer settings &amp;raquo; get the token with &lt;strong&gt;privilege&lt;/strong&gt; &amp;ldquo;write packages&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;operations&#34;&gt;operations
+&lt;/h3&gt;&lt;h4 id=&#34;docker-login&#34;&gt;docker login
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;docker login ghcr.io -u [github name]  -p [token]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;image-format&#34;&gt;image format
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;ghcr.io/[github name]/repo_name/image_name:tag  # [full_image_name == repo_name/image_name]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;push--pull&#34;&gt;push &amp;amp;&amp;amp; pull
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;docker push ghcr.io/[github name]/repo_name/image_name:v1.2  # [full_image_name == repo_name/image_name]&lt;/li&gt;
+&lt;li&gt;docker pull ghcr.io/[github name]/repo_name/image_name:v1.2  # [full_image_name == repo_name/image_name]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;exit&#34;&gt;exit
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;docker logout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-network&#34;&gt;Docker Network
+&lt;/h2&gt;&lt;h3 id=&#34;list-docker-network&#34;&gt;list docker network
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker network list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;inspect&#34;&gt;inspect
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker network inspect [name] | less&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;view-the-ip-address-information-on-the-network-device-veth_name-output-it-in-json-format-and-use-jq-to-format-and-process-the-json-data&#34;&gt;view the IP address information on the network device &lt;code&gt;veth_name&lt;/code&gt;, output it in JSON format, and use &lt;code&gt;jq&lt;/code&gt; to format and process the JSON data.
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ip -json address show dev [veth_name] | jq&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/github_38294679/article/details/135754374?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171412000316800225517633%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;amp;request_id=171412000316800225517633&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-135754374-null-null.142%5ev100%5epc_search_result_base2&amp;amp;utm_term=docker%E5%A6%82%E4%BD%95%E5%B0%86%E9%95%9C%E5%83%8F%E5%AD%98%E5%82%A8%E5%88%B0github&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Info&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Aj411r71b/?spm_id_from=333.999.0.0&amp;amp;vd_source=f367f43d00246a51bd639e9f1fcda3a9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Network&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

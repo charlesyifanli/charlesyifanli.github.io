@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tools on Space of Yifan</title>
+        <link>https://charlesyifanli.github.io/categories/tools/</link>
+        <description>Recent content in Tools on Space of Yifan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Charles-Yifan_li</copyright>
+        <lastBuildDate>Fri, 26 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://charlesyifanli.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>docker</title>
+        <link>https://charlesyifanli.github.io/p/docker/</link>
+        <pubDate>Fri, 26 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://charlesyifanli.github.io/p/docker/</guid>
+        <description>&lt;h2 id=&#34;install-docker-in-ubuntu&#34;&gt;install docker in ubuntu
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;sudo apt update&lt;/li&gt;
+&lt;li&gt;sudo apt install docker.io docker-compose
+[ sudo usermod -aG docker ${USER_NAME} ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-mirror&#34;&gt;docker mirror
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;sudo cd /etc/docker&lt;/li&gt;
+&lt;li&gt;vim daemon.json (if no, create)&lt;/li&gt;
+&lt;li&gt;add:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;registry-mirrors&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.registry.cyou&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker-cf.registry.cyou&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockercf.jsdelivr.fyi&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.jsdelivr.fyi&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockertest.jsdelivr.fyi&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://mirror.aliyuncs.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockerproxy.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://mirror.baidubce.com&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.m.daocloud.io&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.nju.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.mirrors.sjtug.sjtu.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://mirror.iscas.ac.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.rainbond.cc&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;basic-operation&#34;&gt;basic operation
+&lt;/h2&gt;&lt;h3 id=&#34;create---query--delete-image&#34;&gt;create &amp;amp;&amp;amp;  query &amp;amp;&amp;amp; delete image
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker build -t repo_name:tag .&lt;/li&gt;
+&lt;li&gt;docker images&lt;/li&gt;
+&lt;li&gt;docker rmi repo_name:tag/id&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;run--query--delete-container&#34;&gt;run &amp;amp;&amp;amp; query &amp;amp;&amp;amp; delete container
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;docker run [-it/-d] [-p host_port:container_port] [-v /host/data:/container/data]
+&amp;ndash;name container_name &amp;ndash;hostname hostname repo_name:tag&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-it: interact with current console&lt;/li&gt;
+&lt;li&gt;-d: detach&lt;/li&gt;
+&lt;li&gt;-p: set port&lt;/li&gt;
+&lt;li&gt;-v: set volume&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;docker ps [-a]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;docker rm container_name/id&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;start--stop-container&#34;&gt;start &amp;amp;&amp;amp; stop container
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker start/stop container_name&lt;/li&gt;
+&lt;li&gt;docker stop $(docker ps -q) //stop all container&lt;/li&gt;
+&lt;li&gt;docker exec -it container_name  bash&lt;/li&gt;
+&lt;li&gt;docker attach container_name&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Ctrl + P + Q&amp;rdquo; [interact with current console]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;query-container-volume&#34;&gt;query container volume
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker inspect &amp;ndash;format=&amp;rsquo;{{json .Mounts}}&amp;rsquo; &amp;lt;container_name or container_id&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;copy-during-hosts-and-containers&#34;&gt;copy during hosts and containers
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker cp /root/build/demo.txt master:/root/build&lt;/li&gt;
+&lt;li&gt;docker cp master:/root/build/demo.txt /root/build&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-and-github-package&#34;&gt;Docker and Github Package
+&lt;/h2&gt;&lt;h3 id=&#34;preparation&#34;&gt;preparation
+&lt;/h3&gt;&lt;p&gt;github &amp;raquo;  settings &amp;raquo; developer settings &amp;raquo; get the token with &lt;strong&gt;privilege&lt;/strong&gt; &amp;ldquo;write packages&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;operations&#34;&gt;operations
+&lt;/h3&gt;&lt;h4 id=&#34;docker-login&#34;&gt;docker login
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;docker login ghcr.io -u [github name]  -p [token]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;image-format&#34;&gt;image format
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;ghcr.io/[github name]/repo_name/image_name:tag  # [full_image_name == repo_name/image_name]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;push--pull&#34;&gt;push &amp;amp;&amp;amp; pull
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;docker push ghcr.io/[github name]/repo_name/image_name:v1.2  # [full_image_name == repo_name/image_name]&lt;/li&gt;
+&lt;li&gt;docker pull ghcr.io/[github name]/repo_name/image_name:v1.2  # [full_image_name == repo_name/image_name]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;exit&#34;&gt;exit
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;docker logout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-network&#34;&gt;Docker Network
+&lt;/h2&gt;&lt;h3 id=&#34;list-docker-network&#34;&gt;list docker network
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker network list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;inspect&#34;&gt;inspect
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;docker network inspect [name] | less&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;view-the-ip-address-information-on-the-network-device-veth_name-output-it-in-json-format-and-use-jq-to-format-and-process-the-json-data&#34;&gt;view the IP address information on the network device &lt;code&gt;veth_name&lt;/code&gt;, output it in JSON format, and use &lt;code&gt;jq&lt;/code&gt; to format and process the JSON data.
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ip -json address show dev [veth_name] | jq&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/github_38294679/article/details/135754374?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171412000316800225517633%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;amp;request_id=171412000316800225517633&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-135754374-null-null.142%5ev100%5epc_search_result_base2&amp;amp;utm_term=docker%E5%A6%82%E4%BD%95%E5%B0%86%E9%95%9C%E5%83%8F%E5%AD%98%E5%82%A8%E5%88%B0github&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Info&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Aj411r71b/?spm_id_from=333.999.0.0&amp;amp;vd_source=f367f43d00246a51bd639e9f1fcda3a9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Network&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>conda_pip_source</title>
+        <link>https://charlesyifanli.github.io/p/conda_pip_source/</link>
+        <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://charlesyifanli.github.io/p/conda_pip_source/</guid>
+        <description>&lt;h2 id=&#34;conda-config&#34;&gt;conda config
+&lt;/h2&gt;&lt;h3 id=&#34;view-mirror-sources&#34;&gt;view mirror sources
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;conda config &amp;ndash;show-sources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;display-config-file&#34;&gt;display config file
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;conda config &amp;ndash;set show_channel_urls yes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;update ~/.condarc&lt;/p&gt;
+&lt;h3 id=&#34;example&#34;&gt;example
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;channels:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - defaults
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;default_channels:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;custom_channels:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssl_verify: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;show_channel_urls: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;auto_activate_base: false
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;create-and-delete-envs&#34;&gt;create and delete envs
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;conda create -n &amp;lt;env_name&amp;gt; [python=3.10]&lt;/li&gt;
+&lt;li&gt;conda remove -n &amp;lt;environment_name&amp;gt; &amp;ndash;all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;clear-cache-index&#34;&gt;clear cache index
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;conda clean -i&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;pip-config&#34;&gt;pip config
+&lt;/h2&gt;&lt;h3 id=&#34;view-mirror-sources-1&#34;&gt;view mirror sources
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;pip config list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://pip.pypa.io/en/stable/cli/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;pip command line&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;methods&#34;&gt;methods
+&lt;/h3&gt;&lt;h4 id=&#34;windows&#34;&gt;windows
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;new ~/pip/pip.init&lt;/li&gt;
+&lt;li&gt;update pip.ini&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;linux&#34;&gt;linux
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;new ~/.config/pip/pip.conf&lt;/li&gt;
+&lt;li&gt;update pip.conf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;example
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[global]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;trusted-host = pypi.tuna.tsinghua.edu.cn
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[global]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;index-url = https://mirror.nju.edu.cn/pypi/web/simple
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[install]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;trusted-host = https://mirror.nju.edu.cn/pypi/web
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;reference&#34;&gt;reference
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://mirrors.cernet.edu.cn/list&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;United Mirrors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tsinghua&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.manongjc.com/detail/29-ftpasjhctocytqc.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Info&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jianshu.com/p/6cc047bc94e5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jupyer&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>git_config</title>
+        <link>https://charlesyifanli.github.io/p/git_config/</link>
+        <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://charlesyifanli.github.io/p/git_config/</guid>
+        <description>&lt;h2 id=&#34;git-branch-intro&#34;&gt;git branch intro
+&lt;/h2&gt;&lt;p&gt;The main branch is responsible for merging other branches, while other branches are responsible for completing their respective tasks and continuing iterations.&lt;/p&gt;
+&lt;p&gt;Solution: &amp;ldquo;A repository corresponds to a sub-branch, create a privileged repository corresponding to all branches, pull all branches in the privileged repository first, then perform a &lt;code&gt;--no-ff&lt;/code&gt; merge of other branches into the main branch, and push.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Workflow: &lt;a class=&#34;link&#34; href=&#34;https://www.zhihu.com/question/596345017/answer/2997761096&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;command-git-merge-no-ff--branch-name&#34;&gt;command: git merge &amp;ndash;no-ff  &amp;ldquo;branch-name&amp;rdquo;
+&lt;/h2&gt;&lt;h3 id=&#34;before-merge&#34;&gt;Before merge:
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  o---o---o---o  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        o---o    feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;merge-with-default-fast-forward-enabled&#34;&gt;Merge with Default (Fast-forward Enabled):
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  o---o---o---o---o  master (fast-forwarded to feature)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        o---o    feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;merge-with-no-ff-flag&#34;&gt;Merge with &amp;ndash;no-ff Flag:
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  o---o---o---o-------o  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       \         /
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        o---o---o    feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;note&#34;&gt;Note
+&lt;/h3&gt;&lt;p&gt;When merging without the &lt;code&gt;--no-ff&lt;/code&gt; flag, the &lt;code&gt;master&lt;/code&gt; branch pointer moves directly to the tip of the &lt;code&gt;feature&lt;/code&gt; branch. This process doesn&amp;rsquo;t show a distinct merge operation in the commit history.&lt;/p&gt;
+&lt;p&gt;However, when merging using the &lt;code&gt;--no-ff&lt;/code&gt; flag, a new merge commit is generated, &lt;strong&gt;preserving the separate histories of both &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;feature&lt;/code&gt; branches.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;More info: &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/452996934&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssh-and-github&#34;&gt;ssh and github
+&lt;/h2&gt;&lt;h3 id=&#34;generate-key&#34;&gt;generate key
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ssh-keygen -t rsa -C &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;mailto:xxx@xxx.com&#34; &gt;xxx@xxx.com&lt;/a&gt;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;get-public-key&#34;&gt;get public key
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;cd ~/.ssh&lt;/li&gt;
+&lt;li&gt;cat id_rsa.pub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;add-public-key-into-github-and-test&#34;&gt;add public key into github and test
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ssh -T &lt;a class=&#34;link&#34; href=&#34;mailto:git@github.com&#34; &gt;git@github.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ssh-connect-to-host-githubcom-port-22-connection-timed-out&#34;&gt;ssh: connect to host github.com port 22: Connection timed out
+&lt;/h2&gt;&lt;h3 id=&#34;in-sshconfig&#34;&gt;In &amp;ldquo;~/.ssh/config&amp;rdquo;,
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Host github.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Hostname ssh.github.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Port 443
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;More info: &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/521340971&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;branch-based-on-a-historical-version&#34;&gt;branch based on a historical version
+&lt;/h2&gt;&lt;h3 id=&#34;clone-the-repository-locally&#34;&gt;Clone the repository locally:
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git clone &lt;url&gt;&lt;/li&gt;
+&lt;li&gt;cd your-repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;create-a-new-branch&#34;&gt;Create a new branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git checkout -b new-branch-name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;look-through-the-hash-value-of-specific-history-version&#34;&gt;Look through the hash value of specific history version
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;reset-the-branch&#34;&gt;Reset the branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git reset &amp;ndash;hard commit-hash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;set-upstream&#34;&gt;Set upstream
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git push &amp;ndash;set-upstream origin branch-name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;merge-branch&#34;&gt;Merge branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git switch name&lt;/li&gt;
+&lt;li&gt;git merge name_to_be_merged&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;delete-branch&#34;&gt;Delete branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git branch -d name_to_be_delete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;delete-remote-corresponding-brach&#34;&gt;Delete remote corresponding brach
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git add .;git commit -m *;git push&lt;/li&gt;
+&lt;li&gt;git push origin &amp;ndash;delete name_to_be_delete&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

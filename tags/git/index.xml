@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Git on Space of Yifan</title>
+        <link>https://charlesyifanli.github.io/tags/git/</link>
+        <description>Recent content in Git on Space of Yifan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Charles-Yifan_li</copyright>
+        <lastBuildDate>Thu, 07 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charlesyifanli.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>git_config</title>
+        <link>https://charlesyifanli.github.io/p/git_config/</link>
+        <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://charlesyifanli.github.io/p/git_config/</guid>
+        <description>&lt;h2 id=&#34;git-branch-intro&#34;&gt;git branch intro
+&lt;/h2&gt;&lt;p&gt;The main branch is responsible for merging other branches, while other branches are responsible for completing their respective tasks and continuing iterations.&lt;/p&gt;
+&lt;p&gt;Solution: &amp;ldquo;A repository corresponds to a sub-branch, create a privileged repository corresponding to all branches, pull all branches in the privileged repository first, then perform a &lt;code&gt;--no-ff&lt;/code&gt; merge of other branches into the main branch, and push.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Workflow: &lt;a class=&#34;link&#34; href=&#34;https://www.zhihu.com/question/596345017/answer/2997761096&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;command-git-merge-no-ff--branch-name&#34;&gt;command: git merge &amp;ndash;no-ff  &amp;ldquo;branch-name&amp;rdquo;
+&lt;/h2&gt;&lt;h3 id=&#34;before-merge&#34;&gt;Before merge:
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  o---o---o---o  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        o---o    feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;merge-with-default-fast-forward-enabled&#34;&gt;Merge with Default (Fast-forward Enabled):
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  o---o---o---o---o  master (fast-forwarded to feature)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       \
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        o---o    feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;merge-with-no-ff-flag&#34;&gt;Merge with &amp;ndash;no-ff Flag:
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  o---o---o---o-------o  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       \         /
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        o---o---o    feature
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;note&#34;&gt;Note
+&lt;/h3&gt;&lt;p&gt;When merging without the &lt;code&gt;--no-ff&lt;/code&gt; flag, the &lt;code&gt;master&lt;/code&gt; branch pointer moves directly to the tip of the &lt;code&gt;feature&lt;/code&gt; branch. This process doesn&amp;rsquo;t show a distinct merge operation in the commit history.&lt;/p&gt;
+&lt;p&gt;However, when merging using the &lt;code&gt;--no-ff&lt;/code&gt; flag, a new merge commit is generated, &lt;strong&gt;preserving the separate histories of both &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;feature&lt;/code&gt; branches.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;More info: &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/452996934&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssh-and-github&#34;&gt;ssh and github
+&lt;/h2&gt;&lt;h3 id=&#34;generate-key&#34;&gt;generate key
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ssh-keygen -t rsa -C &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;mailto:xxx@xxx.com&#34; &gt;xxx@xxx.com&lt;/a&gt;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;get-public-key&#34;&gt;get public key
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;cd ~/.ssh&lt;/li&gt;
+&lt;li&gt;cat id_rsa.pub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;add-public-key-into-github-and-test&#34;&gt;add public key into github and test
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ssh -T &lt;a class=&#34;link&#34; href=&#34;mailto:git@github.com&#34; &gt;git@github.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ssh-connect-to-host-githubcom-port-22-connection-timed-out&#34;&gt;ssh: connect to host github.com port 22: Connection timed out
+&lt;/h2&gt;&lt;h3 id=&#34;in-sshconfig&#34;&gt;In &amp;ldquo;~/.ssh/config&amp;rdquo;,
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Host github.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Hostname ssh.github.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Port 443
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;More info: &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/521340971&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;branch-based-on-a-historical-version&#34;&gt;branch based on a historical version
+&lt;/h2&gt;&lt;h3 id=&#34;clone-the-repository-locally&#34;&gt;Clone the repository locally:
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git clone &lt;url&gt;&lt;/li&gt;
+&lt;li&gt;cd your-repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;create-a-new-branch&#34;&gt;Create a new branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git checkout -b new-branch-name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;look-through-the-hash-value-of-specific-history-version&#34;&gt;Look through the hash value of specific history version
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;reset-the-branch&#34;&gt;Reset the branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git reset &amp;ndash;hard commit-hash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;set-upstream&#34;&gt;Set upstream
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git push &amp;ndash;set-upstream origin branch-name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;merge-branch&#34;&gt;Merge branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git switch name&lt;/li&gt;
+&lt;li&gt;git merge name_to_be_merged&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;delete-branch&#34;&gt;Delete branch
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git branch -d name_to_be_delete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;delete-remote-corresponding-brach&#34;&gt;Delete remote corresponding brach
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git add .;git commit -m *;git push&lt;/li&gt;
+&lt;li&gt;git push origin &amp;ndash;delete name_to_be_delete&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

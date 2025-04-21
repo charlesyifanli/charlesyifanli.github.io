@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ProgrammingLanguage on Space of Yifan</title>
+        <link>https://charlesyifanli.github.io/categories/programminglanguage/</link>
+        <description>Recent content in ProgrammingLanguage on Space of Yifan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Charles-Yifan_li</copyright>
+        <lastBuildDate>Sun, 10 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://charlesyifanli.github.io/categories/programminglanguage/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>javascript</title>
+        <link>https://charlesyifanli.github.io/p/javascript/</link>
+        <pubDate>Sun, 10 Dec 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://charlesyifanli.github.io/p/javascript/</guid>
+        <description>&lt;h2 id=&#34;change-npm-registry&#34;&gt;change npm registry
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;npm config get registry&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;npm config set registry &lt;a class=&#34;link&#34; href=&#34;https://registry.npmmirror.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://registry.npmmirror.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;npm config set registry &lt;a class=&#34;link&#34; href=&#34;https://registry.npmjs.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://registry.npmjs.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;nvm-intro&#34;&gt;nvm intro
+&lt;/h2&gt;&lt;h3 id=&#34;what-is-nvm&#34;&gt;what is &amp;ldquo;nvm&amp;rdquo;
+&lt;/h3&gt;&lt;p&gt;NVM (Node Version Manager) is a tool that manages multiple Node.js versions.&lt;/p&gt;
+&lt;h3 id=&#34;common-command&#34;&gt;common command
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;nvm ls - View currently installed versions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm install &lt;version&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm use &lt;version&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm list available - Display a partial list of available versions for download&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm uninstall &lt;version&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm alias - Add aliases to different version numbers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm unalias - Remove defined aliases&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nvm reinstall-packages &lt;version&gt; - Reinstall globally installed npm packages for a specified version in the current Node environment&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More info: &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/549256854&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
